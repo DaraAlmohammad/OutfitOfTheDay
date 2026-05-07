@@ -26,12 +26,14 @@ Databas
 outfits: 
 id
 color 
-seasonsId
+seasonId
 image
 description
 outfitType
-IsFavourite
+IsFavourite - true/false
+myOutfit - true/false
 
 seasons:
 id
-seasons 
+season
+
