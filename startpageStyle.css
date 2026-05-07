@@ -1,4 +1,12 @@
+#filter-form {
+            text-align: center;
+            display: flex;
+            justify-content: start;
+            gap: 15px;
+            font-weight: bold;
+
+        }
 .mypage-button{
-    color:skyblue;
-    padding:15px;
+    position: fixed;
+    right: 15px;
 }
