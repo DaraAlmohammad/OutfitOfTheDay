@@ -1,0 +1,92 @@
+{
+  "seasons": [
+    {
+      "id": 1,
+      "season": "summer"
+    },
+    {
+      "id": 2,
+      "season": "spring"
+    },
+    {
+      "id": 3,
+      "season": "winter"
+    },
+    {
+      "id": 4,
+      "season": "fall"
+    }
+  ],
+  "outfits": [
+    {
+      "id": 1,
+      "color": "white",
+      "seasonId": 1,
+      "image": "",
+      "description": "",
+      "outfitType": "casual",
+      "IsFavourite": false,
+      "myOutfit": false
+    },
+    {
+      "id": 2,
+      "color": "blue",
+      "seasonId": 4,
+      "image": "",
+      "description": "",
+      "outfitType": "office",
+      "IsFavourite": false,
+      "myOutfit": false
+    },
+    {
+      "id": 3,
+      "color": "black",
+      "seasonId": 3,
+      "image": "",
+      "description": "",
+      "outfitType": "elegant",
+      "IsFavourite": false,
+      "myOutfit": false
+    },
+    {
+      "id": 4,
+      "color": "pink",
+      "seasonId": 1,
+      "image": "",
+      "description": "",
+      "outfitType": "beachwear",
+      "IsFavourite": false,
+      "myOutfit": false
+    },
+    {
+      "id": 5,
+      "color": "gold",
+      "seasonId": 3,
+      "image": "",
+      "description": "",
+      "outfitType": "party",
+      "IsFavourite": false,
+      "myOutfit": false
+    },
+    {
+      "id": 6,
+      "color": "green",
+      "seasonId": 4,
+      "image": "",
+      "description": "",
+      "outfitType": "streetwear",
+      "IsFavourite": false,
+      "myOutfit": false
+    },
+    {
+      "id": 7,
+      "color": "silver",
+      "seasonId": 2,
+      "image": "",
+      "description": "",
+      "outfitType": "sporty",
+      "IsFavourite": false,
+      "myOutfit": false
+    }
+  ]
+}
