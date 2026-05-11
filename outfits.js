@@ -17,7 +17,7 @@ class Outfits{
                 newData.outfits.splice(i,1);
             }
         }
-        let finelData = JSON.stringify(newData);
-        Deno.writeTextFileSync("data.json",finelData)
+        let finalData = JSON.stringify(newData);
+        Deno.writeTextFileSync("data.json",finalData)
     }
 }
