@@ -25,7 +25,7 @@ class API{
     }
 
     static async getOutfitById(id) {
-        let response = fetch("mainpage/" + id, {
+        let response = fetch("mainpage/id" + id, {
             headers: {"Accept": "application/json"},
         });
         
