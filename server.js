@@ -1,4 +1,4 @@
-import { getUserByname } from "./api.js";
+import { getUserByname } from "/api.js";
 async function handle(request) {
     let url = new URL(request.url);
     if (url.pathname == "/login" && request.method == "POST") {
