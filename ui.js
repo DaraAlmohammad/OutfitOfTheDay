@@ -1,7 +1,8 @@
-function createAllOutfits() {
-    let allOutfits = outfits.getAllOutfits(); 
+async function createAllOutfits() {
     let outfitList = document.getElementById("outfit-feed-container");
-    outfitList.innerHTML = "";
+    outfitList.innerHTML = "Laddar..";
+    let allOutfits = await Outfits.getAllOutfits();
+    console.log(allOutfits);
 
     for (let outfit of allOutfits) {
         let a = document.createElement("a");

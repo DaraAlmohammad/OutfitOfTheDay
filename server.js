@@ -2,6 +2,14 @@ import { serveDir } from "jsr:@std/http/file-server";
 
 async function handle(request) {
     let url = new URL(request.url);
+    if (url.pathname === "/api/outfits" && request.method === "GET") {
+    // Här på servern är det HELT RÄTT att använda Deno.readTextFile
+    let data = await Deno.readTextFile("data.json");
+    return new Response(data, {
+        headers: { "Content-Type": "application/json" }
+    });
+    return serveDir(request, { fsRoot: "." });
+}
     
     if (url.pathname.startsWith("/login.html")) {
         return serveDir(request,{fsRoot:"."});
