@@ -1,7 +1,5 @@
-import {getAllOutfits} from "./outfits.js";
-
 function createAllOutfits() {
-    let allOutfits = getAllOutfits(); 
+    let allOutfits = outfits.getAllOutfits(); 
     let outfitList = document.getElementById("outfit-feed-container");
     outfitList.innerHTML = "";
 
