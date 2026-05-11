@@ -2,9 +2,11 @@ import { serveDir } from "jsr:@std/http/file-server";
 
 async function handle(request) {
     let url = new URL(request.url);
+    
     if (url.pathname.startsWith("/login.html")) {
         return serveDir(request,{fsRoot:"."});
     }
+
     if (url.pathname == "/login" && url.method=="POST") {
         console.log(request)
         let user = await request.json();
@@ -26,6 +28,5 @@ async function handle(request) {
         
         return new Response("Welcome!", options)
     }
-    return new Response("Hej")
 }
 Deno.serve(handle);
