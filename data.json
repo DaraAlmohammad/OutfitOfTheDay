@@ -25,7 +25,7 @@
       "image": "images/outfit1.jpg",
       "description": "",
       "outfitType": "casual",
-      "IsFavourite": false,
+      "isFavourite": false,
       "myOutfit": false
     },
     {
@@ -35,7 +35,7 @@
       "image": "images/outfit2.jpg",
       "description": "",
       "outfitType": "office",
-      "IsFavourite": false,
+      "isFavourite": false,
       "myOutfit": false
     },
     {
@@ -45,7 +45,7 @@
       "image": "images/outfit3.jpg",
       "description": "",
       "outfitType": "elegant",
-      "IsFavourite": false,
+      "isFavourite": false,
       "myOutfit": false
     },
     {
@@ -55,7 +55,7 @@
       "image": "images/outfit4.jpg",
       "description": "",
       "outfitType": "beachwear",
-      "IsFavourite": false,
+      "isFavourite": false,
       "myOutfit": false
     },
     {
@@ -65,7 +65,7 @@
       "image": "images/outfit5.jpg",
       "description": "",
       "outfitType": "party",
-      "IsFavourite": false,
+      "isFavourite": false,
       "myOutfit": false
     },
     {
@@ -75,7 +75,7 @@
       "image": "images/outfit6.jpg",
       "description": "",
       "outfitType": "streetwear",
-      "IsFavourite": false,
+      "isFavourite": false,
       "myOutfit": false
     },
     {
@@ -85,7 +85,7 @@
       "image": "images/outfit7.jpg",
       "description": "",
       "outfitType": "sporty",
-      "IsFavourite": false,
+      "isFavourite": false,
       "myOutfit": false
     }
   ]
