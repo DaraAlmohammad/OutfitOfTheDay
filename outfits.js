@@ -2,7 +2,7 @@ class Outfits{
 
      static async getAllOutfits() {
         try{
-            let response = await fetch("/api/outfits");
+            let response = await fetch("./api/outfits");
             let jsonData = await response.json();
             return jsonData.outfits;
         } catch(err){

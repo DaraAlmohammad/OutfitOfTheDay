@@ -1,6 +1,6 @@
 async function createAllOutfits() {
     let outfitList = document.getElementById("outfit-feed-container");
-    outfitList.innerHTML = "Laddar..";
+    outfitList.innerHTML = "";
     let allOutfits = await Outfits.getAllOutfits();
     console.log(allOutfits);
 
@@ -10,12 +10,12 @@ async function createAllOutfits() {
         if (outfit.isFavourite === true) {
             a.innerHTML = `
             <img src="${outfit.image}">
-            <img src="images/NotAFavorite.jpg">
+            <img src="images/favorite.jpg">
         `
         } else {
             a.innerHTML = `
             <img src="${outfit.image}">
-            <img src="images/favorite.jpg">
+            <img src="images/NotAfavorite.jpg">
         `
         }
         outfitList.appendChild(a);
