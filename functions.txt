@@ -38,6 +38,8 @@ dropDownMenuSeasons(seasons) - visar alla olika säsonger i en dropdownmenyn på
 
 loadAddOutfitForm(osäker på parametern) - ladda add-outfit formuläret 
 
+createAllOutfits() - visa alla outfits
+
 showOutfit(outfit) - visa en outfit 
 
 showLoading() - om något tar tid att ladda visa en "loading-prompt"
