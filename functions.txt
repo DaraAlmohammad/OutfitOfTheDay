@@ -16,34 +16,30 @@ Radera produkt
 Gör alla funktioner i API async! Använd try och catch! 
 API-funktioner:
 
-deleteProduct(id) - radera en produkt
+isFavoriteOutfit() - Ruth
+deleteOutfit(id) - radera en produkt Dara 
 
-//////////getAllOutfits() - visa alla produkter
+getAllOutfits() - visa alla produkter CHECK PÅ DEN! // Dara 
 
-getOneOutfitById(id) - visa endast en produkt 
+getOneOutfitById(id) - visa endast en produkt Tova
 
-addOutfit() - lägg till en ny outfit 
+addOutfit() - lägg till en ny outfit Tova 
 
-getOutfitsInSeason(season) - sortera outfits på årstid
+getOutfitsInSeason(season) - sortera outfits på årstid Ruth
 
-getOutfitsByColor(color) - sortera outfits på färg 
+getOutfitsByColor(color) - sortera outfits på färg Ruth 
 
 
 Gör alla funktioner i UI static
 UI-funktioner: 
 
-dropDownMenuColors(colors) - visar alla olika färger i dropdownmenyn på startsidan
+loadAddOutfitForm(osäker på parametern) - ladda add-outfit formuläret Dara
 
-dropDownMenuSeasons(seasons) - visar alla olika säsonger i en dropdownmenyn på startsidan
+showOutfit(outfit) - visa en outfit Tova 
 
+showLoading() - om något tar tid att ladda visa en "loading-prompt" Ruth
 
-loadAddOutfitForm(osäker på parametern) - ladda add-outfit formuläret 
-
-showOutfit(outfit) - visa en outfit 
-
-showLoading() - om något tar tid att ladda visa en "loading-prompt"
-
-hideLoading() - när sidan laddats klart dölj "loading-prompten"
+hideLoading() - när sidan laddats klart dölj "loading-prompten" Ruth 
 
 
 
