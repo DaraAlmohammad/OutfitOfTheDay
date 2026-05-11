@@ -1,24 +1,25 @@
-async function createAllOutfits() {
-    const outfitList = document.getElementById("outfit-feed-container");
-    const statusContainer = document.getElementById("dom-status");
+class UI {
+    async createAllOutfits() {
+        const outfitList = document.getElementById("outfit-feed-container");
+        const statusContainer = document.getElementById("dom-status");
 
-    outfitList.innerHTML = "";
+        outfitList.innerHTML = "";
 
-    try {
-        const allOutfits = await Outfits.getAllOutfits();
+        try {
+            const allOutfits = await Outfits.getAllOutfits();
 
-        for (let outfit of allOutfits) {
-            const card = document.createElement("div");
-            card.classList.add("outfit-card");
+            for (let outfit of allOutfits) {
+                const card = document.createElement("div");
+                card.classList.add("outfit-card");
 
-            let heartSrc = "";
-            if (outfit.isFavourite === true) {
-                heartSrc = "images/favorite.jpg";
-            } else {
-                heartSrc = "images/NotAfavorite.jpg";
-            }
-            
-            card.innerHTML = `
+                let heartSrc = "";
+                if (outfit.isFavourite === true) {
+                    heartSrc = "images/favorite.jpg";
+                } else {
+                    heartSrc = "images/NotAfavorite.jpg";
+                }
+
+                card.innerHTML = `
                 <a href="detail.html?id=${outfit.id}" class="main-image-link">
                     <img src="${outfit.image}" class="main-outfit-img">
                 </a>
@@ -27,70 +28,51 @@ async function createAllOutfits() {
                 </button>
             `;
 
-            const heartBtn = card.querySelector(".favorite-btn");
-            const heartImg = card.querySelector(".heart-icon");
+                const heartBtn = card.querySelector(".favorite-btn");
+                const heartImg = card.querySelector(".heart-icon");
 
-            heartBtn.addEventListener("click", async function() {
-                try {
-                    outfit.isFavourite = !outfit.isFavourite;
+                heartBtn.addEventListener("click", async function () {
+                    try {
+                        outfit.isFavourite = !outfit.isFavourite;
 
-                    if (outfit.isFavourite === true) {
-                        heartImg.src = "images/favorite.jpg";
-                    } else {
-                        heartImg.src = "images/NotAfavorite.jpg";
+                        if (outfit.isFavourite === true) {
+                            heartImg.src = "images/favorite.jpg";
+                        } else {
+                            heartImg.src = "images/NotAfavorite.jpg";
+                        }
+
+                        const response = await fetch(`/api/outfits/${outfit.id}`, {
+                            method: "PATCH",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ isFavourite: outfit.isFavourite })
+                        });
+
+                        if (!response.ok) {
+                            throw new Error(`HTTP fel! Status: ${response.status}`);
+                        }
+                    } catch (error) {
+                        if (statusContainer) {
+                            statusContainer.textContent = `Fel: ${error.message}`;
+                            statusContainer.style.display = "block";
+                        }
                     }
+                });
 
-                    const response = await fetch(`/api/outfits/${outfit.id}`, {
-                        method: "PATCH",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ isFavourite: outfit.isFavourite })
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`HTTP fel! Status: ${response.status}`);
-                    }
-                } catch (error) {
-                    if (statusContainer) {
-                        statusContainer.textContent = `Fel: ${error.message}`;
-                        statusContainer.style.display = "block";
-                    }
-                }
-            });
-
-            outfitList.appendChild(card);
-        }
-    } catch (error) {
-        if (statusContainer) {
-            statusContainer.textContent = `Nätverksfel: ${error.message}`;
-            statusContainer.style.display = "block";
-        }
-class UI {
-    async createAllOutfits() {
-        let outfitList = document.getElementById("outfit-feed-container");
-        outfitList.innerHTML = "";
-        let allOutfits = await Outfits.getAllOutfits();
-        console.log(allOutfits);
-
-        for (let outfit of allOutfits) {
-            let a = document.createElement("a");
-
-            if (outfit.isFavourite === true) {
-                a.innerHTML = `
-            <img src="${outfit.image}">
-            <img src="images/favorite.jpg">
-        `
-            } else {
-                a.innerHTML = `
-            <img src="${outfit.image}">
-            <img src="images/NotAfavorite.jpg">
-        `
+                outfitList.appendChild(card);
             }
-            outfitList.appendChild(a);
+        } catch (error) {
+            if (statusContainer) {
+                statusContainer.textContent = `Nätverksfel: ${error.message}`;
+                statusContainer.style.display = "block";
+            }
+
+
+
         }
     }
     async showOutfit(id) {
-        
     }
 }
+
 
 createAllOutfits();
