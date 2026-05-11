@@ -32,6 +32,11 @@ getOutfitsByColor(color) - sortera outfits på färg
 Gör alla funktioner i UI static
 UI-funktioner: 
 
+dropDownMenuColors(colors) - visar alla olika färger i dropdownmenyn på startsidan
+
+dropDownMenuSeasons(seasons) - visar alla olika säsonger i en dropdownmenyn på startsidan
+
+
 loadAddOutfitForm(osäker på parametern) - ladda add-outfit formuläret 
 
 showOutfit(outfit) - visa en outfit 
