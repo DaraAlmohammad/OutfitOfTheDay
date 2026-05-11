@@ -2,13 +2,15 @@ class Outfits{
 
      static async getAllOutfits() {
         try{
-            let response = await fetch("./api/outfits");
+            let response = await fetch("/mainPage");
             let jsonData = await response.json();
             return jsonData.outfits;
         } catch(err){
             console.log("err")
         }
         }
+  
+
     static deleteProduct(id){
         let data = deno.readTextFilesync("data.json");
         let newData = JSON.parse(data);
@@ -17,7 +19,7 @@ class Outfits{
                 newData.outfits.splice(i,1);
             }
         }
-        let finalData = JSON.stringify(newData);
-        Deno.writeTextFileSync("data.json",finalData)
+        let finelData = JSON.stringify(newData);
+        Deno.writeTextFileSync("data.json",finelData)
     }
 }

@@ -2,7 +2,7 @@ import { serveDir } from "jsr:@std/http/file-server";
 
 async function handle(request) {
     let url = new URL(request.url);
-    if (url.pathname === "/api/outfits" && request.method === "GET") {
+    if (url.pathname === "/mainPage" && request.method === "GET") {
     
     let data = await Deno.readTextFile("data.json");
     return new Response(data, {
