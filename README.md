@@ -1,6 +1,7 @@
 # OutfitOfTheDay
 Frågor till Sebbe: 
 - Måste vi ha en del där användaren ska kunna skapa ett konto eller räcker det med att vi hårdkodar användare? 
+- Hur gör vi kontrollerar vi en cookie.
 
 Grupp project där en hemsida med olika outfits ska visas, man ska även kunna posta och radera nya outfits
 
