@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Outfit of the day</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="global-webbheader">
+            <h1 class="Page-name">Ootd</h1>
+            <nav class="global-nav">
+                <a href="mainPage.html">Main page</a>
+                <a href="myOutfits.html">My outfits</a>
+                <a href="postOutfit.html">Post new outfit</a>
+            </nav>
+        </header>
+        <div class="post-form">
+            <form id="postOutfit-form">
+                <h2>Post a new Outfit</h2>
+
+                    <label for="image-url">Bildlänk (URL) Tillfälligt!:</label>
+                    <input type="url" id="image-url" name="imageUrl" placeholder="https://..." required>
+                    
+                    <label for="season">Season:</label>
+                    <select id="season" name="season" required>
+                        <option value="" disabled selected>-- Pick a season --</option>
+                        <option value="spring">Vår</option>
+                        <option value="summer">Sommar</option>
+                        <option value="fall">Höst</option>
+                        <option value="winter">Vinter</option>
+                    </select>
+
+                    <label for="outfit-type">Type of outfit:</label>
+                    <select id="outfit-type" name="outfitType" required>
+                        <option value="" disabled selected>-- Pick an outfit-type --</option>
+                        <option value="casual">Casual</option>
+                        <option value="party">Party</option>
+                        <option value="business">Business</option>
+                        <option value="sporty">Sporty</option>
+                    </select>
+
+                    <label for="color">Main color:</label>
+                        <select id="color" name="color" required>
+                            <option value="" disabled selected>-- Pick a color --</option>
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                            <option value="beige">Beige</option>
+                            <option value="multicolor">Multicolor</option>
+                            <option value="red">Red</option>
+                            <option value="pink">Pink</option>
+                            <option value="purple">Purple</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="orange">Orange</option>
+                            <option value="brown">Brown</option>
+                            <option value="silver">Silver</option>
+                            <option value="gold">Gold</option>
+                            <option value="grey">Grey</option>
+                        </select>
+
+                    <label for="description">Beskrivning:</label>
+                    <textarea id="description" name="description" rows="6" placeholder="Describe your OOTD..."></textarea>
+
+                    <button type="submit">Post Outfit</button>
+            </form>
+        </div>
+
+        <script src=""></script>
+        <script src=""></script>
+        <script src=""></script>
+        
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Outfits - OOTD</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="global-webbheader">
+            <h1 class="Page-name">Ootd</h1>
+            <nav class="global-nav">
+                <a href="mainPage.html">Main page</a>
+                <a href="myOutfits.html">My outfits</a>
+                <a href="postOutfit.html">Post new outfit</a>
+            </nav>
+        </header>
+
+        <main class="my-outfits-page">
+            <div class="filter-section">
+                <form id="filter-form">
+                    <h2>Filtrera mina outfits</h2>
+                    
+                    <div class="filter-dropdowns">
+                        <label for="filter-season">Season:</label>
+                        <select id="filter-season" name="season">
+                            <option value="">All seasons</option>
+                            <option value="spring">Spring</option>
+                            <option value="summer">Summer</option>
+                            <option value="fall">Fall</option>
+                            <option value="winter">Winter</option>
+                        </select>
+
+                        <label for="filter-outfit-type">Type of outfits:</label>
+                        <select id="filter-outfit-type" name="outfitType">
+                            <option value="">All types</option>
+                            <option value="casual">Casual</option>
+                            <option value="party">Party</option>
+                            <option value="business">Business</option>
+                            <option value="sporty">Sporty</option>
+                        </select>
+
+                        <label for="filter-color">Color:</label>
+                        <select id="filter-color" name="color">
+                            <option value="">All colors</option>
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                            <option value="beige">Beige</option>
+                            <option value="multicolor">Multicolor</option>
+                            <option value="red">Red</option>
+                            <option value="pink">Pink</option>
+                            <option value="purple">Purple</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="orange">Orange</option>
+                            <option value="brown">Brown</option>
+                            <option value="silver">Silver</option>
+                            <option value="gold">Gold</option>
+                            <option value="grey">Grey</option>
+                        </select>
+                    </div>
+
+                    <button type="button" id="apply-filter-btn">Filter</button>
+                </form>
+            </div>
+
+            <div id="outfit-feed-container"></div>
+        </main>
+
+        <script src="main.js"></script>
+    </body>
+</html>
