@@ -3,7 +3,7 @@ import { getOutfitById } from "./outfits.js";
 
 async function handle(request) {
     let url = new URL(request.url);
-    let idRouteOutfit = new URLPattern({ pathname: "/mainPage/:id"});
+    let idRouteOutfit = new URLPattern({ pathname: "/mainpage/:id"});
     let options = {
         headers: { 
             "Content-Type": "application/json",
@@ -12,7 +12,7 @@ async function handle(request) {
         }
     };
 
-    if (url.pathname === "/mainPage" && request.method === "GET") {
+    if (url.pathname === "/mainpage" && request.method === "GET") {
 
         let data = await Deno.readTextFile("data.json");
         return new Response(data, {
@@ -50,7 +50,7 @@ async function handle(request) {
         let match = idRouteOutfit.exec(url);
         let id = match.pathname.groups.id;
         let outfitById = getOutfitById(id);
-        
+
         if (!outfitById) {
             options.status = 404;
             return new Response (JSON.stringify({error: "ID NOT FOUND"}), options);
