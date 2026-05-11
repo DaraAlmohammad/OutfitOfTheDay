@@ -1,4 +1,4 @@
-import {getAllOutfits} from "./outfits.js";
+
 
 function createAllOutfits() {
     let allOutfits = getAllOutfits(); 
