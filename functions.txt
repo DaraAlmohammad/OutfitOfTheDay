@@ -36,7 +36,6 @@ dropDownMenuColors(colors) - visar alla olika färger i dropdownmenyn på starts
 
 dropDownMenuSeasons(seasons) - visar alla olika säsonger i en dropdownmenyn på startsidan
 
-
 loadAddOutfitForm(osäker på parametern) - ladda add-outfit formuläret 
 
 showOutfit(outfit) - visa en outfit 
