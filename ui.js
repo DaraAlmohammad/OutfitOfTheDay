@@ -91,4 +91,4 @@ form.addEventListener("submit", async function (){
 
 
 
-createAllOutfits();
+UI.createAllOutfits;
