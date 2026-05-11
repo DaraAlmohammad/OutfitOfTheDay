@@ -70,7 +70,20 @@ class UI {
 
         }
     }
-    async showOutfit(id) {
+    async showOutfit() {
+        const params = new URLSearchParams(windows.location.search);
+        const outfitId = params.get("id");
+        const outfit = await API.getOutfitById(outfitId)
+
+        let outfitById = document.getElementById("outfit-detail-container");
+        let div = document.createElement("div");
+
+        div.innerHTML = `
+            <img src=${outfit.image}>,
+            <h2>${outfit.color}</h2>, 
+            <h2>${outfit.outfitType}</h2>,
+            <p>${outfit.description}</p>,
+        `
     }
 }
 const form = document.querySelector("#filter-form");
