@@ -18,7 +18,7 @@ API-funktioner:
 
 deleteProduct(id) - radera en produkt
 
-getAllOutfits() - visa alla produkter
+//////////getAllOutfits() - visa alla produkter
 
 getOneOutfitById(id) - visa endast en produkt 
 
@@ -36,9 +36,8 @@ dropDownMenuColors(colors) - visar alla olika färger i dropdownmenyn på starts
 
 dropDownMenuSeasons(seasons) - visar alla olika säsonger i en dropdownmenyn på startsidan
 
-loadAddOutfitForm(osäker på parametern) - ladda add-outfit formuläret 
 
-createAllOutfits() - visa alla outfits
+loadAddOutfitForm(osäker på parametern) - ladda add-outfit formuläret 
 
 showOutfit(outfit) - visa en outfit 
 
