@@ -1,0 +1,44 @@
+FRONTEND
+
+Add-product formulär
+* Eventlistener med submit-listener 
+* Funktionen skapar en ny variabel med data, använd value för att hämta värden i de olika fälten.
+* När produkten är tillagd visa något meddelande för användaren så den vet att produkten lagts till. 
+
+Radera produkt
+* Eventlistener med click-listener 
+* Skapa en variabel som hämtar värdet på id:t 
+* Gör en if-sats med return om värdet är tomt ""
+* Anropa funktionen deleteProduct från api:t 
+* När produkten är raderad visa ett relevant meddelande för användaren
+
+
+Gör alla funktioner i API async! Använd try och catch! 
+API-funktioner:
+
+deleteProduct(id) - radera en produkt
+
+getAllOutfits() - visa alla produkter
+
+getOneOutfitById(id) - visa endast en produkt 
+
+addOutfit() - lägg till en ny outfit 
+
+getOutfitsInSeason(season) - sortera outfits på årstid
+
+getOutfitsByColor(color) - sortera outfits på färg 
+
+
+Gör alla funktioner i UI static
+UI-funktioner: 
+
+loadAddOutfitForm(osäker på parametern) - ladda add-outfit formuläret 
+
+showOutfit(outfit) - visa en outfit 
+
+showLoading() - om något tar tid att ladda visa en "loading-prompt"
+
+hideLoading() - när sidan laddats klart dölj "loading-prompten"
+
+
+
