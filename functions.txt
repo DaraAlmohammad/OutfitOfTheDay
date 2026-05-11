@@ -17,6 +17,7 @@ Gör alla funktioner i API async! Använd try och catch!
 API-funktioner:
 
 isFavoriteOutfit() - Ruth
+
 deleteOutfit(id) - radera en produkt Dara 
 
 getAllOutfits() - visa alla produkter CHECK PÅ DEN! // Dara 
