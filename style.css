@@ -1,12 +1,101 @@
-#filter-form {
-            text-align: center;
-            display: flex;
-            justify-content: start;
-            gap: 15px;
-            font-weight: bold;
+* {
+    box-sizing: border-box;
+}
 
-        }
-.mypage-button{
-    position: fixed;
-    right: 15px;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; 
+    background-color: #d4e4f6; 
+    color: #333;
+}
+
+.global-webbheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 30px;
+}
+
+.Page-name {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.global-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.global-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px; 
+}
+
+.global-nav a:hover {
+    background-color: #333;
+    color: #ffffff;
+}
+
+
+.filter-section, .post-form {
+    padding: 0 3%;
+    margin-bottom: 30px;
+}
+
+#filter-form, #postOutfit-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.filter-dropdowns {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; 
+    align-items: center;
+}
+
+select {
+    min-width: 150px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #99b8db;
+    color: #ffffff;
+    transition: background-color 0.2s, transform 0.1s;
+    align-self: flex-start; 
+}
+
+button:hover {
+    background-color: #758fac;
+}
+
+select, textarea {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+select {
+    min-width: 150px;
 }
