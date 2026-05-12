@@ -1,5 +1,5 @@
 import { serveDir } from "jsr:@std/http/file-server";
-import { getOutfitById, getAllOutfits } from "./assets/js/outfits.js";
+import { getOutfitById,} from "./outfits.js";
 
 async function handle(request) {
     let url = new URL(request.url);
