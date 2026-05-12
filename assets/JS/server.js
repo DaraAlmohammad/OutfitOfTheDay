@@ -1,5 +1,5 @@
 import { serveDir } from "jsr:@std/http/file-server";
-import { getOutfitById,} from "./outfits.js";
+import { getOutfitById, getAllOutfits} from "./assets/JS/outfits.js";
 
 async function handle(request) {
     let url = new URL(request.url);
@@ -34,6 +34,6 @@ async function handle(request) {
         }
     } 
 
-    return serveDir(request, { fsRoot: "./OutfitOfTheDay" });
+    return serveDir(request, { fsRoot: "." });
 }
 Deno.serve(handle);

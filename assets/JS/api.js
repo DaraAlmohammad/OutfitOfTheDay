@@ -5,15 +5,14 @@ class API{
         try{
             let response = await fetch("/mainpage");
             let jsonData = await response.json();
-            console.log(jsonData);
-            return jsonData.outfits;
+            return jsonData;
         } catch(err){
             console.log("err")
         }
         }
   
     static async getOutfitById(id) {
-        let response = fetch("mainpage/id" + id, {
+        let response = await fetch("mainpage/id" + id, {
             headers: {"Accept": "application/json"},
         });
         

@@ -87,5 +87,5 @@ class UI {
         outfitById.appendChild(div);
     }
 }
-
-UI.createAllOutfits();
+const ui = new UI();
+ui.createAllOutfits();
