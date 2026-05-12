@@ -1,5 +1,5 @@
 import { serveDir } from "jsr:@std/http/file-server";
-import { getOutfitById, getAllOutfits } from "./outfits.js";
+import { getOutfitById, getAllOutfits } from "./assets/js/outfits.js";
 
 async function handle(request) {
     let url = new URL(request.url);
@@ -17,7 +17,6 @@ async function handle(request) {
         let outfits = getAllOutfits();
         return new Response(JSON.stringify(outfits), {
             headers: { "Content-Type": "application/json" },
-            status=200
         });
     }
     
@@ -35,6 +34,6 @@ async function handle(request) {
         }
     } 
 
-    return serveDir(request, { fsRoot: "." });
+    return serveDir(request, { fsRoot: "./OutfitOfTheDay" });
 }
 Deno.serve(handle);

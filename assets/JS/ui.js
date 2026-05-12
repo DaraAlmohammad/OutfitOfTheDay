@@ -71,7 +71,7 @@ class UI {
         }
     }
     async showOutfit() {
-        const params = new URLSearchParams(windows.location.search);
+        const params = new URLSearchParams(window.location.search);
         const outfitId = params.get("id");
         const outfit = await API.getOutfitById(outfitId)
 
