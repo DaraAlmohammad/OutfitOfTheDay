@@ -84,6 +84,7 @@ class UI {
             <h2>${outfit.outfitType}</h2>,
             <p>${outfit.description}</p>,
         `
+        outfitById.appendChild(div);
     }
 }
 const ui = new UI();
