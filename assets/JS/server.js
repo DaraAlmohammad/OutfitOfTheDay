@@ -1,5 +1,5 @@
 import { serveDir } from "jsr:@std/http/file-server";
-import { getOutfitById } from "./outfits.js";
+import { getOutfitById, getAllOutfits } from "./outfits.js";
 
 async function handle(request) {
     let url = new URL(request.url);
@@ -14,9 +14,10 @@ async function handle(request) {
 
     if (url.pathname === "/mainpage" && request.method === "GET") {
 
-        let data = await Deno.readTextFile("data.json");
-        return new Response(data, {
-            headers: { "Content-Type": "application/json" }
+        let outfits = getAllOutfits();
+        return new Response(JSON.stringify(outfits), {
+            headers: { "Content-Type": "application/json" },
+            status=200
         });
     }
     
