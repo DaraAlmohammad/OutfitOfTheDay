@@ -6,7 +6,7 @@ class UI {
         outfitList.innerHTML = "";
 
         try {
-            const allOutfits = await Outfits.getAllOutfits();
+            const allOutfits = await API.getAllOutfits();
 
             for (let outfit of allOutfits) {
                 const card = document.createElement("div");
@@ -86,4 +86,5 @@ class UI {
         `
     }
 }
-UI.createAllOutfits;
+const ui = new UI();
+ui.createAllOutfits();
