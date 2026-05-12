@@ -1,3 +1,8 @@
+export function getAllOutfits(){
+    let data = Deno.readTextFileSync("data.json");
+    let newData = JSON.parse(data);
+    return newData.outfits;
+}
 export function getOutfitById(id) {
     let data = Deno.readTextFileSync("data.json");
     let newData = JSON.parse(data);
