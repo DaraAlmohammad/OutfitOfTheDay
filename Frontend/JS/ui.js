@@ -14,9 +14,9 @@ class UI {
 
                 let heartSrc = "";
                 if (outfit.isFavourite === true) {
-                    heartSrc = "assets/images/favorite.jpg";
+                    heartSrc = "Frontend/images/favorite.jpg";
                 } else {
-                    heartSrc = "assets/images/NotAfavorite.jpg";
+                    heartSrc = "Frontend/images/NotAfavorite.jpg";
                 }
 
                 card.innerHTML = `
@@ -36,12 +36,12 @@ class UI {
                         outfit.isFavourite = !outfit.isFavourite;
 
                         if (outfit.isFavourite === true) {
-                            heartImg.src = "images/favorite.jpg";
+                            heartImg.src = "Frontend/images/favorite.jpg";
                         } else {
-                            heartImg.src = "images/NotAfavorite.jpg";
+                            heartImg.src = "Frontend/images/NotAfavorite.jpg";
                         }
 
-                        const response = await fetch(`/api/outfits/${outfit.id}`, {
+                        const response = await fetch(`/mainpage/outfits/${outfit.id}`, {
                             method: "PATCH",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({ isFavourite: outfit.isFavourite })

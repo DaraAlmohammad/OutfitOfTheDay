@@ -1,5 +1,5 @@
 import { serveDir } from "jsr:@std/http/file-server";
-import { getOutfitById, getAllOutfits} from "./assets/JS/outfits.js";
+import { getOutfitById, getAllOutfits} from "./outfits.js";
 
 async function handle(request) {
     let url = new URL(request.url);
@@ -8,7 +8,7 @@ async function handle(request) {
         headers: { 
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "GET, POST, DELETE",
+            "Access-Control-Allow-Headers": "GET, POST, DELETE, PATCH",
         }
     };
 
@@ -34,6 +34,6 @@ async function handle(request) {
         }
     } 
 
-    return serveDir(request, { fsRoot: "." });
+    return serveDir(request, { fsRoot: "./Frontend/html" });
 }
 Deno.serve(handle);
