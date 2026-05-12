@@ -86,22 +86,4 @@ class UI {
         `
     }
 }
-const form = document.querySelector("#filter-form");
-form.addEventListener("submit", async function (){
-    const outfits = Outfits.getAllOutfits();
-    const form = document.querySelector("#filter-form");
-    const color = form.elements.color.value;
-
-    let filterdOutfits = [];
-    for(let element of outfits){
-        if(element.color == color){
-            filterdOutfits.push(element);
-        }
-    }
-    return filterdOutfits;
-
-})
-
-
-
 UI.createAllOutfits;
