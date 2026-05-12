@@ -14,9 +14,9 @@ class UI {
 
                 let heartSrc = "";
                 if (outfit.isFavourite === true) {
-                    heartSrc = "images/favorite.jpg";
+                    heartSrc = "assets/images/favorite.jpg";
                 } else {
-                    heartSrc = "images/NotAfavorite.jpg";
+                    heartSrc = "assets/images/NotAfavorite.jpg";
                 }
 
                 card.innerHTML = `
@@ -86,5 +86,5 @@ class UI {
         `
     }
 }
-const ui = new UI();
-ui.createAllOutfits();
+
+UI.createAllOutfits();
