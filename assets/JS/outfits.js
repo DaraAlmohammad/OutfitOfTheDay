@@ -8,7 +8,7 @@ export function getOutfitById(id) {
     let newData = JSON.parse(data);
 
     for (let outfit of newData.outfits) {
-        if (id == newData.id) {
+        if (id == outfit.id) {
             return outfit;
         } 
     }
