@@ -12,7 +12,7 @@ class API{
         }
   
     static async getOutfitById(id) {
-        let response = await fetch("mainpage/" + id, {
+        let response = await fetch("/mainpage/" + id, {
             headers: {"Accept": "application/json"},
         });
         
