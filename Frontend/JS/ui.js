@@ -14,14 +14,14 @@ class UI {
 
                 let heartSrc = "";
                 if (outfit.isFavourite === true) {
-                    heartSrc = "Frontend/images/favorite.jpg";
+                    heartSrc = "../images/favorite.jpg";
                 } else {
-                    heartSrc = "Frontend/images/NotAfavorite.jpg";
+                    heartSrc = "../images/NotAfavorite.jpg";
                 }
 
                 card.innerHTML = `
                 <a href="detail.html?id=${outfit.id}" class="main-image-link">
-                    <img src="${outfit.image}" class="main-outfit-img">
+                    <img src="../${outfit.image}" class="main-outfit-img">
                 </a>
                 <button class="favorite-btn">
                     <img src="${heartSrc}" class="heart-icon">
@@ -36,9 +36,9 @@ class UI {
                         outfit.isFavourite = !outfit.isFavourite;
 
                         if (outfit.isFavourite === true) {
-                            heartImg.src = "Frontend/images/favorite.jpg";
+                            heartImg.src = "../images/favorite.jpg";
                         } else {
-                            heartImg.src = "Frontend/images/NotAfavorite.jpg";
+                            heartImg.src = "../images/NotAfavorite.jpg";
                         }
 
                         const response = await fetch(`/mainpage/outfits/${outfit.id}`, {

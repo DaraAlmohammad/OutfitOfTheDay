@@ -34,6 +34,6 @@ async function handle(request) {
         }
     } 
 
-    return serveDir(request, { fsRoot: "./Frontend/html" });
+    return serveDir(request, { fsRoot: "./Frontend" });
 }
 Deno.serve(handle);
