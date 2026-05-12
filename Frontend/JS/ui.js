@@ -79,7 +79,7 @@ class UI {
         let div = document.createElement("div");
 
         div.innerHTML = `
-            <img src=${outfit.image}>,
+            <img src="${outfit.image}">,
             <h2>${outfit.color}</h2>, 
             <h2>${outfit.outfitType}</h2>,
             <p>${outfit.description}</p>,
@@ -89,3 +89,4 @@ class UI {
 }
 const ui = new UI();
 ui.createAllOutfits();
+ui.showOutfit();
