@@ -3,7 +3,7 @@ import { getOutfitById, getAllOutfits} from "./outfits.js";
 
 async function handle(request) {
     let url = new URL(request.url);
-    let idRouteOutfit = new URLPattern({ pathname: "/mainpage/:id"});
+    let idRouteOutfit = new URLPattern({ pathname: "/detail.html/:id"});
     let options = {
         headers: { 
             "Content-Type": "application/json",
