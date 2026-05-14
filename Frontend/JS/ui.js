@@ -82,12 +82,28 @@ class UI {
         let div = document.createElement("div");
         div.classList.add("detail-card");
 
+        // En översättare från siffra till ord för säsongerna!
+            const seasonNames = {
+                1: "Summer",
+                2: "Spring",
+                3: "Winter",
+                4: "Fall"
+            };
+
         div.innerHTML = `
-            <img src="../${outfit.image}">
-            <h2>color: ${outfit.color}</h2>
-            <h2> outfit Type: ${outfit.outfitType}</h2>
-            <p> description: ${outfit.description}</p>
-        `
+            <img src="../${outfit.image}" class="detail-outfit-img">
+        
+            <div class="detail-info-row">
+                <h3>Color: <span>${outfit.color}</span></h3>
+                <h3>Season: <span>${seasonNames[outfit.seasonId]}</span></h3>
+                <h3>Type: <span>${outfit.outfitType}</span></h3>
+            </div>
+
+            <div class="detail-description">
+                <h3>Description:</h3>
+                <p>${outfit.description || "Ingen beskrivning tillgänglig."}</p>
+            </div>
+        `;
         outfitById.appendChild(div);
     }
 }
