@@ -99,3 +99,37 @@ select, textarea {
 select {
     min-width: 150px;
 }
+#outfit-feed-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    padding: 0 3%; 
+    margin-bottom: 30px;
+}
+.outfit-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+}
+.main-outfit-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.favorite-btn {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end; 
+}
+.heart-icon {
+    width: 25px; /* Anpassa storleken på hjärtat vid behov */
+    height: auto;
+}
