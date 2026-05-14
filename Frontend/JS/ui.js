@@ -74,19 +74,23 @@ class UI {
         const params = new URLSearchParams(window.location.search);
         const outfitId = params.get("id");
         const outfit = await API.getOutfitById(outfitId)
+        if(outfit == undefined){
+            return;
+        }
 
         let outfitById = document.getElementById("outfit-detail-container");
         let div = document.createElement("div");
+        div.classList.add("detail-card");
 
         div.innerHTML = `
-            <img src="../${outfit.image}">,
-            <h2>${outfit.color}</h2>, 
-            <h2>${outfit.outfitType}</h2>,
-            <p>${outfit.description}</p>,
+            <img src="../${outfit.image}">
+            <h2>color: ${outfit.color}</h2>
+            <h2> outfit Type: ${outfit.outfitType}</h2>
+            <p> description: ${outfit.description}</p>
         `
         outfitById.appendChild(div);
     }
 }
 const ui = new UI();
-ui.createAllOutfits();
-ui.showOutfit();
+if (document.getElementById("outfit-feed-container")) ui.createAllOutfits();
+if (document.getElementById("outfit-detail-container")) ui.showOutfit();

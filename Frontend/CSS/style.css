@@ -133,3 +133,51 @@ select {
     width: 25px; /* Anpassa storleken på hjärtat vid behov */
     height: auto;
 }
+/* Centrerar hela innehållet på sidan */
+#detail-page {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: 80vh;
+}
+
+/* Denna div skapas av din JS och innehåller bild + text */
+#outfit-detail-container > div {
+    display: inline-block; /* Gör att boxen bara är så bred som bilden */
+    width: fit-content;
+    max-width: 100%;
+    text-align: left; /* Gör att texten börjar från vänster */
+}
+
+#outfit-detail-container img {
+    display: block;
+    max-height: 60vh; /* Bilden tar upp max 60% av skärmhöjden */
+    width: auto;
+    max-width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px; /* Mellanrum mellan bild och text */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Styling för texten under bilden */
+#outfit-detail-container h2 {
+    font-size: 24px;
+    margin: 10px 0 5px 0;
+    color: #333;
+    text-transform: capitalize;
+}
+
+#outfit-detail-container h3 {
+    font-size: 16px;
+    margin: 0 0 15px 0;
+    color: #758fac;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+#outfit-detail-container p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    max-width: 500px; /* Förhindrar att texten blir för bred om bilden är jättestor */
+}
