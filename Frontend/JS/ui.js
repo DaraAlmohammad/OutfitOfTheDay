@@ -82,20 +82,12 @@ class UI {
         let div = document.createElement("div");
         div.classList.add("detail-card");
 
-        // En översättare från siffra till ord för säsongerna!
-            const seasonNames = {
-                1: "Summer",
-                2: "Spring",
-                3: "Winter",
-                4: "Fall"
-            };
-
         div.innerHTML = `
             <img src="../${outfit.image}" class="detail-outfit-img">
         
             <div class="detail-info-row">
                 <h3>Color: <span>${outfit.color}</span></h3>
-                <h3>Season: <span>${seasonNames[outfit.seasonId]}</span></h3>
+                <h3>Season: <span>${API.seasons[outfit.seasonId]}</span></h3>
                 <h3>Type: <span>${outfit.outfitType}</span></h3>
             </div>
 

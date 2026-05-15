@@ -1,6 +1,13 @@
 
 class API{
 
+    static seasons = {
+        1: "Summer",
+        2: "Spring",
+        3: "Winter",
+        4: "Fall"
+    };
+
     static async getAllOutfits() {
         try{
             let response = await fetch("/mainpage");
@@ -23,4 +30,34 @@ class API{
             return resource;  
         }
     }
+
+    static async getOutfitsInSeason(seasonName) {
+        try {
+            const allOutfits = await this.getAllOutfits(); //
+            let targetId = null;
+
+            for (let id in API.seasons) {
+                if (API.seasons[id] === seasonName) {
+                    targetId = parseInt(id);
+                    break; 
+                }
+            }
+
+            if (targetId === null) return [];
+
+            let filteredResults = [];
+            for (let i = 0; i < allOutfits.length; i++) {
+                if (allOutfits[i].seasonId === targetId) {
+                    filteredResults.push(allOutfits[i]);
+                }
+            }
+            return filteredResults;
+
+        } catch (err) {
+            console.error("Fel vid filtrering:", err);
+            return [];
+        }
+    }
 }
+
+
