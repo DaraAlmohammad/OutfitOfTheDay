@@ -20,7 +20,7 @@ loginForm.addEventListener("submit", async function handleLogin(event) {
     let response = await fetch("/login", options);
 
     if (response.ok) {
-        window.location.href = "/html/mainpage.html";
+        window.location.href = "/OOTD/mainpage.html";
     } else {
         alert("Inloggningen misslyckades. Kontrollera användarnamn och lösenord.");
     }
@@ -46,7 +46,7 @@ registerForm.addEventListener("submit", async function handleRegister(event) {
 
     if (response.ok) {
         // Om kontot skapas loggas vi in direkt och skickas till mainpage
-        window.location.href = "/html/mainpage.html";
+        window.location.href = "/OOTD/mainpage.html";
     } else {
         let result = await response.json();
         alert("Kunde inte skapa användare: " + result.message);

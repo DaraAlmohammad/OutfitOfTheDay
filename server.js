@@ -47,12 +47,12 @@ async function handle(request) {
     let isLoggedIn = (loggedInUser != null);
 
     // --- 2. SKYDDA SIDOR ---
-    const protectedPages = ["/html/mainpage.html", "/html/myOutfits.html", "/html/postOutfit.html", "/html/detail.html"];
+    const protectedPages = ["/OOTD/mainpage.html", "/OOTD/myOutfits.html", "/OOTD/postOutfit.html", "/OOTD/detail.html"];
     if (protectedPages.includes(url.pathname)) {
         if (isLoggedIn === false) {
             let redirectOptions = {
                 status: 303,
-                headers: { "Location": "/html/login.html" }
+                headers: { "Location": "/OOTD/login.html" }
             };
             return new Response("", redirectOptions);
         }
@@ -126,8 +126,8 @@ async function handle(request) {
         let logoutOptions = {
             status: 303, // Omdirigering
             headers: {
-                "Location": "/html/login.html", // Ändra till /login.html om filen inte ligger i en html-mapp
-                "Set-Cookie": "session_id=deleted; Max-Age=0; Path=/" // Raderar cookien
+                "Location": "/OOTD/login.html", // Ändra till /login.html om filen inte ligger i en html-mapp
+                "Set-Cookie": "session_id=deleted; Max-Age=0;" // Raderar cookien
             }
         };
         return new Response("", logoutOptions);
