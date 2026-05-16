@@ -121,6 +121,17 @@ async function handle(request) {
             return new Response(JSON.stringify({ success: false, message: "Fel uppgifter" }), { status: 401 });
         }
     }
+    // --- LOGGA UT ---
+    if (url.pathname === "/logout") {
+        let logoutOptions = {
+            status: 303, // Omdirigering
+            headers: {
+                "Location": "/html/login.html", // Ändra till /login.html om filen inte ligger i en html-mapp
+                "Set-Cookie": "session_id=deleted; Max-Age=0; Path=/" // Raderar cookien
+            }
+        };
+        return new Response("", logoutOptions);
+    }
 
     let options = {
         headers: {
