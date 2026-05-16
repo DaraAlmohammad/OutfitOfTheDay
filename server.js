@@ -87,7 +87,7 @@ async function handle(request) {
             status: 200,
             headers: {
                 "Content-Type": "application/json",
-                "Set-Cookie": "session_id=" + newSessionId + "; Max-Age=86400; Path=/"
+                "Set-Cookie": "session_id=" + newSessionId + "; Max-Age=86400;"
             }
         };
         return new Response(JSON.stringify({ success: true }), registerOptions);
@@ -113,7 +113,7 @@ async function handle(request) {
                 status: 200,
                 headers: {
                     "Content-Type": "application/json",
-                    "Set-Cookie": "session_id=" + newSessionId + "; Max-Age=86400; Path=/"
+                    "Set-Cookie": "session_id=" + newSessionId + "; Max-Age=86400;"
                 }
             };
             return new Response(JSON.stringify({ success: true }), loginOptions);
