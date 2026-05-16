@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d4e4f6; /* Samma ljusblå bakgrund som mainpage */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 40px; /* Mellanrum mellan de två rutorna */
+    flex-wrap: wrap; /* Gör att de staplas på mobila skärmar */
+    padding: 20px;
+}
+/* Styling för den stora loggan högst upp på inloggningssidan */
+.login-main-title {
+    width: 100%;          /* Tvingar rutorna att hamna under texten */
+    text-align: center;   /* Centrerar texten */
+    font-size: 72px;      /* Gör den riktigt stor */
+    font-weight: 900;     /* Extra tjock text */
+    letter-spacing: 4px;  /* Lite mer mellanrum mellan bokstäverna */
+    color: #333;
+    margin: 20px 0 0 0;   /* Mellanrum uppåt */
+    border-bottom: none;  /* Tar bort linjen under texten */
+    padding-bottom: 0;
+}
+
+/* Stylar både Login och Register-boxarna som vita kort */
+#login-Box, #Register-Box {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 20px; /* Samma runda hörn som dina outfit-kort */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 360px; /* Ger en snygg och enhetlig bredd */
+}
+
+/* Rubrikerna inuti boxarna (LOG IN / REGISTER) */
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Texten ovanför input-fälten (username / password) */
+h3 {
+    margin: 0;
+    font-size: 13px;
+    color: #758fac; /* Den dova blå färgen från din detaljsida */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Inmatningsfälten */
+input[type="text"] {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Runda fält som matchar select-menyerna */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+/* När man klickar i ett textfält blir kanten blå */
+input[type="text"]:focus {
+    border-color: #99b8db;
+}
+
+/* Knapparna (Login / Create) */
+button {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #99b8db; /* Din signatur-blå färg */
+    color: #ffffff;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 100%; /* Låter knappen sträcka sig över hela boxen */
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hover-effekt på knapparna */
+button:hover {
+    background-color: #758fac;
+}
+
+/* Liten klickeffekt */
+button:active {
+    transform: scale(0.98);
+}

@@ -47,12 +47,12 @@ async function handle(request) {
     let isLoggedIn = (loggedInUser != null);
 
     // --- 2. SKYDDA SIDOR ---
-    const protectedPages = ["/mainpage.html", "/myOutfits.html", "/postOutfit.html", "/detail.html"];
+    const protectedPages = ["/html/mainpage.html", "/html/myOutfits.html", "/html/postOutfit.html", "/html/detail.html"];
     if (protectedPages.includes(url.pathname)) {
         if (isLoggedIn === false) {
             let redirectOptions = {
                 status: 303,
-                headers: { "Location": "/login.html" }
+                headers: { "Location": "/html/login.html" }
             };
             return new Response("", redirectOptions);
         }
@@ -113,7 +113,7 @@ async function handle(request) {
                 status: 200,
                 headers: {
                     "Content-Type": "application/json",
-                    "Set-Cookie": "session_id=" + newSessionId + "; Max-Age=86400;"
+                    "Set-Cookie": "session_id=" + newSessionId + "; Max-Age=86400; Path=/"
                 }
             };
             return new Response(JSON.stringify({ success: true }), loginOptions);
