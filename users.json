@@ -2,11 +2,13 @@
     "users": [
         {
             "username": "Dara",
-            "password": "1234"
+            "password": "1234",
+            "sessionId": "a25331fc-2035-49be-8c0d-4958275f2025"
         },
         {
-            "username":"Sebbe",
-            "password": 11223344
+            "username": "test",
+            "password": "1234",
+            "sessionId": "62603d96-7c59-4096-9f8c-9a629fc3540b"
         }
     ]
 }

@@ -10,7 +10,8 @@ class API{
 
     static async getAllOutfits() {
         try{
-            let response = await fetch("/mainpage");
+            let options = { credentials: "include" };
+            let response = await fetch("/mainpage",options);
             let jsonData = await response.json();
             return jsonData;
         } catch(err){
