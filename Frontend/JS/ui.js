@@ -74,7 +74,7 @@ class UI {
         const params = new URLSearchParams(window.location.search);
         const outfitId = params.get("id");
         const outfit = await API.getOutfitById(outfitId)
-        if(outfit == undefined){
+        if (outfit == undefined) {
             return;
         }
 
@@ -98,7 +98,51 @@ class UI {
         `;
         outfitById.appendChild(div);
     }
+    async addOutfitToMyPage() {
+    let allOutfits = await API.getAllOutfits();
+
+    let valueImg = document.getElementById("image-url").value;
+    let valueSeason = document.getElementById("season").value;
+    let valueOutfitType = document.getElementById("outfit-type").value;
+    let valueColor = document.getElementById("color").value;
+    let valueDescription = document.getElementById("description").value;
+
+    if (valueImg === "") {
+        let imgSquare = document.getElementById("image-url");
+        imgSquare.style.border = "2px solid red";
+    }
+    if (valueSeason == "") {
+        let seasonSquare = document.getElementById("season");
+        seasonSquare.border = "2px solid red";
+    }
+    if (valueOutfitType == "") {
+        let outfitTypeSquare = document.getElementById("outfit-type");
+        outfitTypeSquare.border = "2px solid red";
+    }
+    if (valueColor == "") {
+        let colorSquare = document.getElementById("color");
+        colorSquare.border = "2px solid red";
+    }
+    if (valueDescription == "") {
+        let descriptionSquare = document.getElementById("description");
+        descriptionSquare.border = "2px solid red";
+    }
+
+    let newOutfit = {
+        "id": allOutfits.length + 1,
+        "color": valueColor,
+        "seasonId": valueSeason,
+        "image": valueImg,
+        "description": valueDescription,
+        "outfitType": valueOutfitType,
+        "isFavourite": false,
+        "myOutfit": true
+    };
+    allOutfits.push(newOutfit);
+    // myOutfits.push(newOutfit)        den nya outfiten ska läggas till på myPage också, fixa när vi har den funktionen!
 }
+}
+
 const ui = new UI();
 if (document.getElementById("outfit-feed-container")) ui.createAllOutfits();
 if (document.getElementById("outfit-detail-container")) ui.showOutfit();

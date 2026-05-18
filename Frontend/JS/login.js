@@ -9,14 +9,14 @@ loginForm.addEventListener("submit", async function handleLogin(event) {
         username: loginForm.elements.username.value,
         password: loginForm.elements.password.value
     });
-    
+
     let options = {
         method: "POST",
         body: data,
         headers: { "Content-Type": "application/json" },
-        credentials: "include" 
+        credentials: "include"
     };
-    
+
     let response = await fetch("/login", options);
 
     if (response.ok) {
@@ -34,14 +34,14 @@ registerForm.addEventListener("submit", async function handleRegister(event) {
         username: registerForm.elements.createUser.value,
         password: registerForm.elements.createPassword.value
     });
-    
+
     let options = {
         method: "POST",
         body: data,
         headers: { "Content-Type": "application/json" },
-        credentials: "include" 
+        credentials: "include"
     };
-    
+
     let response = await fetch("/register", options);
 
     if (response.ok) {
@@ -52,3 +52,31 @@ registerForm.addEventListener("submit", async function handleRegister(event) {
         alert("Kunde inte skapa användare: " + result.message);
     }
 });
+
+// --- LÄGG TILL NY OUTFIT --- 
+
+const addOutfitForm = document.getElementById("postOutfit-form");
+
+addOutfitForm.addEventListener("submit", async function handleAddOutfit(event) {
+    event.preventDefault();
+
+    let data = JSON.stringify({
+        image: addOutfitForm.elements.imageUrl.value,
+        seasonId: addOutfitForm.elements.season.value, 
+        outfitType: addOutfitForm.elements.outfitType.value,
+        color: addOutfitForm.elements.color.value,
+        description: addOutfitForm.elements.description.value,
+    });
+
+    let options = {
+        method: "POST",
+        body: data, 
+        headers: {"Content-Type": "application/json"}, 
+    };
+
+    let response = await fetch("/postOutfit.html", options)
+    
+    if (response.ok) {
+        
+    }
+})
