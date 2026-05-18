@@ -22,7 +22,7 @@ deleteOutfit(id) - radera en produkt Dara
 
 getAllOutfits() - visa alla produkter CHECK PÅ DEN! // Dara 
 
-getOneOutfitById(id) - visa endast en produkt Tova
+getOneOutfitById(id) - visa endast en produkt Tova //CHECK
 
 addOutfit() - lägg till en ny outfit Tova 
 

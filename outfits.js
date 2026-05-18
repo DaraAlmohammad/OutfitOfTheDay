@@ -25,4 +25,3 @@ export function deleteProduct(id){
         let finalData = JSON.stringify(newData);
         Deno.writeTextFileSync("data.json",finalData)
 }
-    
