@@ -37,7 +37,7 @@ class API {
     static getOutfitsInSeason(seasonId, allOutfits) {
         let filteredResults = [];
         for (let i = 0; i < allOutfits.length; i++) {
-            if (allOutfits[i].seasonId === parseInt(seasonId)) { 
+            if (allOutfits[i].seasonId === parseInt(seasonId)) {
                 filteredResults.push(allOutfits[i]);
             }
         }
@@ -47,7 +47,7 @@ class API {
     static getOutfitsByColor(color, allOutfits) {
         let filteredResults = [];
         for (let i = 0; i < allOutfits.length; i++) {
-            if (allOutfits[i].color === color) { 
+            if (allOutfits[i].color === color) {
                 filteredResults.push(allOutfits[i]);
             }
         }
@@ -57,12 +57,49 @@ class API {
     static getOutfitsByType(outfitType, allOutfits) {
         let filteredResults = [];
         for (let i = 0; i < allOutfits.length; i++) {
-            if (allOutfits[i].outfitType === outfitType) { 
+            if (allOutfits[i].outfitType === outfitType) {
                 filteredResults.push(allOutfits[i]);
             }
         }
         return filteredResults;
     }
+
+    static init() { // döp om funktionen
+        const addOutfitForm = document.getElementById("postOutfit-form");
+
+        if (!addOutfitForm) return;
+        addOutfitForm.addEventListener("submit", async function handleAddOutfit(event) {
+            event.preventDefault();
+
+            let data = JSON.stringify({
+                image: addOutfitForm.elements.imageUrl.value,
+                seasonId: addOutfitForm.elements.season.value,
+                outfitType: addOutfitForm.elements.outfitType.value,
+                color: addOutfitForm.elements.color.value,
+                description: addOutfitForm.elements.description.value,
+            });
+
+            let options = {
+                method: "POST",
+                body: data,
+                headers: { "Content-Type": "application/json" },
+            };
+
+            try {
+                let response = await fetch("/postOutfit.html", options)
+                console.log(response);
+                if (response.ok) {
+                    alert("The outfit successfully posted!")
+                } else {
+                    console.log(response);
+                }
+
+            } catch (error) {
+                console.log("Fel vid nätverksanrop:", error);
+                alert("Network error, please try again");
+            }
+        })
+    }
 }
 
-
+API.init();

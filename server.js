@@ -1,5 +1,13 @@
 import { serveDir } from "jsr:@std/http/file-server";
-import { getOutfitById, getAllOutfits } from "./outfits.js";
+import { getOutfitById, getAllOutfits, deleteProduct} from "./outfits.js";
+
+let options = {
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "GET, POST, DELETE, PATCH",
+        }
+    };
 
 function getUsers() {
     try {
@@ -133,13 +141,30 @@ async function handle(request) {
         return new Response("", logoutOptions);
     }
 
-    let options = {
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "GET, POST, DELETE, PATCH",
-        }
-    };
+    // Acceptera post-request 
+    if (request.method === "POST" && url.pathname === "/postOutfit.html") {
+
+        let bodyText = await request.json();
+        let fulfilledRequest = await addOutfitToMyPage(bodyText);
+
+        if (!fulfilledRequest) {
+                return new Response(JSON.stringify({ message: "Bad request" }), {
+                    status: 400,
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Access-Control-Allow-Origin": "*"
+                    }
+                });
+            }
+        return new Response(null, {
+                status: 201,
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                }
+            });
+
+    }
 
     if (url.pathname === "/mainpage" && request.method === "GET") {
         if (isLoggedIn == false) {
