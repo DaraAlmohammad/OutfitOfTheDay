@@ -40,7 +40,7 @@ export function addOutfitToMyPage(body) {
     let newOutfit = {
         "id": data.outfits.length + 1,
         "color": body.color,
-        "seasonId": body.seasonId,
+        "seasonId": parseInt(body.seasonId),
         "image": body.image,
         "description": body.description,
         "outfitType": body.outfitType,
