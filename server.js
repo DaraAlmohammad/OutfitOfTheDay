@@ -25,6 +25,7 @@ function saveUsers(userData) {
 
 async function handle(request) {
     let url = new URL(request.url);
+    console.log("inkommande request", request.method, url.pathname);
     let idRouteOutfit = new URLPattern({ pathname: "/detail.html/:id" });
 
     // --- 1. KOLLA COOKIES ---
@@ -55,7 +56,7 @@ async function handle(request) {
     let isLoggedIn = (loggedInUser != null);
 
     // --- 2. SKYDDA SIDOR ---
-    const protectedPages = ["/OOTD/mainpage.html", "/OOTD/myOutfits.html", "/OOTD/postOutfit.html", "/OOTD/detail.html"];
+    const protectedPages = ["/OOTD/mainpage.html", "/OOTD/myOutfits.html", "/OOTD/postOutfit.html", "/OOTD/detail.html",];
     if (protectedPages.includes(url.pathname)) {
         if (isLoggedIn === false) {
             let redirectOptions = {
@@ -142,10 +143,10 @@ async function handle(request) {
     }
 
     // Acceptera post-request 
-    if (request.method === "POST" && url.pathname === "/api/postOutfit.html") {
+    if (request.method === "POST" && url.pathname === "/OOTD/api/postOutfit") {
 
         let bodyText = await request.json();
-        let fulfilledRequest = await addOutfitToMyPage(bodyText);
+        let fulfilledRequest = addOutfitToMyPage(bodyText);
 
         if (!fulfilledRequest) {
                 return new Response(JSON.stringify({ message: "Bad request" }), {

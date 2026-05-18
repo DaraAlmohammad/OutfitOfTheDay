@@ -86,7 +86,7 @@ class API {
             };
 
             try {
-                let response = await fetch("/postOutfit.html", options)
+                let response = await fetch("/OOTD/api/postOutfit", options)
                 console.log(response);
                 if (response.ok) {
                     alert("The outfit successfully posted!")
