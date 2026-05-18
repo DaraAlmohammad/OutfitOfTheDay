@@ -1,5 +1,5 @@
 
-class API{
+class API {
 
     static seasons = {
         1: "Summer",
@@ -9,27 +9,27 @@ class API{
     };
 
     static async getAllOutfits() {
-        try{
+        try {
             let options = { credentials: "include" };
-            let response = await fetch("/mainpage",options);
+            let response = await fetch("/mainpage", options);
             let jsonData = await response.json();
             return jsonData;
-        } catch(err){
-            ("hit kommer vi")
+        } catch (err) {
+            console.log("hit kommer vi")
             console.log("err")
         }
-        }
-  
+    }
+
     static async getOutfitById(id) {
         let response = await fetch("/detail.html/" + id, {
-            headers: {"Accept": "application/json"},
+            headers: { "Accept": "application/json" },
         });
-        
+
         if (!response.ok) {
-            return undefined; 
+            return undefined;
         } else {
             const resource = await response.json();
-            return resource;  
+            return resource;
         }
     }
 
@@ -41,7 +41,7 @@ class API{
             for (let id in API.seasons) {
                 if (API.seasons[id] === seasonName) {
                     targetId = parseInt(id);
-                    break; 
+                    break;
                 }
             }
 

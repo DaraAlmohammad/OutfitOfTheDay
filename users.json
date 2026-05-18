@@ -3,12 +3,17 @@
         {
             "username": "Dara",
             "password": "1234",
-            "sessionId": "5517d71e-831d-4c86-998d-a3b4fd1d4239"
+            "sessionId": "02ff9540-e76c-4276-a837-af5f0deecf9f"
         },
         {
             "username": "test",
             "password": "1234",
             "sessionId": "62603d96-7c59-4096-9f8c-9a629fc3540b"
+        },
+        {
+            "username": "Tova",
+            "password": "1234",
+            "sessionId": "2800f3b4-02b1-49f2-8a85-1f7588390592"
         }
     ]
 }
