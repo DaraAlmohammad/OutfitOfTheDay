@@ -29,27 +29,41 @@ export function deleteProduct(id) {
 export function addOutfitToMyPage(body) {
     let fileText = Deno.readTextFileSync("data.json");
     let data = JSON.parse(fileText);
-    
+
     for (let key in body) {
         if (body[key] === "" || body[key] === undefined || body[key] === null) {
-           return false;
+            return false;
         }
     }
 
+    let foundSeason = null;
+
+    for (let i = 0; i < data.seasons.length; i++) {
+        if (data.seasons[i].season === body.seasonId) {
+            foundSeason = data.seasons[i];
+            break; 
+        }
+    }
+
+    if (foundSeason == null) {
+        return false; 
+    }
+    console.log(foundSeason);
     let newOutfit = {
         "id": data.outfits.length + 1,
         "color": body.color,
-        "seasonId": parseInt(body.seasonId),
+        "seasonId": foundSeason.id,
         "image": body.image,
         "description": body.description,
         "outfitType": body.outfitType,
         "isFavourite": false,
         "myOutfit": true
     };
+
     data.outfits.push(newOutfit);
     let updatedJson = JSON.stringify(data, null, 2);
     Deno.writeTextFileSync("data.json", updatedJson);
 
-    return true; 
+    return true;
 }
 

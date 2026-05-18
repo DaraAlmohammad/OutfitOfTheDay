@@ -15,7 +15,6 @@ class API {
             let jsonData = await response.json();
             return jsonData;
         } catch (err) {
-            console.log("hit kommer vi")
             console.log("err")
         }
     }
