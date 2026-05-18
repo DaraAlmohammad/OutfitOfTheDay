@@ -1,5 +1,5 @@
 import { serveDir } from "jsr:@std/http/file-server";
-import { getOutfitById, getAllOutfits, deleteProduct} from "./outfits.js";
+import { getOutfitById, getAllOutfits, deleteProduct, addOutfitToMyPage} from "./outfits.js";
 
 let options = {
         headers: {
@@ -142,7 +142,7 @@ async function handle(request) {
     }
 
     // Acceptera post-request 
-    if (request.method === "POST" && url.pathname === "/postOutfit.html") {
+    if (request.method === "POST" && url.pathname === "/api/postOutfit.html") {
 
         let bodyText = await request.json();
         let fulfilledRequest = await addOutfitToMyPage(bodyText);

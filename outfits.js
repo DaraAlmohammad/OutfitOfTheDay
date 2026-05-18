@@ -17,6 +17,7 @@ export function getOutfitById(id) {
 export function deleteProduct(id) {
     let data = Deno.readTextFileSync("data.json");
     let newData = JSON.parse(data);
+
     for (let i = 0; i < newData.outfits.length; i++) {
         if (newData.outfits[i].id == id) {
             newData.outfits.splice(i, 1);
@@ -24,5 +25,31 @@ export function deleteProduct(id) {
     }
     let finalData = JSON.stringify(newData);
     Deno.writeTextFileSync("data.json", finalData)
+}
+export function addOutfitToMyPage(body) {
+    let fileText = Deno.readTextFileSync("data.json");
+    let data = JSON.parse(fileText);
+    
+    for (let key in body) {
+        if (body[key] === "" || body[key] === undefined || body[key] === null) {
+           return false;
+        }
+    }
+
+    let newOutfit = {
+        "id": data.outfits.length + 1,
+        "color": body.color,
+        "seasonId": parseInt(body.season),
+        "image": body.image,
+        "description": body.description,
+        "outfitType": body.outfitType,
+        "isFavourite": false,
+        "myOutfit": true
+    };
+    data.outfits.push(newOutfit);
+    let updatedJson = JSON.stringify(data, null, 2);
+    Deno.writeTextFile("data.json", updatedJson);
+
+    return true; 
 }
 
