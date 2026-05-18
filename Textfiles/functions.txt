@@ -13,7 +13,6 @@ Radera produkt
 * När produkten är raderad visa ett relevant meddelande för användaren
 
 
-Gör alla funktioner i API async! Använd try och catch! 
 API-funktioner:
 
 isFavoriteOutfit() - Ruth
@@ -24,17 +23,18 @@ getAllOutfits() - visa alla produkter CHECK PÅ DEN! // Dara
 
 getOneOutfitById(id) - visa endast en produkt Tova //CHECK
 
-addOutfit() - lägg till en ny outfit Tova 
+addOutfit() - lägg till en ny outfit Tova //CHECK förutom att kunna ladda upp JPG!!
 
 getOutfitsInSeason(season) - sortera outfits på årstid Ruth
 
 getOutfitsByColor(color) - sortera outfits på färg Ruth 
 
+showMyOutfits - Tova 
 
 Gör alla funktioner i UI static
 UI-funktioner: 
 
-loadAddOutfitForm(osäker på parametern) - ladda add-outfit formuläret Dara
+loadAddOutfitForm() - ladda add-outfit formuläret Dara
 
 showOutfit(outfit) - visa en outfit Tova 
 

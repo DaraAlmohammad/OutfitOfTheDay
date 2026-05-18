@@ -19,6 +19,11 @@ class API {
         }
     }
 
+    static async getMyOutfits() {
+        let response = await fetch("/api/myoutfits");
+        let jsonData = await response.json();
+        return jsonData; 
+    }
     static async getOutfitById(id) {
         let response = await fetch("/detail.html/" + id, {
             headers: { "Accept": "application/json" },
@@ -67,6 +72,7 @@ class API {
         const addOutfitForm = document.getElementById("postOutfit-form");
 
         if (!addOutfitForm) return;
+
         addOutfitForm.addEventListener("submit", async function handleAddOutfit(event) {
             event.preventDefault();
 

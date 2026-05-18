@@ -1,5 +1,5 @@
 import { serveDir } from "jsr:@std/http/file-server";
-import { getOutfitById, getAllOutfits, deleteProduct, addOutfitToMyPage} from "./outfits.js";
+import { getOutfitById, getAllOutfits, deleteProduct, addOutfitToMyPage, myOutfits} from "./outfits.js";
 
 let options = {
         headers: {
@@ -55,6 +55,12 @@ async function handle(request) {
     
     let isLoggedIn = (loggedInUser != null);
 
+    if (url.pathname === "/api/myoutfits" && request.method === "GET") {
+        let showMyOutfits = myOutfits();
+        return new Response(JSON.stringify(showMyOutfits), {
+            headers: {"Content-Type": "application/json"},
+        });
+    }
     // --- 2. SKYDDA SIDOR ---
     const protectedPages = ["/OOTD/mainpage.html", "/OOTD/myOutfits.html", "/OOTD/postOutfit.html", "/OOTD/detail.html",];
     if (protectedPages.includes(url.pathname)) {

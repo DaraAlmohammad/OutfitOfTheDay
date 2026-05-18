@@ -1,4 +1,6 @@
 # OutfitOfTheDay
+TILL MORGONDAGENS LEKTION - Prata med Dara och Ruth om eventlistener till myPage!!!!!!
+
 Frågor till Sebbe: 
 - Måste vi ha en del där användaren ska kunna skapa ett konto eller räcker det med att vi hårdkodar användare? 
 - Hur gör vi kontrollerar vi en cookie.

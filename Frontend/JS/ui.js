@@ -65,11 +65,9 @@ class UI {
                 statusContainer.textContent = `Nätverksfel: ${error.message}`;
                 statusContainer.style.display = "block";
             }
-
-
-
         }
     }
+
     async showOutfit() {
         const params = new URLSearchParams(window.location.search);
         const outfitId = params.get("id");
@@ -99,15 +97,12 @@ class UI {
         outfitById.appendChild(div);
     }
 
-  
-    // myOutfits.push(newOutfit)        den nya outfiten ska läggas till på myPage också, fixa när vi har den funktionen!
-
     setupFilterForm() {
         const filterForm = document.getElementById("filter-form");
 
         if (filterForm) {
             filterForm.addEventListener("submit", async function (event) {
-                event.preventDefault(); 
+                event.preventDefault();
                 const statusContainer = document.getElementById("dom-status");
 
                 try {
@@ -115,10 +110,10 @@ class UI {
                     const colorValue = document.getElementById("filter-color").value;
                     const typeValue = document.getElementById("filter-type").value;
 
-                    let outfits = await API.getAllOutfits(); 
+                    let outfits = await API.getAllOutfits();
 
                     if (seasonValue !== "") {
-                        outfits = API.getOutfitsInSeason(seasonValue, outfits); 
+                        outfits = API.getOutfitsInSeason(seasonValue, outfits);
                     }
                     if (colorValue !== "") {
                         outfits = API.getOutfitsByColor(colorValue, outfits);
@@ -127,12 +122,12 @@ class UI {
                         outfits = API.getOutfitsByType(typeValue, outfits);
                     }
 
-                    await ui.createAllOutfits(outfits); 
-                    
+                    await ui.createAllOutfits(outfits);
+
                     if (statusContainer) {
                         statusContainer.style.display = "none";
                     }
-                    
+
                 } catch (error) {
                     if (statusContainer) {
                         statusContainer.textContent = `Nätverksfel vid filtrering: ${error.message}`;
@@ -142,7 +137,32 @@ class UI {
             });
         }
     }
+
+    async myOutfits() {
+        let allMyOutfits = await API.getMyOutfits();
+        console.log("Detta kommer från servern", allMyOutfits);
+        let outfitList = document.getElementById("outfit-feed-container");
+
+        if (!outfitList) return;
+
+        outfitList.innerHTML = "";
+
+        for (let outfit of allMyOutfits) {
+
+            const card = document.createElement("div");
+            card.classList.add("outfit-card");
+
+            card.innerHTML = `
+                <a href="detail.html?id=${outfit.id}" class="main-image-link">
+                    <img src="../${outfit.image}" class="main-outfit-img">
+                </a>
+                    <button type="submit">Delete outfit</button>
+            `;
+            outfitList.appendChild(card);
+        }
+    }
 }
+
 
 
 
