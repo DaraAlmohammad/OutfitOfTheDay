@@ -33,23 +33,13 @@ class API {
         }
     }
 
-    static async getOutfitsInSeason(seasonName) {
+    static async getOutfitsInSeason(seasonId) {
         try {
-            const allOutfits = await this.getAllOutfits(); //
-            let targetId = null;
-
-            for (let id in API.seasons) {
-                if (API.seasons[id] === seasonName) {
-                    targetId = parseInt(id);
-                    break;
-                }
-            }
-
-            if (targetId === null) return [];
-
+            const allOutfits = await this.getAllOutfits(); 
             let filteredResults = [];
+
             for (let i = 0; i < allOutfits.length; i++) {
-                if (allOutfits[i].seasonId === targetId) {
+                if (allOutfits[i].seasonId === parseInt(seasonId)) { 
                     filteredResults.push(allOutfits[i]);
                 }
             }
