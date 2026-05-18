@@ -99,9 +99,55 @@ class UI {
         outfitById.appendChild(div);
     }
 
+  
     // myOutfits.push(newOutfit)        den nya outfiten ska läggas till på myPage också, fixa när vi har den funktionen!
+
+    setupFilterForm() {
+        const filterForm = document.getElementById("filter-form");
+
+        if (filterForm) {
+            filterForm.addEventListener("submit", async function (event) {
+                event.preventDefault(); 
+                const statusContainer = document.getElementById("dom-status");
+
+                try {
+                    const seasonValue = document.getElementById("filter-season").value;
+                    const colorValue = document.getElementById("filter-color").value;
+                    const typeValue = document.getElementById("filter-type").value;
+
+                    let outfits = await API.getAllOutfits(); 
+
+                    if (seasonValue !== "") {
+                        outfits = API.getOutfitsInSeason(seasonValue, outfits); 
+                    }
+                    if (colorValue !== "") {
+                        outfits = API.getOutfitsByColor(colorValue, outfits);
+                    }
+                    if (typeValue !== "") {
+                        outfits = API.getOutfitsByType(typeValue, outfits);
+                    }
+
+                    await ui.createAllOutfits(outfits); 
+                    
+                    if (statusContainer) {
+                        statusContainer.style.display = "none";
+                    }
+                    
+                } catch (error) {
+                    if (statusContainer) {
+                        statusContainer.textContent = `Nätverksfel vid filtrering: ${error.message}`;
+                        statusContainer.style.display = "block";
+                    }
+                }
+            });
+        }
+    }
 }
+
+
+
 
 const ui = new UI();
 if (document.getElementById("outfit-feed-container")) ui.createAllOutfits();
 if (document.getElementById("outfit-detail-container")) ui.showOutfit();
+if (document.getElementById("filter-form")) ui.setupFilterForm();
