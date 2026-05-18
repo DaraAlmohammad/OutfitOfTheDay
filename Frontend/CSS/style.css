@@ -117,8 +117,7 @@ select {
     position: relative; 
 }
 .main-outfit-img {
-    width: 100%; /* Ändrat från 350px */
-    max-width: 350px; /* Ser till att de inte blir orimligt stora på breda skärmar */
+    width: 350px; 
     height: 400px;
     border-radius: 10px;
     object-fit: cover;
