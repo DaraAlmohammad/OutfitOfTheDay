@@ -107,6 +107,16 @@
       "outfitType": "party",
       "isFavourite": false,
       "myOutfit": true
+    },
+    {
+      "id": 10,
+      "color": "blue",
+      "seasonId": null,
+      "image": "https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fwww.whowhatwear.com%2Foutfit-ideas-2023&ved=0CBYQjRxqFwoTCKDs4vm9wpQDFQAAAAAdAAAAABAG&opi=89978449",
+      "description": "mm",
+      "outfitType": "business",
+      "isFavourite": false,
+      "myOutfit": true
     }
   ]
 }

@@ -27,7 +27,6 @@ export function deleteProduct(id) {
     Deno.writeTextFileSync("data.json", finalData)
 }
 export function addOutfitToMyPage(body) {
-    console.log(body);
     let fileText = Deno.readTextFileSync("data.json");
     let data = JSON.parse(fileText);
     
