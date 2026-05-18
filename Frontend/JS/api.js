@@ -33,22 +33,35 @@ class API {
         }
     }
 
-    static async getOutfitsInSeason(seasonId) {
-        try {
-            const allOutfits = await this.getAllOutfits(); 
-            let filteredResults = [];
 
-            for (let i = 0; i < allOutfits.length; i++) {
-                if (allOutfits[i].seasonId === parseInt(seasonId)) { 
-                    filteredResults.push(allOutfits[i]);
-                }
+    static getOutfitsInSeason(seasonId, allOutfits) {
+        let filteredResults = [];
+        for (let i = 0; i < allOutfits.length; i++) {
+            if (allOutfits[i].seasonId === parseInt(seasonId)) { 
+                filteredResults.push(allOutfits[i]);
             }
-            return filteredResults;
-
-        } catch (err) {
-            console.error("Fel vid filtrering:", err);
-            return [];
         }
+        return filteredResults;
+    }
+
+    static getOutfitsByColor(color, allOutfits) {
+        let filteredResults = [];
+        for (let i = 0; i < allOutfits.length; i++) {
+            if (allOutfits[i].color === color) { 
+                filteredResults.push(allOutfits[i]);
+            }
+        }
+        return filteredResults;
+    }
+
+    static getOutfitsByType(outfitType, allOutfits) {
+        let filteredResults = [];
+        for (let i = 0; i < allOutfits.length; i++) {
+            if (allOutfits[i].outfitType === outfitType) { 
+                filteredResults.push(allOutfits[i]);
+            }
+        }
+        return filteredResults;
     }
 }
 
