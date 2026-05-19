@@ -168,10 +168,9 @@ class UI {
 }
 
 
-
-
-
 const ui = new UI();
-if (document.getElementById("outfit-feed-container")) ui.createAllOutfits();
+
+if (document.getElementById("outfit-feed-container") && !document.querySelector(".my-outfits-page")) ui.createAllOutfits();
+if (document.querySelector(".my-outfits-page")) ui.myOutfits();
 if (document.getElementById("outfit-detail-container")) ui.showOutfit();
 if (document.getElementById("filter-form")) ui.setupFilterForm();

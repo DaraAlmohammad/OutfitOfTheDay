@@ -87,6 +87,16 @@
       "outfitType": "sporty",
       "isFavourite": false,
       "myOutfit": false
+    },
+    {
+      "id": 8,
+      "color": "red",
+      "seasonId": 4,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnR9i6FYN8uPUKJNeUXs2MxNia06hLHFFX1Q&s",
+      "description": "test test",
+      "outfitType": "business",
+      "isFavourite": false,
+      "myOutfit": true
     }
   ]
 }

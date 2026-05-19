@@ -60,7 +60,6 @@ export function addOutfitToMyPage(body) {
         "myOutfit": true
     };
 
-// .myOufits.push(newOutfit)        den nya outfiten ska läggas till på myPage också, fixa när vi har den funktionen!
     data.outfits.push(newOutfit);
     let updatedJson = JSON.stringify(data, null, 2);
     Deno.writeTextFileSync("data.json", updatedJson);
