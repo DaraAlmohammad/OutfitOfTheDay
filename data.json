@@ -96,7 +96,7 @@
       "description": "Pink cardigan, brown skirt and green sneakers :)",
       "outfitType": "casual",
       "isFavourite": true,
-      "myOutfit": true
+      "username": "Dara"
     },
     {
       "id": 9,
@@ -106,7 +106,7 @@
       "description": "Red sweater, black shorts and loafers.",
       "outfitType": "casual",
       "isFavourite": false,
-      "myOutfit": true
+      "username": "Dara"
     },
     {
       "id": 10,
@@ -116,7 +116,7 @@
       "description": "Blue skirt, yellow t-shirt and heels.",
       "outfitType": "casual",
       "isFavourite": false,
-      "myOutfit": true
+      "username": "Dara"
     }
   ]
 }
