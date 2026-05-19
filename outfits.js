@@ -79,3 +79,17 @@ export function myOutfits() {
     }
     return myOutfits; 
 }
+
+export function updateFavoriteStatus(id, body) {
+    let fileText = Deno.readTextFileSync("data.json");
+
+    let data = JSON.parse(fileText);
+
+    for (let outfit of data.outfits) {
+        if (outfit.id === id) {
+            outfit.isFavourite = body.isFavourite;
+        }
+    }
+    let updatedJson = JSON.stringify(data, null, 2);
+    Deno.writeTextFileSync("data.json", updatedJson);
+}
