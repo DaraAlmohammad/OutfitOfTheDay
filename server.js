@@ -179,6 +179,7 @@ async function handle(request) {
         }
 
         let outfits = getAllOutfits();
+        let custom
         return new Response(JSON.stringify(outfits), {
             headers: { "Content-Type": "application/json" },
         });
