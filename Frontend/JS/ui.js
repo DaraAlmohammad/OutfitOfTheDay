@@ -185,9 +185,14 @@ class UI {
             const card = document.createElement("div");
             card.classList.add("outfit-card");
 
+            let imagePath = outfit.image;
+            if (!imagePath.startsWith("http")) {
+                imagePath = "../" + imagePath;
+            }
+
             card.innerHTML = `
                 <a href="detail.html?id=${outfit.id}" class="main-image-link">
-                    <img src="../${outfit.image}" class="main-outfit-img">
+                    <img src="${imagePath}" class="main-outfit-img">
                 </a>
                     <button type="submit">Delete outfit</button>
             `;
