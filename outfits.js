@@ -41,12 +41,12 @@ export function addOutfitToMyPage(body, username) {
     for (let i = 0; i < data.seasons.length; i++) {
         if (data.seasons[i].season === body.seasonId) {
             foundSeason = data.seasons[i];
-            break; 
+            break;
         }
     }
 
     if (foundSeason == null) {
-        return false; 
+        return false;
     }
     console.log(foundSeason);
     let newOutfit = {
@@ -56,7 +56,7 @@ export function addOutfitToMyPage(body, username) {
         "image": body.image,
         "description": body.description,
         "outfitType": body.outfitType,
-        "isFavourite": false,
+        "favoritedBy": [],
         "username": username
     };
 
@@ -73,15 +73,15 @@ export function myOutfits(username) {
     let myOutfits = [];
 
     for (let outfit of newData.outfits) {
-        
+
         if (outfit.username === username) {
             myOutfits.push(outfit);
         }
     }
-    return myOutfits; 
+    return myOutfits;
 }
 
-export function updateFavoriteStatus(id, body) {
+export function updateFavoriteStatus(id, body, username) {
     let fileText = Deno.readTextFileSync("data.json");
 
     let data = JSON.parse(fileText);
@@ -89,6 +89,22 @@ export function updateFavoriteStatus(id, body) {
     for (let outfit of data.outfits) {
         if (outfit.id === id) {
             outfit.isFavourite = body.isFavourite;
+
+            if (!outfit.favoritedBy) {
+                outfit.favoritedBy = [];
+            }
+            if (body.isFavourite === true) {
+                if (!outfit.favoritedBy.includes(username)) {
+                    outfit.favoritedBy.push(username);
+                }
+            } else {
+                for (let i = 0; i < outfit.favoritedBy.length; i++) {
+                    if (outfit.favoritedBy[i] === username) {
+                        outfit.favoritedBy.splice[i, 1];
+                        break;
+                    }
+                }
+            }
         }
     }
     let updatedJson = JSON.stringify(data, null, 2);
