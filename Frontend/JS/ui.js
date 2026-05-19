@@ -173,7 +173,6 @@ class UI {
 
     async myOutfits() {
         let allMyOutfits = await API.getMyOutfits();
-        console.log("Detta kommer från servern", allMyOutfits);
         let outfitList = document.getElementById("outfit-feed-container");
 
         if (!outfitList) return;
