@@ -25,7 +25,7 @@
       "image": "images/outfit1.jpg",
       "description": "",
       "outfitType": "casual",
-      "isFavourite": false,
+      "isFavourite": true,
       "myOutfit": false
     },
     {
@@ -45,7 +45,7 @@
       "image": "images/outfit3.jpg",
       "description": "",
       "outfitType": "elegant",
-      "isFavourite": false,
+      "isFavourite": true,
       "myOutfit": false
     },
     {
@@ -87,6 +87,36 @@
       "outfitType": "sporty",
       "isFavourite": false,
       "myOutfit": false
+    },
+    {
+      "id": 8,
+      "color": "pink",
+      "seasonId": 2,
+      "image": "https://i.pinimg.com/1200x/77/1e/a6/771ea6cf220701ecd3e31c0bba79bc2b.jpg",
+      "description": "Pink cardigan, brown skirt and green sneakers :)",
+      "outfitType": "casual",
+      "isFavourite": true,
+      "myOutfit": true
+    },
+    {
+      "id": 9,
+      "color": "red",
+      "seasonId": 2,
+      "image": "https://i.pinimg.com/1200x/54/3b/ed/543bedc46bc04de22b499268de905505.jpg",
+      "description": "Red sweater, black shorts and loafers.",
+      "outfitType": "casual",
+      "isFavourite": false,
+      "myOutfit": true
+    },
+    {
+      "id": 10,
+      "color": "blue",
+      "seasonId": 1,
+      "image": "https://i.pinimg.com/1200x/32/63/4c/32634c9ee9dafa16d4d263311811915b.jpg",
+      "description": "Blue skirt, yellow t-shirt and heels.",
+      "outfitType": "casual",
+      "isFavourite": false,
+      "myOutfit": true
     }
   ]
 }

@@ -1,16 +1,25 @@
 class UI {
-    async createAllOutfits() {
+    async createAllOutfits(filteredList = null) {
         const outfitList = document.getElementById("outfit-feed-container");
         const statusContainer = document.getElementById("dom-status");
 
         outfitList.innerHTML = "";
 
         try {
-            const allOutfits = await API.getAllOutfits();
+            let outfitsToRender = filteredList;
 
-            for (let outfit of allOutfits) {
+            if (outfitsToRender === null) {
+                outfitsToRender = await API.getAllOutfits();
+            }
+
+            for (let outfit of outfitsToRender) {
                 const card = document.createElement("div");
                 card.classList.add("outfit-card");
+
+                let imagePath = outfit.image;
+                if (!imagePath.startsWith("http")) {
+                    imagePath = "../" + imagePath;
+                }
 
                 let heartSrc = "";
                 if (outfit.isFavourite === true) {
@@ -21,7 +30,7 @@ class UI {
 
                 card.innerHTML = `
                 <a href="detail.html?id=${outfit.id}" class="main-image-link">
-                    <img src="../${outfit.image}" class="main-outfit-img">
+                    <img src="${imagePath}" class="main-outfit-img">
                 </a>
                 <button class="favorite-btn">
                     <img src="${heartSrc}" class="heart-icon">
@@ -80,8 +89,13 @@ class UI {
         let div = document.createElement("div");
         div.classList.add("detail-card");
 
+        let imagePath = outfit.image;
+        if (!imagePath.startsWith("http")) {
+            imagePath = "../" + imagePath;
+        }
+
         div.innerHTML = `
-            <img src="../${outfit.image}" class="detail-outfit-img">
+            <img src="${imagePath}" class="detail-outfit-img">
         
             <div class="detail-info-row">
                 <h3>Color: <span>${outfit.color}</span></h3>
@@ -97,7 +111,7 @@ class UI {
         outfitById.appendChild(div);
     }
 
-    setupFilterForm() {
+   setupFilterForm() {
         const filterForm = document.getElementById("filter-form");
 
         if (filterForm) {
@@ -108,9 +122,28 @@ class UI {
                 try {
                     const seasonValue = document.getElementById("filter-season").value;
                     const colorValue = document.getElementById("filter-color").value;
-                    const typeValue = document.getElementById("filter-type").value;
+                    const typeValue = document.getElementById("filter-outfit-type").value;
 
-                    let outfits = await API.getAllOutfits();
+                    // här kontrollerar jag om vi är på mainpage eller myoutfits-sidan
+                    let outfits;
+                    if (document.querySelector(".my-outfits-page")) {
+                        outfits = await API.getMyOutfits();
+                    } else {
+                        outfits = await API.getAllOutfits();
+                    }
+                   
+                    //vilken radioknapp är itryckt!
+                    const viewModeRadio = document.querySelector('input[name="viewMode"]:checked');
+                    
+                    if (viewModeRadio && viewModeRadio.value === "favorites") {
+                        let favoriteOutfits = [];
+                        for (let i = 0; i < outfits.length; i++) {
+                            if (outfits[i].isFavourite === true) {
+                                favoriteOutfits.push(outfits[i]);
+                            }
+                        }
+                        outfits = favoriteOutfits; 
+                    }
 
                     if (seasonValue !== "") {
                         outfits = API.getOutfitsInSeason(seasonValue, outfits);
@@ -152,9 +185,14 @@ class UI {
             const card = document.createElement("div");
             card.classList.add("outfit-card");
 
+            let imagePath = outfit.image;
+            if (!imagePath.startsWith("http")) {
+                imagePath = "../" + imagePath;
+            }
+
             card.innerHTML = `
                 <a href="detail.html?id=${outfit.id}" class="main-image-link">
-                    <img src="../${outfit.image}" class="main-outfit-img">
+                    <img src="${imagePath}" class="main-outfit-img">
                 </a>
                     <button type="submit">Delete outfit</button>
             `;
@@ -164,10 +202,9 @@ class UI {
 }
 
 
-
-
-
 const ui = new UI();
-if (document.getElementById("outfit-feed-container")) ui.createAllOutfits();
+
+if (document.getElementById("outfit-feed-container") && !document.querySelector(".my-outfits-page")) ui.createAllOutfits();
+if (document.querySelector(".my-outfits-page")) ui.myOutfits();
 if (document.getElementById("outfit-detail-container")) ui.showOutfit();
 if (document.getElementById("filter-form")) ui.setupFilterForm();

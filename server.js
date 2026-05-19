@@ -1,5 +1,5 @@
 import { serveDir } from "jsr:@std/http/file-server";
-import { getOutfitById, getAllOutfits, deleteProduct, addOutfitToMyPage, myOutfits} from "./outfits.js";
+import { getOutfitById, getAllOutfits, deleteProduct, addOutfitToMyPage, myOutfits, updateFavoriteStatus} from "./outfits.js";
 
 let options = {
         headers: {
@@ -27,6 +27,7 @@ async function handle(request) {
     let url = new URL(request.url);
     console.log("inkommande request", request.method, url.pathname);
     let idRouteOutfit = new URLPattern({ pathname: "/detail.html/:id" });
+    let patchRouteOutfit = new URLPattern({ pathname: "/mainpage/outfits/:id" });
 
     // --- 1. KOLLA COOKIES ---
     const cookies = request.headers.get("cookie");
@@ -198,7 +199,18 @@ async function handle(request) {
         }
     }
 
-    
+    if (request.method === "PATCH" && patchRouteOutfit.test(url)) {
+        let match = patchRouteOutfit.exec(url);
+        let outfitId = parseInt(match.pathname.groups.id); 
+        
+        let bodyText = await request.text();
+        let body = JSON.parse(bodyText);
+
+        updateFavoriteStatus(outfitId, body); 
+
+        return new Response(JSON.stringify({ message: "Updated!" }), options);
+    }
+ 
     return serveDir(request, { fsRoot: "./Frontend" }); 
 }
 
