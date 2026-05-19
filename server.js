@@ -188,7 +188,7 @@ async function handle(request) {
                 userHasFavorited = true; 
             }
 
-            outfit.isFavorite = userHasFavorited;
+            outfit.isFavourite = userHasFavorited;
         }
         return new Response(JSON.stringify(customOutfits), {
             headers: { "Content-Type": "application/json" },
