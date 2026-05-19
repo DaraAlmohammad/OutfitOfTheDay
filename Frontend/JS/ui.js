@@ -1,14 +1,18 @@
 class UI {
-    async createAllOutfits() {
+    async createAllOutfits(filteredList = null) {
         const outfitList = document.getElementById("outfit-feed-container");
         const statusContainer = document.getElementById("dom-status");
 
         outfitList.innerHTML = "";
 
         try {
-            const allOutfits = await API.getAllOutfits();
+            let outfitsToRender = filteredList;
 
-            for (let outfit of allOutfits) {
+            if (outfitsToRender === null) {
+                outfitsToRender = await API.getAllOutfits();
+            }
+
+            for (let outfit of outfitsToRender) {
                 const card = document.createElement("div");
                 card.classList.add("outfit-card");
 
@@ -65,11 +69,9 @@ class UI {
                 statusContainer.textContent = `Nätverksfel: ${error.message}`;
                 statusContainer.style.display = "block";
             }
-
-
-
         }
     }
+
     async showOutfit() {
         const params = new URLSearchParams(window.location.search);
         const outfitId = params.get("id");
@@ -113,7 +115,7 @@ class UI {
                 try {
                     const seasonValue = document.getElementById("filter-season").value;
                     const colorValue = document.getElementById("filter-color").value;
-                    const typeValue = document.getElementById("filter-type").value;
+                    const typeValue = document.getElementById("filter-outfit-type").value;
 
                     let outfits = await API.getAllOutfits(); 
 
