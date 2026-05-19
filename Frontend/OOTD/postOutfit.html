@@ -19,9 +19,8 @@
         <div class="post-form">
             <form id="postOutfit-form">
                 <h2>Post a new Outfit</h2>
-
-                    <label for="image-url">Upload image(JPG):</label>
-                    <input type="url" id="image-url" name="imageUrl" placeholder="https://..." required>
+                    <label>Upload an image:</label>
+                    <input type="file" name="file" accept=".jpg, .jpeg,.png" required>
                     
                     <label for="season">Season:</label>
                     <select id="season" name="season" required>
@@ -62,7 +61,7 @@
                         </select>
 
                     <label for="description">Beskrivning:</label>
-                    <textarea id="description" name="description" rows="6" placeholder="Describe your OOTD..."></textarea>
+                    <textarea id="description" name="description" rows="6" placeholder="Describe your OOTD..." required></textarea>
 
                     <button type="submit">Post Outfit</button>
             </form>

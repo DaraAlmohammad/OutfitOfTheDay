@@ -1,4 +1,5 @@
 import { serveDir } from "jsr:@std/http/file-server";
+import {extname} from "jsr:@std/path";
 import { getOutfitById, getAllOutfits, deleteProduct, addOutfitToMyPage, myOutfits, updateFavoriteStatus} from "./outfits.js";
 
 let options = {
@@ -151,7 +152,26 @@ async function handle(request) {
     // Acceptera post-request 
     if (request.method === "POST" && url.pathname === "/OOTD/api/postOutfit") {
 
-        let bodyText = await request.json();
+        let formData = await request.formData();
+        
+        const file = formData.get("file");
+        const originalName = file.name; 
+        const newName = crypto.randomUUID();
+        extname(originalName);
+        const extention = extname(originalName);
+        const newFilename = newName + extention;
+        let bodyText = {
+        seasonId: formData.get("season"),
+        outfitType: formData.get("outfitType"),
+        color: formData.get("color"),
+        description: formData.get("description"),
+        image: "images/" + newFilename // Sätter sökvägen så den pekar rätt på mainpage
+         };
+         if ((file && file.size<100)&&(file && file.size<1000)){
+            const bytes = await file.bytes();
+            await Deno.writeFile(`./Frontend/images/${newFilename}`, bytes);
+
+         }
         let fulfilledRequest = addOutfitToMyPage(bodyText, loggedInUser.username);
 
         if (!fulfilledRequest) {

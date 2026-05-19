@@ -139,7 +139,20 @@
       "description": "Blue skirt, yellow t-shirt and heels.",
       "outfitType": "casual",
       "isFavourite": false,
-      "username": "Dara"
+      "username": "Dara",
+      "favoritedBy": [
+        "Dara"
+      ]
+    },
+    {
+      "id": 11,
+      "color": "beige",
+      "seasonId": 1,
+      "image": "images/f8b97f1b-a1eb-4299-bbc9-5f9f1037d0e4.jpg",
+      "description": "min snygga outfittttt",
+      "outfitType": "casual",
+      "favoritedBy": [],
+      "username": "Tova"
     }
   ]
 }

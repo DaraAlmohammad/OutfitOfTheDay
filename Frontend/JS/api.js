@@ -75,19 +75,13 @@ class API {
 
         addOutfitForm.addEventListener("submit", async function handleAddOutfit(event) {
             event.preventDefault();
+            
 
-            let data = JSON.stringify({
-                image: addOutfitForm.elements.imageUrl.value,
-                seasonId: addOutfitForm.elements.season.value,
-                outfitType: addOutfitForm.elements.outfitType.value,
-                color: addOutfitForm.elements.color.value,
-                description: addOutfitForm.elements.description.value,
-            });
+            const formData = new FormData(addOutfitForm);
 
             let options = {
                 method: "POST",
-                body: data,
-                headers: { "Content-Type": "application/json" },
+                body: formData,
             };
 
             try {
@@ -95,6 +89,7 @@ class API {
                 console.log(response);
                 if (response.ok) {
                     alert("The outfit successfully posted!")
+                    addOutfitForm.reset();
                 } else {
                     console.log(response);
                 }
