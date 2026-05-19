@@ -25,7 +25,6 @@ function saveUsers(userData) {
 
 async function handle(request) {
     let url = new URL(request.url);
-    console.log("inkommande request", request.method, url.pathname);
     let idRouteOutfit = new URLPattern({ pathname: "/detail.html/:id" });
     let patchRouteOutfit = new URLPattern({ pathname: "/mainpage/outfits/:id" });
 
@@ -57,7 +56,7 @@ async function handle(request) {
     let isLoggedIn = (loggedInUser != null);
 
     if (url.pathname === "/api/myoutfits" && request.method === "GET") {
-        let showMyOutfits = myOutfits();
+        let showMyOutfits = myOutfits(loggedInUser.username);
         return new Response(JSON.stringify(showMyOutfits), {
             headers: {"Content-Type": "application/json"},
         });
@@ -153,7 +152,7 @@ async function handle(request) {
     if (request.method === "POST" && url.pathname === "/OOTD/api/postOutfit") {
 
         let bodyText = await request.json();
-        let fulfilledRequest = addOutfitToMyPage(bodyText);
+        let fulfilledRequest = addOutfitToMyPage(bodyText, loggedInUser.username);
 
         if (!fulfilledRequest) {
                 return new Response(JSON.stringify({ message: "Bad request" }), {

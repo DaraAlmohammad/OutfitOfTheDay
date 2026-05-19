@@ -26,7 +26,7 @@ export function deleteProduct(id) {
     let finalData = JSON.stringify(newData);
     Deno.writeTextFileSync("data.json", finalData)
 }
-export function addOutfitToMyPage(body) {
+export function addOutfitToMyPage(body, username) {
     let fileText = Deno.readTextFileSync("data.json");
     let data = JSON.parse(fileText);
 
@@ -57,7 +57,7 @@ export function addOutfitToMyPage(body) {
         "description": body.description,
         "outfitType": body.outfitType,
         "isFavourite": false,
-        "myOutfit": true
+        "username": username
     };
 
     data.outfits.push(newOutfit);
@@ -66,14 +66,15 @@ export function addOutfitToMyPage(body) {
 
     return true;
 }
-export function myOutfits() {
+export function myOutfits(username) {
     let data = Deno.readTextFileSync("data.json");
     let newData = JSON.parse(data);
 
     let myOutfits = [];
 
     for (let outfit of newData.outfits) {
-        if (outfit.myOutfit == true) {
+        
+        if (outfit.username === username) {
             myOutfits.push(outfit);
         }
     }
