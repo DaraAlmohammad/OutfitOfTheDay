@@ -167,7 +167,7 @@ async function handle(request) {
         description: formData.get("description"),
         image: "images/" + newFilename // Sätter sökvägen så den pekar rätt på mainpage
          };
-         if ((file && file.size<100)&&(file && file.size<1000)){
+         if ((file && file.size>0)&&(file && file.size<500000)){
             const bytes = await file.bytes();
             await Deno.writeFile(`./Frontend/images/${newFilename}`, bytes);
 
