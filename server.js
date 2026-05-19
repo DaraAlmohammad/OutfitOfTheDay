@@ -178,9 +178,19 @@ async function handle(request) {
             return new Response("Unauthorized", { status: 401 });
         }
 
-        let outfits = getAllOutfits();
-        let custom
-        return new Response(JSON.stringify(outfits), {
+        let customOutfits = getAllOutfits();
+
+        for (let i = 0; i < customOutfits.length; i++) {
+            let outfit = customOutfits[i];
+            let userHasFavorited = false; 
+
+            if (outfit.favoritedBy && outfit.favoritedBy.includes(loggedInUser.username)) {
+                userHasFavorited = true; 
+            }
+
+            outfit.isFavorite = userHasFavorited;
+        }
+        return new Response(JSON.stringify(customOutfits), {
             headers: { "Content-Type": "application/json" },
         });
     }
@@ -206,7 +216,7 @@ async function handle(request) {
         let bodyText = await request.text();
         let body = JSON.parse(bodyText);
 
-        updateFavoriteStatus(outfitId, body); 
+        updateFavoriteStatus(outfitId, body, loggedInUser.username)
 
         return new Response(JSON.stringify({ message: "Updated!" }), options);
     }

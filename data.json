@@ -25,8 +25,9 @@
       "image": "images/outfit1.jpg",
       "description": "",
       "outfitType": "casual",
-      "isFavourite": true,
-      "myOutfit": false
+      "isFavourite": false,
+      "myOutfit": false,
+      "favoritedBy": []
     },
     {
       "id": 2,
@@ -36,7 +37,10 @@
       "description": "",
       "outfitType": "office",
       "isFavourite": false,
-      "myOutfit": false
+      "myOutfit": false,
+      "favoritedBy": [
+        "Tova"
+      ]
     },
     {
       "id": 3,
@@ -45,8 +49,9 @@
       "image": "images/outfit3.jpg",
       "description": "",
       "outfitType": "elegant",
-      "isFavourite": true,
-      "myOutfit": false
+      "isFavourite": false,
+      "myOutfit": false,
+      "favoritedBy": []
     },
     {
       "id": 4,
@@ -55,8 +60,11 @@
       "image": "images/outfit4.jpg",
       "description": "",
       "outfitType": "beachwear",
-      "isFavourite": false,
-      "myOutfit": false
+      "isFavourite": true,
+      "myOutfit": false,
+      "favoritedBy": [
+        "Dara"
+      ]
     },
     {
       "id": 5,
@@ -65,8 +73,11 @@
       "image": "images/outfit5.jpg",
       "description": "",
       "outfitType": "party",
-      "isFavourite": false,
-      "myOutfit": false
+      "isFavourite": true,
+      "myOutfit": false,
+      "favoritedBy": [
+        "Dara"
+      ]
     },
     {
       "id": 6,
@@ -75,8 +86,11 @@
       "image": "images/outfit6.jpg",
       "description": "",
       "outfitType": "streetwear",
-      "isFavourite": false,
-      "myOutfit": false
+      "isFavourite": true,
+      "myOutfit": false,
+      "favoritedBy": [
+        "Dara"
+      ]
     },
     {
       "id": 7,
@@ -95,8 +109,9 @@
       "image": "https://i.pinimg.com/1200x/77/1e/a6/771ea6cf220701ecd3e31c0bba79bc2b.jpg",
       "description": "Pink cardigan, brown skirt and green sneakers :)",
       "outfitType": "casual",
-      "isFavourite": true,
-      "username": "Dara"
+      "isFavourite": false,
+      "username": "Dara",
+      "favoritedBy": []
     },
     {
       "id": 9,
