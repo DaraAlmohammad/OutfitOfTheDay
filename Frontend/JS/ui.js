@@ -1,17 +1,21 @@
 class UI {
+        static showLoading() {
+        const container = document.getElementById("outfit-feed-container");
+        container.innerHTML = `<h2 style="color: black; text-align: center;">Laddar... ⏳</h2>`
+    }
     async createAllOutfits(filteredList = null) {
         const outfitList = document.getElementById("outfit-feed-container");
         const statusContainer = document.getElementById("dom-status");
 
         outfitList.innerHTML = "";
-
+        UI.showLoading();
         try {
             let outfitsToRender = filteredList;
 
             if (outfitsToRender === null) {
                 outfitsToRender = await API.getAllOutfits();
             }
-
+        outfitList.innerHTML="";
             for (let outfit of outfitsToRender) {
                 const card = document.createElement("div");
                 card.classList.add("outfit-card");
@@ -118,6 +122,7 @@ class UI {
             filterForm.addEventListener("submit", async function (event) {
                 event.preventDefault();
                 const statusContainer = document.getElementById("dom-status");
+                UI.showLoading();
 
                 try {
                     const seasonValue = document.getElementById("filter-season").value;
@@ -172,12 +177,17 @@ class UI {
     }
 
     async myOutfits() {
-        let allMyOutfits = await API.getMyOutfits();
+        
         let outfitList = document.getElementById("outfit-feed-container");
-
         if (!outfitList) return;
-
+        
         outfitList.innerHTML = "";
+        UI.showLoading();
+
+        let allMyOutfits = await API.getMyOutfits();
+        outfitList.innerHTML ="";
+
+
 
         for (let outfit of allMyOutfits) {
 
