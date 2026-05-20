@@ -63,7 +63,8 @@ h3 {
 }
 
 /* Inmatningsfälten */
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
     padding: 12px 15px;
     border: 1px solid #ccc;
     border-radius: 20px; /* Runda fält som matchar select-menyerna */
@@ -76,7 +77,8 @@ input[type="text"] {
 }
 
 /* När man klickar i ett textfält blir kanten blå */
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
     border-color: #99b8db;
 }
 
