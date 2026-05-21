@@ -2,9 +2,14 @@
     box-sizing: border-box;
 }
 
+@font-face {
+  font-family: myFont;
+  src: url(../Fonts/Bungee_Hairline/BungeeHairline-Regular.ttf);
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif;
     background-color: #d4e4f6; /* Samma ljusblå bakgrund som mainpage */
     color: #333;
     display: flex;
@@ -18,8 +23,9 @@ body {
 /* Styling för den stora loggan högst upp på inloggningssidan */
 .login-main-title {
     width: 100%;          /* Tvingar rutorna att hamna under texten */
+    font-family: myFont;
     text-align: center;   /* Centrerar texten */
-    font-size: 72px;      /* Gör den riktigt stor */
+    font-size: 150px;      /* Gör den riktigt stor */
     font-weight: 900;     /* Extra tjock text */
     letter-spacing: 4px;  /* Lite mer mellanrum mellan bokstäverna */
     color: #333;

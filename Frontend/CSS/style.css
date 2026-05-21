@@ -2,9 +2,14 @@
     box-sizing: border-box;
 }
 
+@font-face {
+  font-family: myFont;
+  src: url(../Fonts/Bungee_Hairline/BungeeHairline-Regular.ttf);
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif; 
+    font-family: Helvetica, sans-serif; 
     background-color: #d4e4f6; 
     color: #333;
 }
@@ -21,7 +26,8 @@ body {
 
 .Page-name {
     margin: 0;
-    font-size: 32px;
+    font-family: myFont;
+    font-size: 100px;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -33,15 +39,15 @@ body {
 
 .global-nav a {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    background-color: #99b8db;
+    color: #ffffff;
+    transition: background-color 0.2s, transform 0.1s;
     padding: 10px 20px;
     border-radius: 20px; 
 }
 
 .global-nav a:hover {
-    background-color: #333;
-    color: #ffffff;
+    background-color: #758fac;
 }
 
 
