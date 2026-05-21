@@ -100,7 +100,7 @@ export function updateFavoriteStatus(id, body, username) {
             } else {
                 for (let i = 0; i < outfit.favoritedBy.length; i++) {
                     if (outfit.favoritedBy[i] === username) {
-                        outfit.favoritedBy.splice[i, 1];
+                        outfit.favoritedBy.splice(i, 1);
                         break;
                     }
                 }
