@@ -39,8 +39,11 @@
       "image": "images/c0fa06eb-dc8c-47c1-b657-10dde70341c3.jpg",
       "description": "Blue skirt, yellow t-shirt :)",
       "outfitType": "casual",
-      "favoritedBy": [],
-      "username": "test"
+      "favoritedBy": [
+        "Tova"
+      ],
+      "username": "test",
+      "isFavourite": true
     },
     {
       "id": 3,
