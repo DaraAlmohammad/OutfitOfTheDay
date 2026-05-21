@@ -1,12 +1,47 @@
 export function getAllOutfits() {
     let data = Deno.readTextFileSync("data.json");
     let newData = JSON.parse(data);
+    let seasons = newData.seasons;
+    let outfitTypes = newData.outfitTypes;
+
+    for (let element of newData.outfits) {
+        for (let season of seasons) {
+            if (element.seasonId === season.id) {
+                element.season = season.season;
+            }
+
+        }
+
+        for (let outfitType of outfitTypes) {
+
+            if (element.outfitTypeId === outfitType.id) {
+                element.outfitType = outfitType.type;
+            }
+        }
+    }
     return newData.outfits;
 }
+
 export function getOutfitById(id) {
     let data = Deno.readTextFileSync("data.json");
     let newData = JSON.parse(data);
+    let seasons = newData.seasons;
+    let outfitTypes = newData.outfitTypes;
 
+    for (let element of newData.outfits) {
+        for (let season of seasons) {
+            if (element.seasonId === season.id) {
+                element.season = season.season;
+            }
+
+        }
+        for (let outfitType of outfitTypes) {
+
+            if (element.outfitTypeId === outfitType.id) {
+                element.outfitType = outfitType.type;
+            }
+        }
+    }
     for (let outfit of newData.outfits) {
         if (id == outfit.id) {
             return outfit;
@@ -48,7 +83,7 @@ export function addOutfitToMyPage(body, username) {
     if (foundSeason == null) {
         return false;
     }
-    console.log(foundSeason);
+
     let newOutfit = {
         "id": data.outfits.length + 1,
         "color": body.color,

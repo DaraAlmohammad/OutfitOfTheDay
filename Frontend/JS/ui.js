@@ -103,7 +103,7 @@ class UI {
         
             <div class="detail-info-row">
                 <h3>Color: <span>${outfit.color}</span></h3>
-                <h3>Season: <span></span></h3>
+                <h3>Season: <span>${outfit.season}</span></h3>
                 <h3>Type: <span>${outfit.outfitType}</span></h3>
             </div>
 
