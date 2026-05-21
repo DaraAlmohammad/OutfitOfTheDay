@@ -58,6 +58,35 @@ class API {
             return false;
         }
     }
+    static submitPostoutfit() { 
+        const addOutfitForm = document.getElementById("postOutfit-form");
+
+        if (!addOutfitForm) return;
+
+        addOutfitForm.addEventListener("submit", async function handleAddOutfit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(addOutfitForm);
+            let options = {
+                method: "POST",
+                body: formData,
+            };
+
+            try {
+                let response = await fetch("/OOTD/postoutfit", options)
+                console.log(response);
+                if (response.ok) {
+                    alert("The outfit successfully posted!")
+                    addOutfitForm.reset();
+                } else {
+                    alert("Could not post outfit");
+                }
+
+            } catch (error) {
+                alert("Network error, please try again");
+            }
+        })
+    }
 
     static getOutfitsInSeason(seasonId, allOutfits) {
         let filteredResults = [];
@@ -89,36 +118,7 @@ class API {
         return filteredResults;
     }
 
-    static submitPostoutfit() { // döp om funktionen
-        const addOutfitForm = document.getElementById("postOutfit-form");
-
-        if (!addOutfitForm) return;
-
-        addOutfitForm.addEventListener("submit", async function handleAddOutfit(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(addOutfitForm);
-            let options = {
-                method: "POST",
-                body: formData,
-            };
-
-            try {
-                let response = await fetch("/OOTD/postoutfit", options)
-                console.log(response);
-                if (response.ok) {
-                    alert("The outfit successfully posted!")
-                    addOutfitForm.reset();
-                } else {
-                    console.log(response);
-                }
-
-            } catch (error) {
-                console.log("Fel vid nätverksanrop:", error);
-                alert("Network error, please try again");
-            }
-        })
-    }
+    
 }
 
-API.init();
+API.submitPostoutfit();

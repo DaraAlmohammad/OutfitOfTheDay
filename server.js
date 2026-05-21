@@ -1,14 +1,14 @@
 import { serveDir } from "jsr:@std/http/file-server";
-import {extname} from "jsr:@std/path";
-import { getOutfitById, getAllOutfits, deleteProduct, addOutfitToMyPage, myOutfits, updateFavoriteStatus} from "./outfits.js";
+import { extname } from "jsr:@std/path";
+import { getOutfitById, getAllOutfits, deleteProduct, addOutfitToMyPage, myOutfits, updateFavoriteStatus } from "./outfits.js";
 
 let options = {
-        headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "GET, POST, DELETE, PATCH",
-        }
-    };
+    headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "GET, POST, DELETE, PATCH",
+    }
+};
 
 function getUsers() {
     try {
@@ -33,7 +33,7 @@ async function handle(request) {
     // --- 1. KOLLA COOKIES ---
     const cookies = request.headers.get("cookie");
     let currentSessionId = null;
-    
+
     if (cookies != null && cookies.includes("session_id=")) {
         let cookieArray = cookies.split("; ");
         for (let i = 0; i < cookieArray.length; i++) {
@@ -46,7 +46,7 @@ async function handle(request) {
 
     let usersData = getUsers();
     let loggedInUser = null;
-    
+
     if (currentSessionId != null) {
         for (let i = 0; i < usersData.users.length; i++) {
             if (usersData.users[i].sessionId === currentSessionId) {
@@ -54,15 +54,10 @@ async function handle(request) {
             }
         }
     }
-    
+
     let isLoggedIn = (loggedInUser != null);
 
-    if (url.pathname === "/OOTD/myoutfits" && request.method === "GET") {
-        let showMyOutfits = myOutfits(loggedInUser.username);
-        return new Response(JSON.stringify(showMyOutfits), {
-            headers: {"Content-Type": "application/json"},
-        });
-    }
+
     // --- 2. SKYDDA SIDOR ---
     const protectedPages = ["/OOTD/mainpage.html", "/OOTD/myOutfits.html", "/OOTD/postOutfit.html", "/OOTD/detail.html",];
     if (protectedPages.includes(url.pathname)) {
@@ -74,37 +69,36 @@ async function handle(request) {
             return new Response("", redirectOptions);
         }
     }
-
     // --- 3. REGISTRERA 
     if (url.pathname === "/OOTD/register" && request.method === "POST") {
         let body = await request.json();
         let userExists = false;
-        
+
         for (let i = 0; i < usersData.users.length; i++) {
             if (usersData.users[i].username === body.username) {
                 userExists = true;
             }
         }
-        
+
         if (userExists == true) {
-            return new Response(JSON.stringify({ success: false, message: "Användare finns redan" }), { status: 400 });
+            return new Response(JSON.stringify({ success: false, message: "User already exist" }), { status: 400 });
         }
-        
+
         let newSessionId = crypto.randomUUID();
         let newUser = {
             username: body.username,
             password: body.password,
             sessionId: newSessionId
         }
-        
+
         usersData.users.push(newUser);
         saveUsers(usersData);
-        
+
         let registerOptions = {
             status: 200,
             headers: {
                 "Content-Type": "application/json",
-                "Set-Cookie": "session_id=" + newSessionId + "; Max-Age=86400;"
+                "Set-Cookie": "session_id=" + newSessionId + "; Max-Age=86400; Path=/;"
             }
         };
         return new Response(JSON.stringify({ success: true }), registerOptions);
@@ -120,7 +114,7 @@ async function handle(request) {
                 foundUser = usersData.users[i];
             }
         }
-        
+
         if (foundUser != null) {
             let newSessionId = crypto.randomUUID();
             foundUser.sessionId = newSessionId;
@@ -130,7 +124,7 @@ async function handle(request) {
                 status: 200,
                 headers: {
                     "Content-Type": "application/json",
-                    "Set-Cookie": "session_id=" + newSessionId + "; Max-Age=86400;"
+                    "Set-Cookie": "session_id=" + newSessionId + "; Max-Age=86400; Path=/"
                 }
             };
             return new Response(JSON.stringify({ success: true }), loginOptions);
@@ -144,54 +138,19 @@ async function handle(request) {
             status: 303, // Omdirigering
             headers: {
                 "Location": "/OOTD/login.html", // Ändra till /login.html om filen inte ligger i en html-mapp
-                "Set-Cookie": "session_id=deleted; Max-Age=0;" // Raderar cookien
+                "Set-Cookie": "session_id=deleted; Max-Age=0; Path=/" // Raderar cookien
             }
         };
         return new Response("", logoutOptions);
     }
 
-    // Acceptera post-request 
-    if (request.method === "POST" && url.pathname === "/OOTD/postoutfit") {
-
-        let formData = await request.formData();
+    if (url.pathname === "/OOTD/myoutfits" && request.method === "GET") {
         
-        const file = formData.get("file");
-        const originalName = file.name; 
-        const newName = crypto.randomUUID();
-        extname(originalName);
-        const extention = extname(originalName);
-        const newFilename = newName + extention;
-        let bodyText = {
-        seasonId: formData.get("season"),
-        outfitType: formData.get("outfitType"),
-        color: formData.get("color"),
-        description: formData.get("description"),
-        image: "images/" + newFilename // Sätter sökvägen så den pekar rätt på mainpage
-         };
-         if ((file && file.size>0)&&(file && file.size<500000)){
-            const bytes = await file.bytes();
-            await Deno.writeFile(`./Frontend/images/${newFilename}`, bytes);
-
-         }
-        let fulfilledRequest = addOutfitToMyPage(bodyText, loggedInUser.username);
-
-        if (!fulfilledRequest) {
-                return new Response(JSON.stringify({ message: "Bad request" }), {
-                    status: 400,
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Access-Control-Allow-Origin": "*"
-                    }
-                });
-            }
-        return new Response(null, {
-                status: 201,
-                headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*"
-                }
-            });
-
+        let showMyOutfits = myOutfits(loggedInUser.username);
+        
+        return new Response(JSON.stringify(showMyOutfits), {
+            headers: { "Content-Type": "application/json" },
+        });
     }
 
     if (url.pathname === "/OOTD/mainpage" && request.method === "GET") {
@@ -203,10 +162,10 @@ async function handle(request) {
 
         for (let i = 0; i < customOutfits.length; i++) {
             let outfit = customOutfits[i];
-            let userHasFavorited = false; 
+            let userHasFavorited = false;
 
             if (outfit.favoritedBy && outfit.favoritedBy.includes(loggedInUser.username)) {
-                userHasFavorited = true; 
+                userHasFavorited = true;
             }
 
             outfit.isFavourite = userHasFavorited;
@@ -216,10 +175,64 @@ async function handle(request) {
         });
     }
 
+    // Acceptera post-request 
+    if (request.method === "POST" && url.pathname === "/OOTD/postoutfit") {
+
+        let formData = await request.formData();
+
+        const file = formData.get("file");
+        const originalName = file.name;
+        const newName = crypto.randomUUID();
+        extname(originalName);
+        const extention = extname(originalName);
+        const newFilename = newName + extention;
+
+        let bodyText = {
+            seasonId: formData.get("season"),
+            outfitType: formData.get("outfitType"),
+            color: formData.get("color"),
+            description: formData.get("description"),
+            image: "images/" + newFilename // Sätter sökvägen så den pekar rätt på mainpage
+        };
+
+        if ((file && file.size > 0) && (file && file.size < 500000)) {
+            const bytes = await file.bytes();
+            await Deno.writeFile(`./Frontend/images/${newFilename}`, bytes);
+
+        } else {
+            return new Response(JSON.stringify({ message: "Bad request" }), {
+                status: 400,
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                }
+            });
+        }
+        let fulfilledRequest = addOutfitToMyPage(bodyText, loggedInUser.username);
+
+        if (!fulfilledRequest ) {
+            return new Response(JSON.stringify({ message: "Bad request" }), {
+                status: 400,
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                }
+            });
+        }
+        return new Response(null, {
+            status: 201,
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+            }
+        });
+
+    }
+
     if (request.method === "DELETE" && deleteRouteOutfit.test(url)) {
         let match = deleteRouteOutfit.exec(url);
-        let deleteId = parseInt(match.pathname.groups.id); 
-        
+        let deleteId = parseInt(match.pathname.groups.id);
+
         deleteProduct(deleteId);
 
         return new Response(JSON.stringify({ message: "Outfit deleted!" }), options);
@@ -241,8 +254,8 @@ async function handle(request) {
 
     if (request.method === "PATCH" && patchRouteOutfit.test(url)) {
         let match = patchRouteOutfit.exec(url);
-        let outfitId = parseInt(match.pathname.groups.id); 
-        
+        let outfitId = parseInt(match.pathname.groups.id);
+
         let bodyText = await request.text();
         let body = JSON.parse(bodyText);
 
@@ -250,8 +263,8 @@ async function handle(request) {
 
         return new Response(JSON.stringify({ message: "Updated!" }), options);
     }
- 
-    return serveDir(request, { fsRoot: "./Frontend" }); 
+
+    return serveDir(request, { fsRoot: "./Frontend" });
 }
 
 Deno.serve(handle);

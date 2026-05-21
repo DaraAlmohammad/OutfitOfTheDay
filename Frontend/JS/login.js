@@ -49,6 +49,6 @@ registerForm.addEventListener("submit", async function handleRegister(event) {
         window.location.href = "/OOTD/mainpage.html";
     } else {
         let result = await response.json();
-        alert("Kunde inte skapa användare: " + result.message);
+        alert("Could not create new user: " + result.message);
     }
 });

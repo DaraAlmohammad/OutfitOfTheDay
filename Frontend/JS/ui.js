@@ -3,6 +3,7 @@ class UI {
         const container = document.getElementById("outfit-feed-container");
         container.innerHTML = `<h3 class="h3-loading">Loading... </h3>`
     }
+
     async createAllOutfits(filteredList = null) {
         const outfitList = document.getElementById("outfit-feed-container");
         const statusContainer = document.getElementById("dom-status");
@@ -21,10 +22,7 @@ class UI {
                 card.classList.add("outfit-card");
 
                 let imagePath = outfit.image;
-                if (!imagePath.startsWith("http")) {
-                    imagePath = "../" + imagePath;
-                }
-
+                
                 let heartSrc = "";
                 if (outfit.isFavourite === true) {
                     heartSrc = "../images/favorite.jpg";
