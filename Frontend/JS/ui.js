@@ -33,7 +33,7 @@ class UI {
                 }
 
                 card.innerHTML = `
-                <a href="detail.html?id=${outfit.id}" class="main-image-link">
+                <a href="/OOTD/detail.html?id=${outfit.id}" class="main-image-link">
                     <img src="${imagePath}" class="main-outfit-img">
                 </a>
                 <button class="favorite-btn">
@@ -46,6 +46,7 @@ class UI {
 
                 heartBtn.addEventListener("click", async function () {
                     try {
+                        // 1. Byta utseende (isFavourite)
                         outfit.isFavourite = !outfit.isFavourite;
 
                         if (outfit.isFavourite === true) {
@@ -54,15 +55,14 @@ class UI {
                             heartImg.src = "../images/NotAfavorite.jpg";
                         }
 
-                        const response = await fetch(`/mainpage/outfits/${outfit.id}`, {
-                            method: "PATCH",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ isFavourite: outfit.isFavourite })
-                        });
+                        // 2. Anropa api.js för att skicka ändringen till servern
+                        const isSuccess = await API.updateFavorite(outfit.id, outfit.isFavourite);
 
-                        if (!response.ok) {
-                            throw new Error(`HTTP fel! Status: ${response.status}`);
+                        // 3. Om nätverksanropet misslyckades
+                        if (!isSuccess) {
+                            throw new Error("Kunde inte spara gilla-markeringen.");
                         }
+
                     } catch (error) {
                         if (statusContainer) {
                             statusContainer.textContent = `Fel: ${error.message}`;
@@ -204,7 +204,7 @@ class UI {
             }
 
             card.innerHTML = `
-                <a href="detail.html?id=${outfit.id}" class="main-image-link">
+                <a href="/OOTD/detail.html?id=${outfit.id}" class="main-image-link">
                     <img src="${imagePath}" class="main-outfit-img">
                 </a>
                     <button class="delete-btn">Delete outfit</button>

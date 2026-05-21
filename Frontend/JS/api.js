@@ -39,6 +39,25 @@ class API {
         let response = await fetch("/OOTD/myoutfits/" + id, options);
         return response.ok;
     }
+    static async updateFavorite(id, isFavourite) {
+        try {
+            let options = {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ isFavourite: isFavourite })
+            };
+            
+            let response = await fetch(`/OOTD/mainpage/outfits/${id}`, options);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP fel! Status: ${response.status}`);
+            }
+            return true; 
+        } catch (error) {
+            console.error("Kunde inte uppdatera favorit:", error);
+            return false;
+        }
+    }
 
     static getOutfitsInSeason(seasonId, allOutfits) {
         let filteredResults = [];
@@ -70,7 +89,7 @@ class API {
         return filteredResults;
     }
 
-    static init() { // döp om funktionen
+    static submitPostoutfit() { // döp om funktionen
         const addOutfitForm = document.getElementById("postOutfit-form");
 
         if (!addOutfitForm) return;
