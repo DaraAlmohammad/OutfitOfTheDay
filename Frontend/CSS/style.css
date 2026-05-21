@@ -136,7 +136,7 @@ select {
 }
 .outfit-card {
     background-color: #ffffff;
-    padding: 15px;
+    padding: 25px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     display: flex;
@@ -156,6 +156,7 @@ select {
     border: none;
     cursor: pointer;
     align-self: flex-end; 
+    margin-right: 0;
     transition: none !important;
     transform: none !important;
 }
