@@ -17,6 +17,24 @@
       "season": "fall"
     }
   ],
+  "outfitTypes": [
+    {
+      "id": 1,
+      "type": "casual"
+    },
+    {
+      "id": 2,
+      "type": "party"
+    },
+    {
+      "id": 3,
+      "type": "business"
+    },
+    {
+      "id": 4,
+      "type": "sporty"
+    }
+  ],
   "outfits": [
     {
       "id": 1,
@@ -24,7 +42,7 @@
       "seasonId": 1,
       "image": "images/outfit1.jpg",
       "description": "",
-      "outfitType": "casual",
+      "outfitTypeId": 1,
       "isFavourite": false,
       "myOutfit": false,
       "favoritedBy": [
@@ -32,17 +50,27 @@
       ]
     },
     {
+      "id": 2,
+      "color": "blue",
+      "seasonId": 2,
+      "image": "images/c0fa06eb-dc8c-47c1-b657-10dde70341c3.jpg",
+      "description": "Blue skirt, yellow t-shirt :)",
+      "outfitTypeId": 1,
+      "favoritedBy": [
+        "Tova"
+      ],
+      "username": "test",
+      "isFavourite": true
+    },
+    {
       "id": 3,
       "color": "blue",
       "seasonId": 4,
       "image": "images/143ba9ed-3896-4a4d-aee5-3b5c4ff42680.jpg",
       "description": "Dots and color for the office!",
-      "outfitType": "business",
-      "favoritedBy": [
-        "Dara"
-      ],
-      "username": "test",
-      "isFavourite": true
+      "outfitTypeId": 2,
+      "favoritedBy": [],
+      "username": "test"
     },
     {
       "id": 4,
@@ -50,7 +78,7 @@
       "seasonId": 1,
       "image": "images/9923d80a-614d-4398-af7c-cfcf16564813.jpg",
       "description": "Cool summer-outfit.",
-      "outfitType": "casual",
+      "outfitTypeId": 1,
       "favoritedBy": [],
       "username": "test"
     },
@@ -60,7 +88,7 @@
       "seasonId": 4,
       "image": "images/731c8ced-aef8-47a7-981d-6d93bbb76367.jpg",
       "description": "A more casual office-outfit.",
-      "outfitType": "business",
+      "outfitTypeId": 3,
       "favoritedBy": [],
       "username": "test"
     },
@@ -70,7 +98,7 @@
       "seasonId": 4,
       "image": "images/674cce94-2f49-49e0-8b00-2620fbddf6d1.jpg",
       "description": "A pop of color with a nice blue scarf :)",
-      "outfitType": "casual",
+      "outfitTypeId": 1,
       "favoritedBy": [],
       "username": "test",
       "isFavourite": false
