@@ -35,92 +35,52 @@
     {
       "id": 2,
       "color": "blue",
-      "seasonId": 4,
-      "image": "images/outfit2.jpg",
-      "description": "",
-      "outfitType": "office",
-      "isFavourite": false,
-      "myOutfit": false,
-      "favoritedBy": [
-        "Tova",
-        "ruth.granath"
-      ]
+      "seasonId": 2,
+      "image": "images/c0fa06eb-dc8c-47c1-b657-10dde70341c3.jpg",
+      "description": "Blue skirt, yellow t-shirt :)",
+      "outfitType": "casual",
+      "favoritedBy": [],
+      "username": "test"
     },
     {
       "id": 3,
-      "color": "black",
-      "seasonId": 3,
-      "image": "images/outfit3.jpg",
-      "description": "",
-      "outfitType": "elegant",
-      "isFavourite": false,
-      "myOutfit": false,
-      "favoritedBy": []
+      "color": "blue",
+      "seasonId": 4,
+      "image": "images/143ba9ed-3896-4a4d-aee5-3b5c4ff42680.jpg",
+      "description": "Dots and color for the office!",
+      "outfitType": "business",
+      "favoritedBy": [],
+      "username": "test"
     },
     {
       "id": 4,
-      "color": "pink",
+      "color": "black",
       "seasonId": 1,
-      "image": "images/outfit4.jpg",
-      "description": "",
-      "outfitType": "beachwear",
-      "isFavourite": true,
-      "myOutfit": false,
-      "favoritedBy": [
-        "Dara"
-      ]
+      "image": "images/9923d80a-614d-4398-af7c-cfcf16564813.jpg",
+      "description": "Cool summer-outfit.",
+      "outfitType": "casual",
+      "favoritedBy": [],
+      "username": "test"
     },
     {
       "id": 5,
-      "color": "gold",
-      "seasonId": 3,
-      "image": "images/outfit5.jpg",
-      "description": "",
-      "outfitType": "party",
-      "isFavourite": true,
-      "myOutfit": false,
-      "favoritedBy": [
-        "Dara"
-      ]
+      "color": "pink",
+      "seasonId": 4,
+      "image": "images/731c8ced-aef8-47a7-981d-6d93bbb76367.jpg",
+      "description": "A more casual office-outfit.",
+      "outfitType": "business",
+      "favoritedBy": [],
+      "username": "test"
     },
     {
       "id": 6,
-      "color": "green",
+      "color": "blue",
       "seasonId": 4,
-      "image": "images/outfit6.jpg",
-      "description": "",
-      "outfitType": "streetwear",
-      "isFavourite": true,
-      "myOutfit": false,
-      "favoritedBy": [
-        "Dara"
-      ]
-    },
-    {
-      "id": 7,
-      "color": "silver",
-      "seasonId": 2,
-      "image": "images/outfit7.jpg",
-      "description": "",
-      "outfitType": "sporty",
-      "isFavourite": true,
-      "myOutfit": false,
-      "favoritedBy": [
-        "Dara"
-      ]
-    },
-    {
-      "id": 8,
-      "color": "pink",
-      "seasonId": 2,
-      "image": "https://i.pinimg.com/1200x/77/1e/a6/771ea6cf220701ecd3e31c0bba79bc2b.jpg",
-      "description": "Pink cardigan, brown skirt and green sneakers :)",
+      "image": "images/674cce94-2f49-49e0-8b00-2620fbddf6d1.jpg",
+      "description": "A pop of color with a nice blue scarf :)",
       "outfitType": "casual",
-      "isFavourite": true,
-      "username": "Dara",
-      "favoritedBy": [
-        "Dara"
-      ]
+      "favoritedBy": [],
+      "username": "test"
     }
   ]
 }
