@@ -238,3 +238,7 @@ select {
     padding: 25px;        /* Ger lite extra luft på insidan så det ser lyxigare ut */
     border: 6px #758fac solid;
 }
+.h3-loading{
+    grid-column: 2;
+    text-align: center;
+}
