@@ -1,7 +1,7 @@
 class UI {
         static showLoading() {
         const container = document.getElementById("outfit-feed-container");
-        container.innerHTML = `<h2 style="color: black; text-align: center;">Laddar... ⏳</h2>`
+        container.innerHTML = `<h3 style="color: #758fac; text-align: center;">Loading... </h3>`
     }
     async createAllOutfits(filteredList = null) {
         const outfitList = document.getElementById("outfit-feed-container");
