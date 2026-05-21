@@ -28,6 +28,7 @@ async function handle(request) {
     let url = new URL(request.url);
     let idRouteOutfit = new URLPattern({ pathname: "/detail.html/:id" });
     let patchRouteOutfit = new URLPattern({ pathname: "/mainpage/outfits/:id" });
+    let deleteRouteOutfit = new URLPattern({ pathname: "/api/outfits/:id" });
 
     // --- 1. KOLLA COOKIES ---
     const cookies = request.headers.get("cookie");
@@ -213,6 +214,15 @@ async function handle(request) {
         return new Response(JSON.stringify(customOutfits), {
             headers: { "Content-Type": "application/json" },
         });
+    }
+
+    if (request.method === "DELETE" && deleteRouteOutfit.test(url)) {
+        let match = deleteRouteOutfit.exec(url);
+        let deleteId = parseInt(match.pathname.groups.id); 
+        
+        deleteProduct(deleteId);
+
+        return new Response(JSON.stringify({ message: "Outfit deleted!" }), options);
     }
 
     if (idRouteOutfit.test(url)) {

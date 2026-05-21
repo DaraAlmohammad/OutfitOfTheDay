@@ -37,6 +37,15 @@ class API {
         }
     }
 
+    static async deleteOutfit(id) {
+        let options = {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" }
+        };
+        
+        let response = await fetch("/api/outfits/" + id, options);
+        return response.ok;
+    }
 
     static getOutfitsInSeason(seasonId, allOutfits) {
         let filteredResults = [];

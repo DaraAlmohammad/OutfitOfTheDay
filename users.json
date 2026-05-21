@@ -14,6 +14,11 @@
             "username": "Tova",
             "password": "1234",
             "sessionId": "9527d090-9ebc-4146-b33b-54b7c73c25b3"
+        },
+        {
+            "username": "ruth.granath",
+            "password": "123456",
+            "sessionId": "5b7f05ef-feec-4a26-ac07-c7d95a827a1a"
         }
     ]
 }
