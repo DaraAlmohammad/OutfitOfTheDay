@@ -18,7 +18,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 10px 30px;
     background-color: #ffffff;
     border-bottom: 1px solid #eaeaea;
     margin-bottom: 30px;
@@ -42,8 +42,9 @@ body {
     background-color: #99b8db;
     color: #ffffff;
     transition: background-color 0.2s, transform 0.1s;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 20px; 
+    font-size: 15px;
 }
 
 .global-nav a:hover {
@@ -58,19 +59,27 @@ body {
 
 #filter-form, #postOutfit-form {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
-    gap: 15px; 
+    gap: 10px; 
 }
-
+.filter-radios {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-left: 10px; /* Ger lite extra luft från dropdowns:en */
+}
 .filter-dropdowns {
     display: flex;
     gap: 15px;
     flex-wrap: wrap; 
     align-items: center;
+}
+.filter-h2{
+    margin-left: 40px;
 }
 
 select {
@@ -88,6 +97,7 @@ button {
     color: #ffffff;
     transition: background-color 0.2s, transform 0.1s;
     align-self: flex-start; 
+    margin-right: 20px;
 }
 
 button:hover {

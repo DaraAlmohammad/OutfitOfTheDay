@@ -25,13 +25,13 @@ body {
     width: 100%;          /* Tvingar rutorna att hamna under texten */
     font-family: myFont;
     text-align: center;   /* Centrerar texten */
-    font-size: 150px;      /* Gör den riktigt stor */
+    font-size: 125px;      /* Gör den riktigt stor */
     font-weight: 900;     /* Extra tjock text */
     letter-spacing: 4px;  /* Lite mer mellanrum mellan bokstäverna */
     color: #333;
-    margin: 20px 0 0 0;   /* Mellanrum uppåt */
+    margin: 0 0;   /* Mellanrum uppåt */
     border-bottom: none;  /* Tar bort linjen under texten */
-    padding-bottom: 0;
+    padding: 5px;
 }
 
 /* Stylar både Login och Register-boxarna som vita kort */
@@ -49,14 +49,13 @@ body {
 
 /* Rubrikerna inuti boxarna (LOG IN / REGISTER) */
 h1 {
-    margin: 0 0 10px 0;
     font-size: 24px;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #333;
     border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 10px;
     text-align: center;
+    margin:0 0;
 }
 
 /* Texten ovanför input-fälten (username / password) */

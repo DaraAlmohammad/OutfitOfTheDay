@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>OOTD - Main Feed</title>
-        <link rel="stylesheet" href="../CSS/style.css">
-    </head>
-    <body>
-        <header class="global-webbheader">
-            <h1 class="Page-name">Ootd</h1>
-            <nav class="global-nav">
-                <a href="mainpage.html">Main page</a>
-                <a href="myOutfits.html">My outfits</a>
-                <a href="postOutfit.html">Post new outfit</a>
-                <a href="/logout">Logout</a>
-            </nav>
-        </header>
-            <div id="dom-status"></div>
-            <main>
-                <div class="filter-section">
-                <form id="filter-form">
-                <h2>Filter outfits</h2>
-                
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOTD - Main Feed</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+    <header class="global-webbheader">
+        <h1 class="Page-name">Ootd</h1>
+        <nav class="global-nav">
+            <a href="mainpage.html">Main page</a>
+            <a href="myOutfits.html">My outfits</a>
+            <a href="postOutfit.html">Post new outfit</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+    <div id="dom-status"></div>
+    <main>
+        <h2 class="filter-h2">Filter outfits</h2>
+        <div class="filter-section">
+            <form id="filter-form">
+
                 <div class="filter-dropdowns">
                     <label for="filter-season">Season:</label>
                     <select id="filter-season" name="season">
@@ -48,30 +50,19 @@
                         <option value="white">White</option>
                         <option value="beige">Beige</option>
                         <option value="multicolor">Multicolor</option>
-                        <option value="red">Red</option>
-                        <option value="pink">Pink</option>
-                        <option value="purple">Purple</option>
-                        <option value="blue">Blue</option>
-                        <option value="green">Green</option>
-                        <option value="yellow">Yellow</option>
-                        <option value="orange">Orange</option>
-                        <option value="brown">Brown</option>
-                        <option value="silver">Silver</option>
-                        <option value="gold">Gold</option>
-                        <option value="grey">Grey</option>
                     </select>
-                </div>
 
-                <div class="filter-radios">
-                    <span>Show:</span>
-                    <label>
-                        <input type="radio" name="viewMode" value="all" checked> All outfits
-                    </label>
-                    <label>
-                        <input type="radio" name="viewMode" value="favorites"> My favorites
-                    </label>
-                </div>
+                    <div class="filter-radios">
+                        <span>Show:</span>
+                        <label>
+                            <input type="radio" name="viewMode" value="all" checked> All outfits
+                        </label>
+                        <label>
+                            <input type="radio" name="viewMode" value="favorites"> My favorites
+                        </label>
+                    </div>
 
+                </div>
                 <button type="submit" id="apply-filter-btn">Filter</button>
             </form>
         </div>
@@ -80,8 +71,9 @@
         </div>
 
     </main>
-        <script src="../JS/api.js"></script>
-        <script src="../JS/ui.js"></script>
+    <script src="../JS/api.js"></script>
+    <script src="../JS/ui.js"></script>
 
-    </body>
+</body>
+
 </html>
