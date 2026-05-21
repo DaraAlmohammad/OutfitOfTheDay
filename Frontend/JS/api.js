@@ -1,17 +1,10 @@
 
 class API {
 
-    static seasons = {
-        1: "Summer",
-        2: "Spring",
-        3: "Winter",
-        4: "Fall"
-    };
-
     static async getAllOutfits() {
         try {
             let options = { credentials: "include" };
-            let response = await fetch("/mainpage", options);
+            let response = await fetch("/OOTD/mainpage", options);
             let jsonData = await response.json();
             return jsonData;
         } catch (err) {
@@ -20,12 +13,12 @@ class API {
     }
 
     static async getMyOutfits() {
-        let response = await fetch("/api/myoutfits");
+        let response = await fetch("/OOTD/myoutfits");
         let jsonData = await response.json();
         return jsonData; 
     }
     static async getOutfitById(id) {
-        let response = await fetch("/detail.html/" + id, {
+        let response = await fetch("/OOTD/detail/" + id, {
             headers: { "Accept": "application/json" },
         });
 
@@ -43,7 +36,7 @@ class API {
             headers: { "Content-Type": "application/json" }
         };
         
-        let response = await fetch("/api/outfits/" + id, options);
+        let response = await fetch("/OOTD/myoutfits/" + id, options);
         return response.ok;
     }
 
@@ -85,16 +78,14 @@ class API {
         addOutfitForm.addEventListener("submit", async function handleAddOutfit(event) {
             event.preventDefault();
             
-
             const formData = new FormData(addOutfitForm);
-
             let options = {
                 method: "POST",
                 body: formData,
             };
 
             try {
-                let response = await fetch("/OOTD/api/postOutfit", options)
+                let response = await fetch("/OOTD/postoutfit", options)
                 console.log(response);
                 if (response.ok) {
                     alert("The outfit successfully posted!")

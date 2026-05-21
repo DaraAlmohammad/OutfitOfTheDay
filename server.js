@@ -26,9 +26,9 @@ function saveUsers(userData) {
 
 async function handle(request) {
     let url = new URL(request.url);
-    let idRouteOutfit = new URLPattern({ pathname: "/detail.html/:id" });
-    let patchRouteOutfit = new URLPattern({ pathname: "/mainpage/outfits/:id" });
-    let deleteRouteOutfit = new URLPattern({ pathname: "/api/outfits/:id" });
+    let idRouteOutfit = new URLPattern({ pathname: "/OOTD/detail/:id" });
+    let patchRouteOutfit = new URLPattern({ pathname: "/OOTD/mainpage/outfits/:id" });
+    let deleteRouteOutfit = new URLPattern({ pathname: "/OOTD/myoutfits/:id" });
 
     // --- 1. KOLLA COOKIES ---
     const cookies = request.headers.get("cookie");
@@ -57,7 +57,7 @@ async function handle(request) {
     
     let isLoggedIn = (loggedInUser != null);
 
-    if (url.pathname === "/api/myoutfits" && request.method === "GET") {
+    if (url.pathname === "/OOTD/myoutfits" && request.method === "GET") {
         let showMyOutfits = myOutfits(loggedInUser.username);
         return new Response(JSON.stringify(showMyOutfits), {
             headers: {"Content-Type": "application/json"},
@@ -76,7 +76,7 @@ async function handle(request) {
     }
 
     // --- 3. REGISTRERA 
-    if (url.pathname === "/register" && request.method === "POST") {
+    if (url.pathname === "/OOTD/register" && request.method === "POST") {
         let body = await request.json();
         let userExists = false;
         
@@ -111,7 +111,7 @@ async function handle(request) {
     }
 
     // --- 4. LOGGA IN 
-    if (url.pathname === "/login" && request.method === "POST") {
+    if (url.pathname === "/OOTD/login" && request.method === "POST") {
         let body = await request.json();
         let foundUser = null;
 
@@ -151,7 +151,7 @@ async function handle(request) {
     }
 
     // Acceptera post-request 
-    if (request.method === "POST" && url.pathname === "/OOTD/api/postOutfit") {
+    if (request.method === "POST" && url.pathname === "/OOTD/postoutfit") {
 
         let formData = await request.formData();
         
@@ -194,7 +194,7 @@ async function handle(request) {
 
     }
 
-    if (url.pathname === "/mainpage" && request.method === "GET") {
+    if (url.pathname === "/OOTD/mainpage" && request.method === "GET") {
         if (isLoggedIn == false) {
             return new Response("Unauthorized", { status: 401 });
         }
@@ -225,7 +225,7 @@ async function handle(request) {
         return new Response(JSON.stringify({ message: "Outfit deleted!" }), options);
     }
 
-    if (idRouteOutfit.test(url)) {
+    if (request.method === "GET" && idRouteOutfit.test(url)) {
         let match = idRouteOutfit.exec(url);
         let id = match.pathname.groups.id;
         let outfitById = getOutfitById(id);
