@@ -17,7 +17,7 @@ loginForm.addEventListener("submit", async function handleLogin(event) {
         credentials: "include"
     };
 
-    let response = await fetch("/login", options);
+    let response = await fetch("/OOTD/login", options);
 
     if (response.ok) {
         window.location.href = "/OOTD/mainpage.html";
@@ -42,7 +42,7 @@ registerForm.addEventListener("submit", async function handleRegister(event) {
         credentials: "include"
     };
 
-    let response = await fetch("/register", options);
+    let response = await fetch("/OOTD/register", options);
     
     if (response.ok) {
         // Om kontot skapas loggas vi in direkt och skickas till mainpage
