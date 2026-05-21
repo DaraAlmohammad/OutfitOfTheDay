@@ -160,7 +160,11 @@ class UI {
                         outfits = API.getOutfitsByType(typeValue, outfits);
                     }
 
-                    await ui.createAllOutfits(outfits);
+                    if (document.querySelector(".my-outfits-page")) {
+                        await ui.myOutfits(outfits);
+                    } else {
+                        await ui.createAllOutfits(outfits);
+                    }
 
                     if (statusContainer) {
                         statusContainer.style.display = "none";
@@ -203,9 +207,29 @@ class UI {
                 <a href="detail.html?id=${outfit.id}" class="main-image-link">
                     <img src="${imagePath}" class="main-outfit-img">
                 </a>
-                    <button type="submit">Delete outfit</button>
+                    <button class="delete-btn">Delete outfit</button>
             `;
             outfitList.appendChild(card);
+
+            let deleteBtn = card.querySelector(".delete-btn");
+            
+            deleteBtn.addEventListener("click", async function() {
+                try {
+                    let isDeleted = await API.deleteOutfit(outfit.id);
+                    
+                    if (isDeleted === true) {
+                        ui.myOutfits();
+                    } else {
+                        throw new Error("Kunde inte radera outfiten från databasen.");
+                    }
+                } catch (error) {
+                    const statusContainer = document.getElementById("dom-status");
+                    if (statusContainer) {
+                        statusContainer.textContent = `Nätverksfel vid radering: ${error.message}`;
+                        statusContainer.style.display = "block";
+                    }
+                }
+            });
         }
     }
 }
