@@ -113,3 +113,8 @@ button:hover {
 button:active {
     transform: scale(0.98);
 }
+#postOutfit-form {
+    max-width: 300px; /* Ändra denna siffra om du vill ha det ännu smalare eller bredare */
+    margin: 0 auto;   /* Detta ser till att formuläret hamnar snyggt centrerat i mitten av skärmen */
+    padding: 30px;    /* Lägger till lite extra luft inuti formuläret så det ser snyggare ut när det är smalare */
+}
