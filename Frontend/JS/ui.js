@@ -92,9 +92,6 @@ class UI {
         div.classList.add("detail-card");
 
         let imagePath = outfit.image;
-        if (!imagePath.startsWith("http")) {
-            imagePath = "../" + imagePath;
-        }
 
         div.innerHTML = `
             <img src="${imagePath}" class="detail-outfit-img">

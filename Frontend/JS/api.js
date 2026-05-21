@@ -117,7 +117,6 @@ class API {
         }
         return filteredResults;
     }
-
     
 }
 
