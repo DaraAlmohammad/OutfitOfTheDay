@@ -10,44 +10,44 @@
 body {
     margin: 0;
     font-family: Helvetica, sans-serif;
-    background-color: #d4e4f6; /* Samma ljusblå bakgrund som mainpage */
+    background-color: #d4e4f6; 
     color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    gap: 40px; /* Mellanrum mellan de två rutorna */
-    flex-wrap: wrap; /* Gör att de staplas på mobila skärmar */
+    gap: 40px; 
+    flex-wrap: wrap; 
     padding: 20px;
 }
-/* Styling för den stora loggan högst upp på inloggningssidan */
+
 .login-main-title {
-    width: 100%;          /* Tvingar rutorna att hamna under texten */
+    width: 100%;          
     font-family: myFont;
-    text-align: center;   /* Centrerar texten */
-    font-size: 125px;      /* Gör den riktigt stor */
-    font-weight: 900;     /* Extra tjock text */
-    letter-spacing: 4px;  /* Lite mer mellanrum mellan bokstäverna */
+    text-align: center;   
+    font-size: 125px;    
+    font-weight: 900;  
+    letter-spacing: 4px; 
     color: #333;
-    margin: 0 0;   /* Mellanrum uppåt */
-    border-bottom: none;  /* Tar bort linjen under texten */
+    margin: 0 0;   
+    border-bottom: none;  
     padding: 5px;
 }
 
-/* Stylar både Login och Register-boxarna som vita kort */
+
 #login-Box, #Register-Box {
     background-color: #ffffff;
     padding: 35px;
-    border-radius: 20px; /* Samma runda hörn som dina outfit-kort */
+    border-radius: 20px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: 100%;
-    max-width: 360px; /* Ger en snygg och enhetlig bredd */
+    max-width: 360px; 
 }
 
-/* Rubrikerna inuti boxarna (LOG IN / REGISTER) */
+
 h1 {
     font-size: 24px;
     letter-spacing: 1px;
@@ -58,11 +58,11 @@ h1 {
     margin:0 0;
 }
 
-/* Texten ovanför input-fälten (username / password) */
+
 h3 {
     margin: 0;
     font-size: 13px;
-    color: #758fac; /* Den dova blå färgen från din detaljsida */
+    color: #758fac; 
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -72,7 +72,7 @@ input[type="text"],
 input[type="password"] {
     padding: 12px 15px;
     border: 1px solid #ccc;
-    border-radius: 20px; /* Runda fält som matchar select-menyerna */
+    border-radius: 20px; 
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #333;
@@ -81,13 +81,13 @@ input[type="password"] {
     transition: border-color 0.2s;
 }
 
-/* När man klickar i ett textfält blir kanten blå */
+
 input[type="text"]:focus,
 input[type="password"]:focus {
     border-color: #99b8db;
 }
 
-/* Knapparna (Login / Create) */
+
 button {
     padding: 12px 15px;
     border: none;
@@ -95,26 +95,26 @@ button {
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
-    background-color: #99b8db; /* Din signatur-blå färg */
+    background-color: #99b8db; 
     color: #ffffff;
     transition: background-color 0.2s, transform 0.1s;
-    width: 100%; /* Låter knappen sträcka sig över hela boxen */
+    width: 100%; 
     margin-top: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Hover-effekt på knapparna */
+
 button:hover {
     background-color: #758fac;
 }
 
-/* Liten klickeffekt */
+
 button:active {
     transform: scale(0.98);
 }
 #postOutfit-form {
-    max-width: 300px; /* Ändra denna siffra om du vill ha det ännu smalare eller bredare */
-    margin: 0 auto;   /* Detta ser till att formuläret hamnar snyggt centrerat i mitten av skärmen */
-    padding: 30px;    /* Lägger till lite extra luft inuti formuläret så det ser snyggare ut när det är smalare */
+    max-width: 300px; 
+    margin: 0 auto;   
+    padding: 30px;  
 }
