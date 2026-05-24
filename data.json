@@ -145,24 +145,6 @@
     },
     {
       "id": 9,
-      "color": "brown",
-      "seasonId": 2,
-      "image": "images/da5425b7-d758-4775-b042-b8f534d884d2.jpg",
-      "description": "Love all brown!!!",
-      "outfitType": "business",
-      "favoritedBy": [],
-      "username": "Tova"
-      "image": "images/87b14e77-f685-4081-9673-6d74f8952dfd.jpg",
-      "description": "Star-top with skirt over pants :)",
-      "outfitType": "casual",
-      "favoritedBy": [
-        "ruth.granath"
-      ],
-      "username": "test",
-      "isFavourite": true
-    },
-    {
-      "id": 9,
       "color": "blue",
       "seasonId": 2,
       "image": "images/d5cff0d0-af35-4efd-8fa1-a0f39a314ab0.jpg",
@@ -213,6 +195,16 @@
       "outfitType": "casual",
       "favoritedBy": [],
       "username": "ruth.granath"
+    },
+    {
+      "id": 15,
+      "color": "brown",
+      "seasonId": 1,
+      "image": "images/84e100d6-0205-4b31-950c-484865a69682.jpg",
+      "description": "Brown!!",
+      "outfitType": "business",
+      "favoritedBy": [],
+      "username": "Tova"
     }
   ]
 }
