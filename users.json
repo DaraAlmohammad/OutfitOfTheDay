@@ -13,12 +13,17 @@
         {
             "username": "Tova",
             "password": "1234",
-            "sessionId": "9ec20203-302d-4ffa-b864-129bacaaab41"
+            "sessionId": "42acea9b-66bf-4f08-be38-9674c3087753"
         },
         {
             "username": "ruth.granath",
             "password": "123456",
             "sessionId": "3c563ae5-0d89-429b-a84d-bb0de169e0d7"
+        },
+        {
+            "username": "Tovatestar",
+            "password": "Hund",
+            "sessionId": "cc776e1b-c3d9-4e4c-81fa-66caef6be0e2"
         }
     ]
 }
