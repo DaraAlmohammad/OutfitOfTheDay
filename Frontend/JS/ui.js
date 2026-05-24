@@ -1,5 +1,5 @@
 class UI {
-        static showLoading() {
+    static showLoading() {
         const container = document.getElementById("outfit-feed-container");
         container.innerHTML = `<h3 class="h3-loading">Loading... </h3>`
     }
@@ -16,16 +16,16 @@ class UI {
             if (outfitsToRender === null) {
                 outfitsToRender = await API.getAllOutfits();
             }
-        outfitList.innerHTML="";
+            outfitList.innerHTML = "";
             for (let outfit of outfitsToRender) {
                 const card = document.createElement("div");
                 card.classList.add("outfit-card");
 
                 let imagePath = outfit.image;
                 if (!imagePath.startsWith("http")) {
-    imagePath = "../" + imagePath;
-}
-                
+                    imagePath = "../" + imagePath;
+                }
+
                 let heartSrc = "";
                 if (outfit.isFavourite === true) {
                     heartSrc = "../images/favorite.jpg";
@@ -73,6 +73,7 @@ class UI {
                 });
 
                 outfitList.appendChild(card);
+                console.log("Kort tillagt i dom", outfitList.innerHTML)
             }
         } catch (error) {
             if (statusContainer) {
@@ -116,7 +117,7 @@ class UI {
         outfitById.appendChild(div);
     }
 
-   setupFilterForm() {
+    setupFilterForm() {
         const filterForm = document.getElementById("filter-form");
 
         if (filterForm) {
@@ -133,14 +134,15 @@ class UI {
                     // här kontrollerar jag om vi är på mainpage eller myoutfits-sidan
                     let outfits;
                     if (document.querySelector(".my-outfits-page")) {
+                        console.log("1. systemet har mypage");
                         outfits = await API.getMyOutfits();
                     } else {
                         outfits = await API.getAllOutfits();
                     }
-                   
+                    console.log("2. antal outfits hämtade innan filter:", outfits.length);
                     //vilken radioknapp är itryckt!
                     const viewModeRadio = document.querySelector('input[name="viewMode"]:checked');
-                    
+
                     if (viewModeRadio && viewModeRadio.value === "favorites") {
                         let favoriteOutfits = [];
                         for (let i = 0; i < outfits.length; i++) {
@@ -148,7 +150,7 @@ class UI {
                                 favoriteOutfits.push(outfits[i]);
                             }
                         }
-                        outfits = favoriteOutfits; 
+                        outfits = favoriteOutfits;
                     }
 
                     if (seasonValue !== "") {
@@ -181,18 +183,22 @@ class UI {
         }
     }
 
-    async myOutfits() {
-        
+    async myOutfits(outfitsList = null) {
+
         let outfitList = document.getElementById("outfit-feed-container");
         if (!outfitList) return;
-        
+
         outfitList.innerHTML = "";
         UI.showLoading();
 
-        let allMyOutfits = await API.getMyOutfits();
-        outfitList.innerHTML ="";
+        let allMyOutfits;
+        if (outfitsList) {
+            allMyOutfits = outfitsList;
+        } else {
+            allMyOutfits = await API.getMyOutfits();
+        }
 
-
+        outfitList.innerHTML = "";
 
         for (let outfit of allMyOutfits) {
 
@@ -210,14 +216,15 @@ class UI {
                 </a>
                     <button class="delete-btn">Delete outfit</button>
             `;
+            console.log(outfitList);
             outfitList.appendChild(card);
 
             let deleteBtn = card.querySelector(".delete-btn");
-            
-            deleteBtn.addEventListener("click", async function() {
+
+            deleteBtn.addEventListener("click", async function () {
                 try {
                     let isDeleted = await API.deleteOutfit(outfit.id);
-                    
+
                     if (isDeleted === true) {
                         ui.myOutfits();
                     } else {

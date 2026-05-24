@@ -9,9 +9,7 @@ export function getAllOutfits() {
             if (element.seasonId === season.id) {
                 element.season = season.season;
             }
-
         }
-
         for (let outfitType of outfitTypes) {
 
             if (element.outfitTypeId === outfitType.id) {
@@ -112,7 +110,7 @@ export function myOutfits(username) {
         if (outfit.username === username) {
             myOutfits.push(outfit);
         }
-    }
+    } console.log(myOutfits);
     return myOutfits;
 }
 
