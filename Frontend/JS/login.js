@@ -1,7 +1,6 @@
 const loginForm = document.querySelector("#login-Box");
 const registerForm = document.querySelector("#Register-Box");
 
-// --- LOGGA IN ---
 loginForm.addEventListener("submit", async function handleLogin(event) {
     event.preventDefault();
 
@@ -26,7 +25,6 @@ loginForm.addEventListener("submit", async function handleLogin(event) {
     }
 });
 
-// --- REGISTRERA NY ANVÄNDARE ---
 registerForm.addEventListener("submit", async function handleRegister(event) {
     event.preventDefault();
 
@@ -45,7 +43,6 @@ registerForm.addEventListener("submit", async function handleRegister(event) {
     let response = await fetch("/OOTD/register", options);
     
     if (response.ok) {
-        // Om kontot skapas loggas vi in direkt och skickas till mainpage
         window.location.href = "/OOTD/mainpage.html";
     } else {
         let result = await response.json();

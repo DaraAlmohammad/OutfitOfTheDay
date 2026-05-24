@@ -17,7 +17,8 @@ class UI {
                 outfitsToRender = await API.getAllOutfits();
             }
             outfitList.innerHTML = "";
-            for (let outfit of outfitsToRender) {
+            for (let i = outfitsToRender.length - 1; i >= 0; i--) {
+                let outfit = outfitsToRender[i];
                 const card = document.createElement("div");
                 card.classList.add("outfit-card");
 
@@ -47,7 +48,6 @@ class UI {
 
                 heartBtn.addEventListener("click", async function () {
                     try {
-                        // 1. Byta utseende (isFavourite)
                         outfit.isFavourite = !outfit.isFavourite;
 
                         if (outfit.isFavourite === true) {
@@ -56,10 +56,8 @@ class UI {
                             heartImg.src = "../images/NotAfavorite.jpg";
                         }
 
-                        // 2. Anropa api.js för att skicka ändringen till servern
                         const isSuccess = await API.updateFavorite(outfit.id, outfit.isFavourite);
 
-                        // 3. Om nätverksanropet misslyckades
                         if (!isSuccess) {
                             throw new Error("Kunde inte spara gilla-markeringen.");
                         }
@@ -73,7 +71,6 @@ class UI {
                 });
 
                 outfitList.appendChild(card);
-                console.log("Kort tillagt i dom", outfitList.innerHTML)
             }
         } catch (error) {
             if (statusContainer) {
@@ -131,7 +128,6 @@ class UI {
                     const colorValue = document.getElementById("filter-color").value;
                     const typeValue = document.getElementById("filter-outfit-type").value;
 
-                    // här kontrollerar jag om vi är på mainpage eller myoutfits-sidan
                     let outfits;
                     if (document.querySelector(".my-outfits-page")) {
                         console.log("1. systemet har mypage");
@@ -140,7 +136,6 @@ class UI {
                         outfits = await API.getAllOutfits();
                     }
                     console.log("2. antal outfits hämtade innan filter:", outfits.length);
-                    //vilken radioknapp är itryckt!
                     const viewModeRadio = document.querySelector('input[name="viewMode"]:checked');
 
                     if (viewModeRadio && viewModeRadio.value === "favorites") {
@@ -174,10 +169,8 @@ class UI {
                     }
 
                 } catch (error) {
-                    if (statusContainer) {
-                        statusContainer.textContent = `Nätverksfel vid filtrering: ${error.message}`;
-                        statusContainer.style.display = "block";
-                    }
+                    console.error("Filtering error:", error);
+                    alert("An error occurred while filtering. Please try again.");
                 }
             });
         }
@@ -199,7 +192,8 @@ class UI {
         
         outfitList.innerHTML ="";
 
-        for (let outfit of allMyOutfits) {
+        for (let i = allMyOutfits.length - 1; i >= 0; i--) {
+            let outfit = allMyOutfits[i];
 
             const card = document.createElement("div");
             card.classList.add("outfit-card");
@@ -215,7 +209,6 @@ class UI {
                 </a>
                     <button class="delete-btn">Delete outfit</button>
             `;
-            console.log(outfitList);
             outfitList.appendChild(card);
 
             let deleteBtn = card.querySelector(".delete-btn");
@@ -224,17 +217,15 @@ class UI {
                 try {
                     let isDeleted = await API.deleteOutfit(outfit.id);
 
-                    if (isDeleted === true) {
-                        ui.myOutfits();
-                    } else {
-                        throw new Error("Kunde inte radera outfiten från databasen.");
-                    }
+                if (isDeleted === true) {
+                    alert("Your outfit was successfully deleted!");
+                    ui.myOutfits(); 
+                } else {
+                    throw new Error("Could not delete the outfit from the database");
+                }
                 } catch (error) {
-                    const statusContainer = document.getElementById("dom-status");
-                    if (statusContainer) {
-                        statusContainer.textContent = `Nätverksfel vid radering: ${error.message}`;
-                        statusContainer.style.display = "block";
-                    }
+                    console.error("Delete error:", error);
+                    alert("An error occurred while deleting. Please try again.");
                 }
             });
         }

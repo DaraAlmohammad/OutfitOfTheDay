@@ -16,7 +16,7 @@ function getUsers() {
         return JSON.parse(data);
     } catch (err) {
         console.log("Could not read users");
-        return { users: [] }; // Tillagd fallback ifall filen är tom
+        return { users: [] }; 
     }
 }
 
@@ -30,7 +30,7 @@ async function handle(request) {
     let patchRouteOutfit = new URLPattern({ pathname: "/OOTD/mainpage/outfits/:id" });
     let deleteRouteOutfit = new URLPattern({ pathname: "/OOTD/myoutfits/:id" });
 
-    // --- 1. KOLLA COOKIES ---
+
     const cookies = request.headers.get("cookie");
     let currentSessionId = null;
 
@@ -58,7 +58,6 @@ async function handle(request) {
     let isLoggedIn = (loggedInUser != null);
 
 
-    // --- 2. SKYDDA SIDOR ---
     const protectedPages = ["/OOTD/mainpage.html", "/OOTD/myOutfits.html", "/OOTD/postOutfit.html", "/OOTD/detail.html",];
     if (protectedPages.includes(url.pathname)) {
         if (isLoggedIn === false) {
@@ -69,7 +68,7 @@ async function handle(request) {
             return new Response("", redirectOptions);
         }
     }
-    // --- 3. REGISTRERA 
+
     if (url.pathname === "/OOTD/register" && request.method === "POST") {
         let body = await request.json();
         let userExists = false;
@@ -104,7 +103,6 @@ async function handle(request) {
         return new Response(JSON.stringify({ success: true }), registerOptions);
     }
 
-    // --- 4. LOGGA IN 
     if (url.pathname === "/OOTD/login" && request.method === "POST") {
         let body = await request.json();
         let foundUser = null;
@@ -132,13 +130,13 @@ async function handle(request) {
             return new Response(JSON.stringify({ success: false, message: "Fel uppgifter" }), { status: 401 });
         }
     }
-    // --- LOGGA UT ---
+
     if (url.pathname === "/logout") {
         let logoutOptions = {
-            status: 303, // Omdirigering
+            status: 303, 
             headers: {
-                "Location": "/OOTD/login.html", // Ändra till /login.html om filen inte ligger i en html-mapp
-                "Set-Cookie": "session_id=deleted; Max-Age=0; Path=/" // Raderar cookien
+                "Location": "/OOTD/login.html", 
+                "Set-Cookie": "session_id=deleted; Max-Age=0; Path=/" 
             }
         };
         return new Response("", logoutOptions);
@@ -175,7 +173,6 @@ async function handle(request) {
         });
     }
 
-    // Acceptera post-request 
     if (request.method === "POST" && url.pathname === "/OOTD/postoutfit") {
 
         let formData = await request.formData();
@@ -192,7 +189,7 @@ async function handle(request) {
             outfitType: formData.get("outfitType"),
             color: formData.get("color"),
             description: formData.get("description"),
-            image: "images/" + newFilename // Sätter sökvägen så den pekar rätt på mainpage
+            image: "images/" + newFilename 
         };
 
         if ((file && file.size > 0) && (file && file.size < 500000)) {

@@ -110,7 +110,7 @@ export function myOutfits(username) {
         if (outfit.username === username) {
             myOutfits.push(outfit);
         }
-    } console.log(myOutfits);
+    } 
     return myOutfits;
 }
 

@@ -6,11 +6,6 @@
             "sessionId": "137d54f8-bb17-475b-afa0-66e7ef6e20ca"
         },
         {
-            "username": "test",
-            "password": "1234",
-            "sessionId": "060326ba-b213-49ad-ad48-4549776a8956"
-        },
-        {
             "username": "Tova",
             "password": "1234",
             "sessionId": "6ab0aa24-a785-4ca1-813d-4910e387d791"
@@ -19,11 +14,6 @@
             "username": "ruth.granath",
             "password": "123456",
             "sessionId": "eb63aa25-0ff3-4388-898d-53cbebdc677d"
-        },
-        {
-            "username": "Wille",
-            "password": "Outfit123",
-            "sessionId": "33cf0e2d-af67-4510-b89e-9ce417466c20"
         }
     ]
 }

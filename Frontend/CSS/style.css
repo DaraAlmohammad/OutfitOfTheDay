@@ -73,7 +73,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px; 
-    margin-left: 10px; /* Ger lite extra luft från dropdowns:en */
+    margin-left: 10px; 
 }
 .filter-dropdowns {
     display: flex;
@@ -161,13 +161,13 @@ select {
     transform: none !important;
 }
 .heart-icon {
-    width: 25px; /* Anpassa storleken på hjärtat vid behov */
+    width: 25px; 
     height: 25px;
     object-fit: contain; 
     transition: none !important;
     transform: none !important;
 }
-/* Centrerar hela innehållet på sidan */
+
 #detail-page {
     display: flex;
     justify-content: center;
@@ -175,27 +175,24 @@ select {
     min-height: 80vh;
 }
 
-/* Själva kortet (Den stora rutan) */
 .detail-card {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    max-width: 800px;  
+    max-width: 560px;  
     width: 100%;  
 }
 
-/* Bilden inuti kortet */
 .detail-outfit-img {
     width: 500px;
-    height: 600px;     /* Du kan ändra denna siffra för att få bilden perfekt! */
+    height: 600px;   
     object-fit: cover;
     border-radius: 15px;
     border: 10px solid #99b8db;
     margin-bottom: 25px;
 }
 
-/* Raden med Color, Season, Outfit type */
 .detail-info-row {
     display: flex;
     justify-content: space-between; 
@@ -211,14 +208,12 @@ select {
     text-transform: uppercase;
 }
 
-/* Själva svaren (alltså den specifika outfitens färg, säsong osv gjorde jag lite mörkare */
 .detail-info-row span {
     color: #333;
     font-weight: bold;
     margin-top: 5px;
 }
 
-/* Beskrivningen längst ner */
 .detail-description h3 {
     font-size: 16px;
     margin: 0 0 10px 0;
@@ -233,9 +228,9 @@ select {
     margin: 0;
 }
 #postOutfit-form {
-    max-width: 500px;     /* Bestämmer hur smalt formuläret ska vara */
-    margin: 0 auto;       /* Centrerar formuläret på skärmen */
-    padding: 25px;        /* Ger lite extra luft på insidan så det ser lyxigare ut */
+    max-width: 500px;     
+    margin: 0 auto;     
+    padding: 25px;       
     border: 6px #758fac solid;
 }
 .h3-loading{

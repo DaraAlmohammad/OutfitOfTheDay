@@ -8,7 +8,8 @@ class API {
             let jsonData = await response.json();
             return jsonData;
         } catch (err) {
-            console.log("err")
+            console.error("Error fetching outfits:", err);
+            alert("Could not load outfits. Please try again later.");
         }
     }
 
@@ -54,7 +55,8 @@ class API {
             }
             return true; 
         } catch (error) {
-            console.error("Kunde inte uppdatera favorit:", error);
+            console.error("Error updating favorite:", error);
+            alert("Failed to update favorite. Please try again.");
             return false;
         }
     }
@@ -83,7 +85,8 @@ class API {
                 }
 
             } catch (error) {
-                alert("Network error, please try again");
+                console.error("Post error:", error);
+                alert("Network error, please try again.");
             }
         })
     }
