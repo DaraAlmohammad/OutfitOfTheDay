@@ -49,7 +49,7 @@ export function getOutfitById(id) {
     }
     return false;
 }
-export function deleteProduct(id) {
+export function deleteOutfit(id) {
     let data = Deno.readTextFileSync("data.json");
     let newData = JSON.parse(data);
 

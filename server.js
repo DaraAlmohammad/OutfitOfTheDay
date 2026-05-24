@@ -1,6 +1,6 @@
 import { serveDir } from "jsr:@std/http/file-server";
 import { extname } from "jsr:@std/path";
-import { getOutfitById, getAllOutfits, deleteProduct, addOutfitToMyPage, myOutfits, updateFavoriteStatus } from "./outfits.js";
+import { getOutfitById, getAllOutfits, deleteOutfit, addOutfitToMyPage, myOutfits, updateFavoriteStatus } from "./outfits.js";
 
 let options = {
     headers: {
@@ -233,7 +233,7 @@ async function handle(request) {
         let match = deleteRouteOutfit.exec(url);
         let deleteId = parseInt(match.pathname.groups.id);
 
-        deleteProduct(deleteId);
+        deleteOutfit(deleteId);
 
         return new Response(JSON.stringify({ message: "Outfit deleted!" }), options);
     }
