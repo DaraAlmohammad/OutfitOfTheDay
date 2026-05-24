@@ -1,7 +1,7 @@
 class UI {
         static showLoading() {
         const container = document.getElementById("outfit-feed-container");
-        container.innerHTML = `<h2 style="color: black; text-align: center;">Laddar... ⏳</h2>`
+        container.innerHTML = `<h2 style="color: black; text-align: center;">Loading... ⏳</h2>`
     }
     async createAllOutfits(filteredList = null) {
         const outfitList = document.getElementById("outfit-feed-container");
@@ -109,7 +109,7 @@ class UI {
 
             <div class="detail-description">
                 <h3>Description:</h3>
-                <p>${outfit.description || "Ingen beskrivning tillgänglig."}</p>
+                <p>${outfit.description}</p>
             </div>
         `;
         outfitById.appendChild(div);
@@ -180,7 +180,7 @@ class UI {
         }
     }
 
-    async myOutfits() {
+    async myOutfits(filteredList = null) {
         
         let outfitList = document.getElementById("outfit-feed-container");
         if (!outfitList) return;
@@ -188,10 +188,13 @@ class UI {
         outfitList.innerHTML = "";
         UI.showLoading();
 
-        let allMyOutfits = await API.getMyOutfits();
+        let allMyOutfits = filteredList;
+        
+        if (allMyOutfits === null) {
+            allMyOutfits = await API.getMyOutfits();
+        }    
+        
         outfitList.innerHTML ="";
-
-
 
         for (let outfit of allMyOutfits) {
 

@@ -39,8 +39,11 @@
       "image": "images/c0fa06eb-dc8c-47c1-b657-10dde70341c3.jpg",
       "description": "Blue skirt, yellow t-shirt :)",
       "outfitType": "casual",
-      "favoritedBy": [],
-      "username": "test"
+      "favoritedBy": [
+        "ruth.granath"
+      ],
+      "username": "test",
+      "isFavourite": true
     },
     {
       "id": 3,
@@ -49,8 +52,12 @@
       "image": "images/143ba9ed-3896-4a4d-aee5-3b5c4ff42680.jpg",
       "description": "Dots and color for the office!",
       "outfitType": "business",
-      "favoritedBy": [],
-      "username": "test"
+      "favoritedBy": [
+        "ruth.granath",
+        "Wille"
+      ],
+      "username": "test",
+      "isFavourite": true
     },
     {
       "id": 4,
@@ -69,8 +76,11 @@
       "image": "images/731c8ced-aef8-47a7-981d-6d93bbb76367.jpg",
       "description": "A more casual office-outfit.",
       "outfitType": "business",
-      "favoritedBy": [],
-      "username": "test"
+      "favoritedBy": [
+        "ruth.granath"
+      ],
+      "username": "test",
+      "isFavourite": false
     },
     {
       "id": 6,
@@ -79,8 +89,87 @@
       "image": "images/674cce94-2f49-49e0-8b00-2620fbddf6d1.jpg",
       "description": "A pop of color with a nice blue scarf :)",
       "outfitType": "casual",
+      "favoritedBy": [
+        "ruth.granath"
+      ],
+      "username": "test",
+      "isFavourite": true
+    },
+    {
+      "id": 7,
+      "color": "pink",
+      "seasonId": 1,
+      "image": "images/7e48d3e8-06fc-4c40-9de2-72e1c4ef8e8d.jpg",
+      "description": "Thick belt and long skirt.",
+      "outfitType": "casual",
       "favoritedBy": [],
       "username": "test"
+    },
+    {
+      "id": 8,
+      "color": "green",
+      "seasonId": 2,
+      "image": "images/87b14e77-f685-4081-9673-6d74f8952dfd.jpg",
+      "description": "Star-top with skirt over pants :)",
+      "outfitType": "casual",
+      "favoritedBy": [
+        "ruth.granath"
+      ],
+      "username": "test",
+      "isFavourite": true
+    },
+    {
+      "id": 9,
+      "color": "blue",
+      "seasonId": 2,
+      "image": "images/d5cff0d0-af35-4efd-8fa1-a0f39a314ab0.jpg",
+      "description": "Casual jean and dress-shirt.",
+      "outfitType": "casual",
+      "favoritedBy": [
+        "Wille"
+      ],
+      "username": "test",
+      "isFavourite": true
+    },
+    {
+      "id": 10,
+      "color": "brown",
+      "seasonId": 3,
+      "image": "images/31a4143b-7629-4f63-a136-a0307f556473.jpg",
+      "description": "Chill winter-outfit",
+      "outfitType": "casual",
+      "favoritedBy": [],
+      "username": "test"
+    },
+    {
+      "id": 11,
+      "color": "blue",
+      "seasonId": 2,
+      "image": "images/86d8b799-86f3-422c-bce1-134101795532.jpg",
+      "description": "Silver and blue :)",
+      "outfitType": "casual",
+      "favoritedBy": [],
+      "username": "ruth.granath"
+    },
+    {
+      "id": 12,
+      "color": "blue",
+      "seasonId": 3,
+      "image": "images/774408aa-31da-477a-a922-bad0c0bbe9d3.jpg",
+      "description": "Turtleneck and long skirt.",
+      "outfitType": "casual",
+      "favoritedBy": [],
+      "username": "ruth.granath"
+    },
+    {
+      "id": 13,
+      "color": "multicolor",
+      "seasonId": 4,
+      "image": "images/fa212bf3-1160-45bc-acf8-35fcedb74d67.jpg",
+      "description": "Big belt with skirt over pants :)",
+      "outfitType": "casual",
+      "favoritedBy": [],
+      "username": "ruth.granath"
     }
   ]
 }
