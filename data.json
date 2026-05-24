@@ -1,1 +1,722 @@
-{"seasons":[{"id":1,"season":"summer"},{"id":2,"season":"spring"},{"id":3,"season":"winter"},{"id":4,"season":"fall"}],"outfitTypes":[{"id":1,"type":"casual"},{"id":2,"type":"party"},{"id":3,"type":"business"},{"id":4,"type":"sporty"}],"outfits":[{"id":1,"color":"grey","seasonId":4,"image":"images/9a14cbf1716bf2b29f538d794888cf40.jpg","description":"Chic autumn business look with a grey cardigan.","outfitType":"business","favoritedBy":[],"username":null},{"id":2,"color":"orange","seasonId":1,"image":"images/3ba9dc2241d4c068e5091bfa5b142e14.jpg","description":"Striped orange summer dress with a green bucket hat.","outfitType":"casual","favoritedBy":[],"username":null},{"id":3,"color":"black","seasonId":3,"image":"images/9b93b0c5621263335775a260d1dd16c2.jpg","description":"Heavy dark grey winter coat paired with popping red gloves.","outfitType":"casual","favoritedBy":[],"username":null},{"id":4,"color":"multicolor","seasonId":4,"image":"images/outfit4.jpg","description":"Patterned business layering with a teal knit over an olive shirt.","outfitType":"business","favoritedBy":[],"username":null},{"id":5,"color":"black","seasonId":4,"image":"images/3b38d45960a0dc6c13284971265d17b2.jpg","description":"Sporty autumn running gear featuring a technical vest.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":6,"color":"black","seasonId":2,"image":"images/51a532927209233cff230d742ab9e821.jpg","description":"Elegant sequin party top paired with a sleek black skirt.","outfitType":"party","favoritedBy":[],"username":null},{"id":7,"color":"blue","seasonId":3,"image":"images/aa735d9b7b9960821d21df7205318187.jpg","description":"Puffy light blue winter jacket suited for heavy snow.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":8,"color":"white","seasonId":1,"image":"images/299e1fbe22cd9da409e13ff7cfeb94a5.jpg","description":"Sophisticated all-white summer linen set.","outfitType":"party","favoritedBy":[],"username":null},{"id":9,"color":"blue","seasonId":2,"image":"images/9c41e300f679fcc7085b94e1038658bb.jpg","description":"Relaxed spring striped blue long sleeve shirt.","outfitType":"casual","favoritedBy":[],"username":null},{"id":10,"color":"white","seasonId":3,"image":"images/97644dcb9118963b392237e50da21904.jpg","description":"Minimalist winter business dress with a sleek white turtleneck.","outfitType":"business","favoritedBy":[],"username":null},{"id":11,"color":"multicolor","seasonId":1,"image":"images/c4911692d5e08869751b49edfec29987.jpg","description":"Colorful striped summer tank top paired with casual shorts.","outfitType":"casual","favoritedBy":[],"username":null},{"id":12,"color":"black","seasonId":3,"image":"images/732efda13cecb3a2ee294a2e60956dcf.jpg","description":"Layered heavy black winter jacket with a red sweater.","outfitType":"casual","favoritedBy":[],"username":null},{"id":13,"color":"blue","seasonId":4,"image":"images/ea745c0030d51eeb2e0163d6323eab89.jpg","description":"Classic navy blue pinstripe double-breasted business suit.","outfitType":"business","favoritedBy":[],"username":null},{"id":14,"color":"purple","seasonId":2,"image":"images/95cc3057b0041019a17561619b385e3b.jpg","description":"Sporty purple striped long sleeve shirt for a spring run.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":15,"color":"multicolor","seasonId":3,"image":"images/cbb05084a6bfd1ae714ec244783eede8.jpg","description":"Luxurious olive faux fur winter jacket.","outfitType":"casual","favoritedBy":[],"username":null},{"id":16,"color":"black","seasonId":1,"image":"images/outfit7.jpg","description":"Sleek and simple little black summer dress.","outfitType":"casual","favoritedBy":[],"username":null},{"id":17,"color":"red","seasonId":2,"image":"images/93f889f392bad24fff3a129c9c1e0ac5.jpg","description":"Casual spring red striped shirt with relaxed dark denim.","outfitType":"casual","favoritedBy":[],"username":null},{"id":18,"color":"black","seasonId":1,"image":"images/4d236b65207e95aa2c9347069e36b76e.jpg","description":"All-black sporty summer training gear.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":19,"color":"brown","seasonId":3,"image":"images/dc23dec348a29919a92c4ab3be8b3aee.jpg","description":"Heavy brown sherpa-lined winter jacket on a snowy day.","outfitType":"casual","favoritedBy":[],"username":null},{"id":20,"color":"green","seasonId":1,"image":"images/6fde9bb66cdbad2326451cb4d7b4dca4.jpg","description":"Unique lime green asymmetrical fringe dress.","outfitType":"party","favoritedBy":[],"username":null},{"id":21,"color":"blue","seasonId":2,"image":"images/01a783fb74a99a39945d1717247f2fea.jpg","description":"Smart-casual spring look with a light blue button-up shirt.","outfitType":"business","favoritedBy":[],"username":null},{"id":22,"color":"beige","seasonId":3,"image":"images/3eeba9b3f392e6b694db0a5c502e2057.jpg","description":"Oversized beige wool blazer perfect for winter business.","outfitType":"business","favoritedBy":[],"username":null},{"id":23,"color":"black","seasonId":3,"image":"images/e54a1c56759f230977bad88b18f5fe97.jpg","description":"Long black down jacket with a grey maxi skirt.","outfitType":"casual","favoritedBy":[],"username":null},{"id":24,"color":"blue","seasonId":1,"image":"images/76fa369cdfbd048084cf6b14b77eef93.jpg","description":"Casual summer outfit with a plain white tee and dark shorts.","outfitType":"casual","favoritedBy":[],"username":null},{"id":25,"color":"grey","seasonId":2,"image":"images/bdcd234cbf362cbffbdf58758d0fb9e8.jpg","description":"Spring casual outfit with a blue striped long sleeve.","outfitType":"casual","favoritedBy":[],"username":null},{"id":26,"color":"blue","seasonId":4,"image":"images/8767abb282ef11a4ba5c5676b7b98533.jpg","description":"Modern business casual look featuring a light blue half-sleeve.","outfitType":"business","favoritedBy":[],"username":null},{"id":27,"color":"black","seasonId":4,"image":"images/cdf5085bf2bf0554ca91629ada6a89ab.jpg","description":"Technical athletic compression gear.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":28,"color":"black","seasonId":2,"image":"images/66c423a9fcda31635233dffcfff62fda.jpg","description":"Chic black party sweater styled with a shimmering gold skirt.","outfitType":"party","favoritedBy":[],"username":null},{"id":29,"color":"grey","seasonId":3,"image":"images/ff74c3cc570703613ca4e977909abb2e.jpg","description":"Heavy technical grey ski jacket with a warm beanie.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":30,"color":"blue","seasonId":2,"image":"images/bde661ed1030048c10408c6295a48578.jpg","description":"Oversized slate blue spring top paired with relaxed black trousers.","outfitType":"casual","favoritedBy":[],"username":null},{"id":31,"color":"blue","seasonId":4,"image":"images/421d3dd95fc675384b96780ff1ea7664.jpg","description":"Professional business look combining a vibrant royal blue shirt.","outfitType":"business","favoritedBy":[],"username":null},{"id":32,"color":"black","seasonId":1,"image":"images/dd79e4be55eb62ed7dfce7244e21fcf6.jpg","description":"Sporty windbreaker jacket styled with yellow sneakers.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":33,"color":"multicolor","seasonId":2,"image":"images/5326bd398231966b7774062f1ee80291.jpg","description":"Retro party outfit featuring a dark shimmering top.","outfitType":"party","favoritedBy":[],"username":null},{"id":34,"color":"brown","seasonId":3,"image":"images/outfit8.jpg","description":"Cosy dark brown winter puffer coat.","outfitType":"casual","favoritedBy":[],"username":null},{"id":35,"color":"red","seasonId":1,"image":"images/c95641c7d5d95f1fc7bf49747251f71a.jpg","description":"Striking monochromatic red party look.","outfitType":"party","favoritedBy":[],"username":null},{"id":36,"color":"multicolor","seasonId":1,"image":"images/369f355b35f1d88717a1e0a93e10b72d.jpg","description":"Oversized blue and cream color block t-shirt.","outfitType":"casual","favoritedBy":[],"username":null},{"id":37,"color":"black","seasonId":3,"image":"images/8d1058a16d8610a11389577b355c5a6a.jpg","description":"Sharp clean all-black business suit.","outfitType":"business","favoritedBy":[],"username":null},{"id":38,"color":"blue","seasonId":2,"image":"images/f6fc388629d2bd7244d29602868cb423.jpg","description":"Sporty blue track pants paired with a white tank top.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":39,"color":"brown","seasonId":4,"image":"images/203b9d252b7a2c2eb8a19db8495b9cfe.jpg","description":"Warm autumn aesthetic outfit with a deep brown leather jacket.","outfitType":"party","favoritedBy":[],"username":null},{"id":40,"color":"grey","seasonId":4,"image":"images/c8e244d075c5351a58ce2f2add478c88.jpg","description":"Distressed grey graphic running t-shirt.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":41,"color":"red","seasonId":2,"image":"images/04004ebaf33882c11986ef366c377f80.jpg","description":"Stylish striped red dress shirt matched with a black skirt.","outfitType":"party","favoritedBy":[],"username":null},{"id":42,"color":"multicolor","seasonId":1,"image":"images/outfit3.jpg","description":"Summer party look showcasing a polka-dot bustier.","outfitType":"party","favoritedBy":[],"username":null},{"id":43,"color":"grey","seasonId":3,"image":"images/7e01003ff8f24a973cd74d45e53a3f91.jpg","description":"Sleek office-wear combining a sleeveless turtleneck and a grey skirt.","outfitType":"business","favoritedBy":[],"username":null},{"id":44,"color":"black","seasonId":2,"image":"images/f9297f47f57844896d3fc48012ed066d.jpg","description":"Monochromatic black training crewneck.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":45,"color":"white","seasonId":1,"image":"images/c7e364163ea49f27c330eafaa2ad157f.jpg","description":"Futuristic sheer white strapless top.","outfitType":"party","favoritedBy":[],"username":null},{"id":46,"color":"blue","seasonId":2,"image":"images/outfit5.jpg","description":"Casual spring outfit with an oversized button-up.","outfitType":"casual","favoritedBy":[],"username":null},{"id":47,"color":"grey","seasonId":4,"image":"images/489ec1780f56add07ab71f9c271b3b3e.jpg","description":"Casual autumn look featuring a grey plaid flannel shirt.","outfitType":"casual","favoritedBy":[],"username":null},{"id":48,"color":"blue","seasonId":2,"image":"images/outfit10.jpg","description":"Relaxed party look with an off-the-shoulder top.","outfitType":"party","favoritedBy":[],"username":null},{"id":49,"color":"red","seasonId":2,"image":"images/543bedc46bc04de22b499268de905505.jpg","description":"Clean-cut minimalist look featuring a vibrant red sweater.","outfitType":"casual","favoritedBy":[],"username":null},{"id":50,"color":"blue","seasonId":2,"image":"images/c8980a19037ffb255b132b74f135e83a.jpg","description":"Sporty streetwear style featuring an electric blue Adidas t-shirt.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":51,"color":"multicolor","seasonId":2,"image":"images/outfit11.jpg","description":"Chic spring outfit with a dusty pink top.","outfitType":"party","favoritedBy":[],"username":null},{"id":52,"color":"black","seasonId":4,"image":"images/b2a99f646200fa34fb1949b2ddbf36a0.jpg","description":"Relaxed autumn business vibe featuring a black leather jacket.","outfitType":"party","favoritedBy":["ruth.granath"],"username":null,"isFavourite":true},{"id":53,"color":"black","seasonId":2,"image":"images/dd6db901e30ef292ca3b449c9d30dc0a.jpg","description":"Chic and minimalist party look.","outfitType":"party","favoritedBy":[],"username":null},{"id":54,"color":"multicolor","seasonId":4,"image":"images/cc9fdf8f0f6c54db2334b8e6c96c0a0e.jpg","description":"Structured corporate look pairing an olive green blazer.","outfitType":"business","favoritedBy":[],"username":null},{"id":55,"color":"multicolor","seasonId":1,"image":"images/outfit2.jpg","description":"Effortless casual summer streetwear look.","outfitType":"casual","favoritedBy":[],"username":null},{"id":56,"color":"white","seasonId":1,"image":"images/outfit6.jpg","description":"Clean and athletic hot-weather look.","outfitType":"casual","favoritedBy":[],"username":null},{"id":57,"color":"grey","seasonId":4,"image":"images/d551354954a05c6ac0a582a1d903c329.jpg","description":"Edgy street style with a thick grey turtleneck.","outfitType":"casual","favoritedBy":[],"username":null},{"id":58,"color":"beige","seasonId":4,"image":"images/08a2b0f65be32fd957fd03d03e0c2708.jpg","description":"Autumn beige skirt look.","outfitType":"casual","favoritedBy":[],"username":null},{"id":59,"color":"black","seasonId":4,"image":"images/93fd126a01cb8aad1320f971c417a78b.jpg","description":"Urban techwear look featuring a dark knit sweater.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":60,"color":"black","seasonId":4,"image":"images/94cf5502e485476df98c613875ef6949.jpg","description":"Avant-garde streetwear showcasing a technical structural black jacket.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":61,"color":"beige","seasonId":4,"image":"images/8aaec4784985597c36290b70493ade89.jpg","description":"Stunning statement piece featuring an oversized shearling coat.","outfitType":"party","favoritedBy":["ruth.granath"],"username":null,"isFavourite":true},{"id":62,"color":"black","seasonId":4,"image":"images/7183980a9c524ec0e441d1dc74869857.jpg","description":"Black casual streetwear look.","outfitType":"casual","favoritedBy":[],"username":null},{"id":63,"color":"multicolor","seasonId":1,"image":"images/80ceaa941bff97d653ff7b8c37808fd7.jpg","description":"Pastel light blue long sleeve crop top matching a pale yellow mini skirt.","outfitType":"casual","favoritedBy":["ruth.granath"],"username":null,"isFavourite":true},{"id":64,"color":"black","seasonId":4,"image":"images/83abfccdb57df95ab03d90d1b29640cb.jpg","description":"Comfy dark training gear combined with colorful running shoes for autumn jogs.","outfitType":"sporty","favoritedBy":[],"username":null},{"id":65,"color":"multicolor","seasonId":2,"image":"images/771ea6cf220701ecd3e31c0bba79bc2b.jpg","description":"Playful color blocking with a vibrant magenta cardigan, deep brown pleated midi skirt, and bright green suede trainers.","outfitType":"casual","favoritedBy":["ruth.granath"],"username":null,"isFavourite":true},{"id":66,"color":"green","seasonId":1,"image":"images/outfit9 (kopia).jpg","description":"Funky patterned t-shirt with a nice skirt over pants.","outfitType":"casual","favoritedBy":[],"username":null},{"id":67,"color":"grey","seasonId":4,"image":"images/4f3388379937cf138662c7d6068cf63f.jpg","description":"Sharp charcoal grey business suit tailored beautifully with a white shirt and black tie.","outfitType":"business","favoritedBy":[],"username":null}]}
+{
+    "seasons": [
+        {
+            "id": 1,
+            "season": "summer"
+        },
+        {
+            "id": 2,
+            "season": "spring"
+        },
+        {
+            "id": 3,
+            "season": "winter"
+        },
+        {
+            "id": 4,
+            "season": "fall"
+        }
+    ],
+    "outfitTypes": [
+        {
+            "id": 1,
+            "type": "casual"
+        },
+        {
+            "id": 2,
+            "type": "party"
+        },
+        {
+            "id": 3,
+            "type": "business"
+        },
+        {
+            "id": 4,
+            "type": "sporty"
+        }
+    ],
+    "outfits": [
+        {
+            "id": 1,
+            "color": "grey",
+            "seasonId": 4,
+            "image": "images/9a14cbf1716bf2b29f538d794888cf40.jpg",
+            "description": "Chic autumn business look with a grey cardigan.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 2,
+            "color": "orange",
+            "seasonId": 1,
+            "image": "images/3ba9dc2241d4c068e5091bfa5b142e14.jpg",
+            "description": "Striped orange summer dress with a green bucket hat.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 3,
+            "color": "black",
+            "seasonId": 3,
+            "image": "images/9b93b0c5621263335775a260d1dd16c2.jpg",
+            "description": "Heavy dark grey winter coat paired with popping red gloves.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 4,
+            "color": "multicolor",
+            "seasonId": 4,
+            "image": "images/outfit4.jpg",
+            "description": "Patterned business layering with a teal knit over an olive shirt.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 5,
+            "color": "black",
+            "seasonId": 4,
+            "image": "images/3b38d45960a0dc6c13284971265d17b2.jpg",
+            "description": "Sporty autumn running gear featuring a technical vest.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 6,
+            "color": "black",
+            "seasonId": 2,
+            "image": "images/51a532927209233cff230d742ab9e821.jpg",
+            "description": "Elegant sequin party top paired with a sleek black skirt.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 7,
+            "color": "blue",
+            "seasonId": 3,
+            "image": "images/aa735d9b7b9960821d21df7205318187.jpg",
+            "description": "Puffy light blue winter jacket suited for heavy snow.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 8,
+            "color": "white",
+            "seasonId": 1,
+            "image": "images/299e1fbe22cd9da409e13ff7cfeb94a5.jpg",
+            "description": "Sophisticated all-white summer linen set.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 9,
+            "color": "blue",
+            "seasonId": 2,
+            "image": "images/9c41e300f679fcc7085b94e1038658bb.jpg",
+            "description": "Relaxed spring striped blue long sleeve shirt.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 10,
+            "color": "white",
+            "seasonId": 3,
+            "image": "images/97644dcb9118963b392237e50da21904.jpg",
+            "description": "Minimalist winter business dress with a sleek white turtleneck.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 11,
+            "color": "multicolor",
+            "seasonId": 1,
+            "image": "images/c4911692d5e08869751b49edfec29987.jpg",
+            "description": "Colorful striped summer tank top paired with casual shorts.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 12,
+            "color": "black",
+            "seasonId": 3,
+            "image": "images/732efda13cecb3a2ee294a2e60956dcf.jpg",
+            "description": "Layered heavy black winter jacket with a red sweater.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 13,
+            "color": "blue",
+            "seasonId": 4,
+            "image": "images/ea745c0030d51eeb2e0163d6323eab89.jpg",
+            "description": "Classic navy blue pinstripe double-breasted business suit.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 14,
+            "color": "purple",
+            "seasonId": 2,
+            "image": "images/95cc3057b0041019a17561619b385e3b.jpg",
+            "description": "Sporty purple striped long sleeve shirt for a spring run.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 15,
+            "color": "multicolor",
+            "seasonId": 3,
+            "image": "images/cbb05084a6bfd1ae714ec244783eede8.jpg",
+            "description": "Luxurious olive faux fur winter jacket.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 16,
+            "color": "black",
+            "seasonId": 1,
+            "image": "images/outfit7.jpg",
+            "description": "Sleek and simple little black summer dress.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 17,
+            "color": "red",
+            "seasonId": 2,
+            "image": "images/93f889f392bad24fff3a129c9c1e0ac5.jpg",
+            "description": "Casual spring red striped shirt with relaxed dark denim.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 18,
+            "color": "black",
+            "seasonId": 1,
+            "image": "images/4d236b65207e95aa2c9347069e36b76e.jpg",
+            "description": "All-black sporty summer training gear.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 19,
+            "color": "brown",
+            "seasonId": 3,
+            "image": "images/dc23dec348a29919a92c4ab3be8b3aee.jpg",
+            "description": "Heavy brown sherpa-lined winter jacket on a snowy day.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 20,
+            "color": "green",
+            "seasonId": 1,
+            "image": "images/6fde9bb66cdbad2326451cb4d7b4dca4.jpg",
+            "description": "Unique lime green asymmetrical fringe dress.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 21,
+            "color": "blue",
+            "seasonId": 2,
+            "image": "images/01a783fb74a99a39945d1717247f2fea.jpg",
+            "description": "Smart-casual spring look with a light blue button-up shirt.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 22,
+            "color": "beige",
+            "seasonId": 3,
+            "image": "images/3eeba9b3f392e6b694db0a5c502e2057.jpg",
+            "description": "Oversized beige wool blazer perfect for winter business.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 23,
+            "color": "black",
+            "seasonId": 3,
+            "image": "images/e54a1c56759f230977bad88b18f5fe97.jpg",
+            "description": "Long black down jacket with a grey maxi skirt.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 24,
+            "color": "blue",
+            "seasonId": 1,
+            "image": "images/76fa369cdfbd048084cf6b14b77eef93.jpg",
+            "description": "Casual summer outfit with a plain white tee and dark shorts.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 25,
+            "color": "grey",
+            "seasonId": 2,
+            "image": "images/bdcd234cbf362cbffbdf58758d0fb9e8.jpg",
+            "description": "Spring casual outfit with a blue striped long sleeve.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 26,
+            "color": "blue",
+            "seasonId": 4,
+            "image": "images/8767abb282ef11a4ba5c5676b7b98533.jpg",
+            "description": "Modern business casual look featuring a light blue half-sleeve.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 27,
+            "color": "black",
+            "seasonId": 4,
+            "image": "images/cdf5085bf2bf0554ca91629ada6a89ab.jpg",
+            "description": "Technical athletic compression gear.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 28,
+            "color": "black",
+            "seasonId": 2,
+            "image": "images/66c423a9fcda31635233dffcfff62fda.jpg",
+            "description": "Chic black party sweater styled with a shimmering gold skirt.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 29,
+            "color": "grey",
+            "seasonId": 3,
+            "image": "images/ff74c3cc570703613ca4e977909abb2e.jpg",
+            "description": "Heavy technical grey ski jacket with a warm beanie.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 30,
+            "color": "blue",
+            "seasonId": 2,
+            "image": "images/bde661ed1030048c10408c6295a48578.jpg",
+            "description": "Oversized slate blue spring top paired with relaxed black trousers.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 31,
+            "color": "blue",
+            "seasonId": 4,
+            "image": "images/421d3dd95fc675384b96780ff1ea7664.jpg",
+            "description": "Professional business look combining a vibrant royal blue shirt.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 32,
+            "color": "black",
+            "seasonId": 1,
+            "image": "images/dd79e4be55eb62ed7dfce7244e21fcf6.jpg",
+            "description": "Sporty windbreaker jacket styled with yellow sneakers.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 33,
+            "color": "multicolor",
+            "seasonId": 2,
+            "image": "images/5326bd398231966b7774062f1ee80291.jpg",
+            "description": "Retro party outfit featuring a dark shimmering top.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 34,
+            "color": "brown",
+            "seasonId": 3,
+            "image": "images/outfit8.jpg",
+            "description": "Cosy dark brown winter puffer coat.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 35,
+            "color": "red",
+            "seasonId": 1,
+            "image": "images/c95641c7d5d95f1fc7bf49747251f71a.jpg",
+            "description": "Striking monochromatic red party look.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 36,
+            "color": "multicolor",
+            "seasonId": 1,
+            "image": "images/369f355b35f1d88717a1e0a93e10b72d.jpg",
+            "description": "Oversized blue and cream color block t-shirt.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 37,
+            "color": "black",
+            "seasonId": 3,
+            "image": "images/8d1058a16d8610a11389577b355c5a6a.jpg",
+            "description": "Sharp clean all-black business suit.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 38,
+            "color": "blue",
+            "seasonId": 2,
+            "image": "images/f6fc388629d2bd7244d29602868cb423.jpg",
+            "description": "Sporty blue track pants paired with a white tank top.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 39,
+            "color": "brown",
+            "seasonId": 4,
+            "image": "images/203b9d252b7a2c2eb8a19db8495b9cfe.jpg",
+            "description": "Warm autumn aesthetic outfit with a deep brown leather jacket.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 40,
+            "color": "grey",
+            "seasonId": 4,
+            "image": "images/c8e244d075c5351a58ce2f2add478c88.jpg",
+            "description": "Distressed grey graphic running t-shirt.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 41,
+            "color": "red",
+            "seasonId": 2,
+            "image": "images/04004ebaf33882c11986ef366c377f80.jpg",
+            "description": "Stylish striped red dress shirt matched with a black skirt.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 42,
+            "color": "multicolor",
+            "seasonId": 1,
+            "image": "images/outfit3.jpg",
+            "description": "Summer party look showcasing a polka-dot bustier.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 43,
+            "color": "grey",
+            "seasonId": 3,
+            "image": "images/7e01003ff8f24a973cd74d45e53a3f91.jpg",
+            "description": "Sleek office-wear combining a sleeveless turtleneck and a grey skirt.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 44,
+            "color": "black",
+            "seasonId": 2,
+            "image": "images/f9297f47f57844896d3fc48012ed066d.jpg",
+            "description": "Monochromatic black training crewneck.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 45,
+            "color": "white",
+            "seasonId": 1,
+            "image": "images/c7e364163ea49f27c330eafaa2ad157f.jpg",
+            "description": "Futuristic sheer white strapless top.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 46,
+            "color": "blue",
+            "seasonId": 2,
+            "image": "images/outfit5.jpg",
+            "description": "Casual spring outfit with an oversized button-up.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 47,
+            "color": "grey",
+            "seasonId": 4,
+            "image": "images/489ec1780f56add07ab71f9c271b3b3e.jpg",
+            "description": "Casual autumn look featuring a grey plaid flannel shirt.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 48,
+            "color": "blue",
+            "seasonId": 2,
+            "image": "images/outfit10.jpg",
+            "description": "Relaxed party look with an off-the-shoulder top.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 49,
+            "color": "red",
+            "seasonId": 2,
+            "image": "images/543bedc46bc04de22b499268de905505.jpg",
+            "description": "Clean-cut minimalist look featuring a vibrant red sweater.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 50,
+            "color": "blue",
+            "seasonId": 2,
+            "image": "images/c8980a19037ffb255b132b74f135e83a.jpg",
+            "description": "Sporty streetwear style featuring an electric blue Adidas t-shirt.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 51,
+            "color": "multicolor",
+            "seasonId": 2,
+            "image": "images/outfit11.jpg",
+            "description": "Chic spring outfit with a dusty pink top.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 52,
+            "color": "black",
+            "seasonId": 4,
+            "image": "images/b2a99f646200fa34fb1949b2ddbf36a0.jpg",
+            "description": "Relaxed autumn business vibe featuring a black leather jacket.",
+            "outfitType": "party",
+            "favoritedBy": [
+                "ruth.granath"
+            ],
+            "username": null,
+            "isFavourite": true
+        },
+        {
+            "id": 53,
+            "color": "black",
+            "seasonId": 2,
+            "image": "images/dd6db901e30ef292ca3b449c9d30dc0a.jpg",
+            "description": "Chic and minimalist party look.",
+            "outfitType": "party",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 54,
+            "color": "multicolor",
+            "seasonId": 4,
+            "image": "images/cc9fdf8f0f6c54db2334b8e6c96c0a0e.jpg",
+            "description": "Structured corporate look pairing an olive green blazer.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 55,
+            "color": "multicolor",
+            "seasonId": 1,
+            "image": "images/outfit2.jpg",
+            "description": "Effortless casual summer streetwear look.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 56,
+            "color": "white",
+            "seasonId": 1,
+            "image": "images/outfit6.jpg",
+            "description": "Clean and athletic hot-weather look.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 57,
+            "color": "grey",
+            "seasonId": 4,
+            "image": "images/d551354954a05c6ac0a582a1d903c329.jpg",
+            "description": "Edgy street style with a thick grey turtleneck.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 58,
+            "color": "beige",
+            "seasonId": 4,
+            "image": "images/08a2b0f65be32fd957fd03d03e0c2708.jpg",
+            "description": "Autumn beige skirt look.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 59,
+            "color": "black",
+            "seasonId": 4,
+            "image": "images/93fd126a01cb8aad1320f971c417a78b.jpg",
+            "description": "Urban techwear look featuring a dark knit sweater.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 60,
+            "color": "black",
+            "seasonId": 4,
+            "image": "images/94cf5502e485476df98c613875ef6949.jpg",
+            "description": "Avant-garde streetwear showcasing a technical structural black jacket.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 61,
+            "color": "beige",
+            "seasonId": 4,
+            "image": "images/8aaec4784985597c36290b70493ade89.jpg",
+            "description": "Stunning statement piece featuring an oversized shearling coat.",
+            "outfitType": "party",
+            "favoritedBy": [
+                "ruth.granath"
+            ],
+            "username": null,
+            "isFavourite": true
+        },
+        {
+            "id": 62,
+            "color": "black",
+            "seasonId": 4,
+            "image": "images/7183980a9c524ec0e441d1dc74869857.jpg",
+            "description": "Black casual streetwear look.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 63,
+            "color": "multicolor",
+            "seasonId": 1,
+            "image": "images/80ceaa941bff97d653ff7b8c37808fd7.jpg",
+            "description": "Pastel light blue long sleeve crop top matching a pale yellow mini skirt.",
+            "outfitType": "casual",
+            "favoritedBy": [
+                "ruth.granath"
+            ],
+            "username": null,
+            "isFavourite": true
+        },
+        {
+            "id": 64,
+            "color": "black",
+            "seasonId": 4,
+            "image": "images/83abfccdb57df95ab03d90d1b29640cb.jpg",
+            "description": "Comfy dark training gear combined with colorful running shoes for autumn jogs.",
+            "outfitType": "sporty",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 65,
+            "color": "multicolor",
+            "seasonId": 2,
+            "image": "images/771ea6cf220701ecd3e31c0bba79bc2b.jpg",
+            "description": "Playful color blocking with a vibrant magenta cardigan, deep brown pleated midi skirt, and bright green suede trainers.",
+            "outfitType": "casual",
+            "favoritedBy": [
+                "ruth.granath"
+            ],
+            "username": null,
+            "isFavourite": true
+        },
+        {
+            "id": 66,
+            "color": "green",
+            "seasonId": 1,
+            "image": "images/outfit9 (kopia).jpg",
+            "description": "Funky patterned t-shirt with a nice skirt over pants.",
+            "outfitType": "casual",
+            "favoritedBy": [],
+            "username": null
+        },
+        {
+            "id": 67,
+            "color": "grey",
+            "seasonId": 4,
+            "image": "images/4f3388379937cf138662c7d6068cf63f.jpg",
+            "description": "Sharp charcoal grey business suit tailored beautifully with a white shirt and black tie.",
+            "outfitType": "business",
+            "favoritedBy": [],
+            "username": null
+        }
+    ]
+}
