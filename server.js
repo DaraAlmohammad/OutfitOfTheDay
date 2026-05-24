@@ -15,7 +15,7 @@ function getUsers() {
         let data = Deno.readTextFileSync("users.json");
         return JSON.parse(data);
     } catch (err) {
-        console.log("Kunde inte läsa in users");
+        console.log("Could not read users");
         return { users: [] }; // Tillagd fallback ifall filen är tom
     }
 }

@@ -111,7 +111,7 @@ class UI {
 
             <div class="detail-description">
                 <h3>Description:</h3>
-                <p>${outfit.description || "Ingen beskrivning tillgänglig."}</p>
+                <p>${outfit.description}</p>
             </div>
         `;
         outfitById.appendChild(div);
@@ -183,22 +183,21 @@ class UI {
         }
     }
 
-    async myOutfits(outfitsList = null) {
-
+    async myOutfits(filteredList = null) {
+        
         let outfitList = document.getElementById("outfit-feed-container");
         if (!outfitList) return;
 
         outfitList.innerHTML = "";
         UI.showLoading();
 
-        let allMyOutfits;
-        if (outfitsList) {
-            allMyOutfits = outfitsList;
-        } else {
+        let allMyOutfits = filteredList;
+        
+        if (allMyOutfits === null) {
             allMyOutfits = await API.getMyOutfits();
-        }
-
-        outfitList.innerHTML = "";
+        }    
+        
+        outfitList.innerHTML ="";
 
         for (let outfit of allMyOutfits) {
 
