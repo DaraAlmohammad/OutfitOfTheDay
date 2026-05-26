@@ -638,9 +638,28 @@
       "outfitType": "sporty",
       "favoritedBy": [],
       "username": null
+    },{
+      "id": 61,
+      "color": "black",
+      "seasonId": 4,
+      "image": "images/3d8b398f-f13d-42b1-b53d-d39fa4314dde.jpeg",
+      "description": "Black outfit in fall!",
+      "outfitType": "casual",
+      "favoritedBy": [],
+      "username": "Dara"
     },
     {
-      "id": 61,
+      "id": 62,
+      "color": "beige",
+      "seasonId": 1,
+      "image": "images/cbc18ec8-afcb-4565-bde5-b8ae51171184.jpeg",
+      "description": "All beige!!",
+      "outfitType": "casual",
+      "favoritedBy": [],
+      "username": "Dara"
+    },
+    {
+      "id": 63,
       "color": "beige",
       "seasonId": 4,
       "image": "images/8aaec4784985597c36290b70493ade89.jpg",
@@ -653,7 +672,7 @@
       "isFavourite": true
     },
     {
-      "id": 62,
+      "id": 64,
       "color": "black",
       "seasonId": 4,
       "image": "images/7183980a9c524ec0e441d1dc74869857.jpg",
@@ -663,7 +682,7 @@
       "username": null
     },
     {
-      "id": 63,
+      "id": 65,
       "color": "multicolor",
       "seasonId": 1,
       "image": "images/80ceaa941bff97d653ff7b8c37808fd7.jpg",
@@ -677,7 +696,7 @@
       "isFavourite": true
     },
     {
-      "id": 64,
+      "id": 66,
       "color": "black",
       "seasonId": 4,
       "image": "images/83abfccdb57df95ab03d90d1b29640cb.jpg",
@@ -687,7 +706,7 @@
       "username": null
     },
     {
-      "id": 65,
+      "id": 67,
       "color": "multicolor",
       "seasonId": 2,
       "image": "images/771ea6cf220701ecd3e31c0bba79bc2b.jpg",
@@ -700,7 +719,7 @@
       "isFavourite": true
     },
     {
-      "id": 66,
+      "id": 68,
       "color": "green",
       "seasonId": 1,
       "image": "images/outfit9 (kopia).jpg",
@@ -710,7 +729,7 @@
       "username": null
     },
     {
-      "id": 67,
+      "id": 69,
       "color": "grey",
       "seasonId": 4,
       "image": "images/4f3388379937cf138662c7d6068cf63f.jpg",
