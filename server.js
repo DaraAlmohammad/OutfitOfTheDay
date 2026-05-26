@@ -180,7 +180,6 @@ async function handle(request) {
         const file = formData.get("file");
         const originalName = file.name;
         const newName = crypto.randomUUID();
-        extname(originalName);
         const extention = extname(originalName);
         const newFilename = newName + extention;
 
